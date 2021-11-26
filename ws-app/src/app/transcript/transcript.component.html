@@ -1,0 +1,122 @@
+<p-card [style]="{'margin-top':'13px'}">
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="Choose/View Date Range and Year" icon="pi pi-plus" class="p-button-info p-mr-2" (click)="openRageDate()"></button>&nbsp;&nbsp;
+      <button pButton pRipple label="Add/Log CE Activity" icon="pi pi-plus" class="p-button-success p-mr-2"
+              (click)="openNew()"></button>
+    </ng-template>
+  </p-toolbar>
+  <p-table>
+    <ng-template pTemplate="caption">
+      <div class="p-flex p-ai-center p-jc-between">
+        <h5 class="p-m-0">Transcript</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="firstName">
+          Name/Discription<p-sortIcon field="firstName"></p-sortIcon>
+        </th>
+        <th pSortableColumn="lastName">
+          Provider<p-sortIcon field="lastName"></p-sortIcon>
+        </th>
+        <th pSortableColumn="email">
+          Completion Date<p-sortIcon field="email"></p-sortIcon>
+        </th>
+        <th pSortableColumn="customerMemberId">
+          Type<p-sortIcon field="customerMemberId"></p-sortIcon>
+        </th>
+        <th pSortableColumn="customerMemberId">
+          Cat1<p-sortIcon field="customerMemberId"></p-sortIcon>
+        </th>
+        <th pSortableColumn="customerMemberId">
+          Cat2<p-sortIcon field="customerMemberId"></p-sortIcon>
+        </th>
+        <th pSortableColumn="customerMemberId">
+          PS/RM<p-sortIcon field="customerMemberId"></p-sortIcon>
+        </th>
+        <th pSortableColumn="customerMemberId">
+          Child Abuse<p-sortIcon field="customerMemberId"></p-sortIcon>
+        </th>
+        <th pSortableColumn="customerMemberId">
+          Opioids<p-sortIcon field="customerMemberId"></p-sortIcon>
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="user"></p-tableCheckbox>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
+                  (click)="dialogbox()"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <!--In total there are 0 Transcript Entries.-->
+      </div>
+    </ng-template>
+
+  </p-table>
+  <p-dialog [(visible)]="display" [style]="{width: '80%'}" header="Transcript" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+      <form [formGroup]="transcriptform" (ngSubmit)="onSubmit()" class="p-fluid">
+        <div>
+          <formly-form class="grid" [model]="model" [fields]="fields" [options]="options" [form]="transcriptform">
+          </formly-form>
+        </div>
+        <!-- {{ transcriptform.value | json }}
+        <br />
+        {{ model | json }} -->
+        <div class="grid mt-2">
+          gr
+          <button pButton pRipple label="Save" type="submit" icon="pi pi-check" class="p-button-info col-1"></button>
+          <button pButton pRipple label="Cancel" type="button" icon="pi pi-times" class="p-button-danger col-1 ml-2"></button>
+        </div>
+      </form>
+    </ng-template>
+    <!-- <ng-template pTemplate="footer">
+
+    </ng-template> -->
+  </p-dialog>
+  <p-dialog [(visible)]="rangeDateYear" [style]="{width: '40%'}" header="Transcript" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+      <form [formGroup]="transcriptdaterangeform" (ngSubmit)="onSubmit()" class="p-fluid">
+        <div>
+          <formly-form class="grid" [model]="model2" [fields]="field" [options]="options" [form]="transcriptdaterangeform">
+          </formly-form>
+        </div>
+        <!-- {{ transcriptform.value | json }}
+        <br />
+        {{ model | json }} -->
+        <div class="grid mt-2">
+          gr
+          <button pButton pRipple label="Search" type="submit" icon="pi pi-check" class="p-button-info col-2"></button>
+          <button pButton pRipple label="Cancel" type="button" icon="pi pi-times" class="p-button-danger col-2 ml-2"></button>
+        </div>
+      </form>
+    </ng-template>
+    <!-- <ng-template pTemplate="footer">
+
+    </ng-template> -->
+  </p-dialog>
+</p-card>

@@ -1,0 +1,118 @@
+<p-card [style]="{'margin-top':'13px'}">
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+        (click)="openNew()"></button>
+      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
+        (click)="deleteSelectedProducts()"></button>
+    </ng-template>
+
+    <ng-template pTemplate="right">
+      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import"
+        class="p-mr-2 p-d-inline-block"></p-fileUpload>
+      <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"
+        class="p-button-success p-mr-2" pTooltip="XLS" tooltipPosition="bottom"></button>
+      <!-- <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button> -->
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="register" [rows]="10" [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true"
+    [loading]="(loading$ |async)||false" [scrollHeight]="'600px'">
+    <ng-template pTemplate="caption">
+      <div class="p-flex p-ai-center p-jc-between">
+        <h5 class="p-m-0">Register Search</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (keyup)="KeyupFunc($event)" placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="firstName">First Name<p-sortIcon field="firstName"></p-sortIcon>
+        </th>
+        <th pSortableColumn="lastName">Last Name<p-sortIcon field="lastName"></p-sortIcon>
+        </th>
+        <th pSortableColumn="email">Email<p-sortIcon field="email"></p-sortIcon>
+        </th>
+        <th pSortableColumn="customerMemberId">Customer Member Id<p-sortIcon field="customerMemberId"></p-sortIcon>
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="user"></p-tableCheckbox>
+        </td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td><a routerLinkActive="active" routerLink="/User/{{user.id}}/Edit"> {{user.email}}</a></td>
+        <td>{{user.customerMemberId}}</td>
+        <td>
+          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
+            (click)="edit(user)"></button>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+            (click)="deleteUser(user)"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        In total there are {{register ? register.length : 0 }} Register Entries.
+      </div>
+    </ng-template>
+
+  </p-table>
+
+</p-card>
+<p-dialog [(visible)]="display" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
+  <ng-template pTemplate="content">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <label for="name"> First Name</label>
+        <input type="text" pInputText id="name" formControlName="firstName"
+          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required" class="p-error">First Name is required</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="description">Last Name</label>
+        <input type="text" pInputText id="name" formControlName="lastName"
+          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required" class="p-error">Last Name is required</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="inventoryStatus">Email</label>
+        <input type="text" pInputText id="name" formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required" class="p-error">Email is required</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="inventoryStatus">Customer MemberId</label>
+        <input type="text" pInputText id="name" formControlName="customerMemberId"
+          [ngClass]="{ 'is-invalid': submitted && f.customerMemberId.errors }" />
+        <div *ngIf="submitted && f.customerMemberId.errors" class="invalid-feedback">
+          <div *ngIf="f.customerMemberId.errors.required" class="p-error">Customer MemberId is required</div>
+        </div>
+      </div>
+      <div class="grid mt-2">
+        <button pButton pRipple label="Save" type="submit" icon="pi pi-check" class="p-button-info col-3 inline-block w-auto"></button>
+        <button pButton pRipple label="Cancel" type="button" icon="pi pi-times" (click)="hideDialog()" class="p-button-danger col-3 w-auto ml-3 inline-block"></button>
+      </div>
+    </form>
+  </ng-template>
+  <!-- <ng-template pTemplate="footer">
+      
+    </ng-template> -->
+</p-dialog>
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

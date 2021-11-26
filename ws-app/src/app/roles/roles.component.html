@@ -1,0 +1,30 @@
+<p-card [style]="{'margin-top':'13px'}">
+  <form [formGroup]="rolesform">
+    <p-card>
+      <div class="grid">
+
+        <div class="col-4">
+          <label style="font:bold">System Roles (0)</label><br />
+          <p-autoComplete (completeMethod)="filterroles($event)" [suggestions]="findroles" field="name" [dropdown]="true">
+            <ng-template let-role pTemplate="item">
+              <div class="country-item">
+                <div>{{role.label}}</div>
+              </div>
+            </ng-template>
+          </p-autoComplete>
+        </div>
+        <p-card>
+          <div class="col-12">
+            <p-checkbox name="groupname" value="val1"></p-checkbox>&nbsp;
+            <label for="binary">Administrator </label>&nbsp;
+            <p-checkbox name="groupname" value="val1"></p-checkbox>&nbsp;
+            <label for="binary">Reports User</label>&nbsp;
+            <p-checkbox name="groupname" value="val1"></p-checkbox>&nbsp;
+            <label for="binary">Course Tester</label>
+          </div>
+        </p-card>
+
+      </div>
+    </p-card>
+  </form>
+  </p-card>

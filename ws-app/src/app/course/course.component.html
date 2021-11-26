@@ -1,0 +1,53 @@
+<p-card [style]="{'margin-top':'13px'}">
+  <p-panel>
+    <ng-template pTemplate="header">
+      Course Form
+    </ng-template>
+    <form [formGroup]="courseform" (ngSubmit)="onSubmit()" class="p-fluid">
+      <div class="grid">
+        <div class="col-6">
+          <formly-form class="grid" [model]="model" [fields]="fields" [options]="options" [form]="courseform">
+          </formly-form>
+        </div><div class="col-6"><p-fileUpload name="myfile[]" class="ng-star-inserted"></p-fileUpload></div>
+      </div>
+      <div>
+        <formly-form class="grid" [model]="model" [fields]="fields2" [options]="options" [form]="courseform">
+        </formly-form>
+      </div>
+      <div class="grid">
+        <p-card class="col-6">
+          <ng-template pTemplate="header">
+            <h3>Prerequisties (0)</h3>
+          </ng-template>
+          <formly-form class="grid" [model]="model" [fields]="cardfields1" [options]="options" [form]="courseform">
+          </formly-form>
+          <ng-template pTemplate="footer">
+          </ng-template>
+        </p-card>
+        <p-card class="col-6">
+          <ng-template pTemplate="header">
+            <h3>Credits</h3>
+            <button pButton pRipple label="+Add Credit" type="button" icon="pi pi-add" class="p-button-info col-3"></button>
+          </ng-template>
+          <formly-form class="grid" [model]="model" [fields]="cardfields2" [options]="options" [form]="courseform">
+          </formly-form>
+        </p-card>
+      </div>
+      <div class="grid">
+        <p-card class="col-6">
+          <ng-template pTemplate="header">
+            <h3>Member Type Settings</h3>
+          </ng-template>
+          <formly-form class="grid" [model]="model" [fields]="cardfields3" [options]="options" [form]="courseform">
+          </formly-form>
+          <ng-template pTemplate="footer">
+          </ng-template>
+        </p-card>
+      </div>
+      <div class="grid mt-2">
+        <button pButton pRipple label="Save" type="submit" icon="pi pi-check" class="p-button-info col-1"></button>
+        <button pButton pRipple label="Cancel" type="button" icon="pi pi-times" class="p-button-danger col-1 ml-2"></button>
+      </div>
+    </form>
+  </p-panel>
+</p-card>

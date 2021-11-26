@@ -1,0 +1,42 @@
+<p-card [style]="{'margin-top':'13px'}">
+  <p-table [value]="[[]]">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="events">
+          Purchase Date<p-sortIcon field="events"></p-sortIcon>
+        </th>
+        <th pSortableColumn="subject">
+          Total<p-sortIcon field="subject"></p-sortIcon>
+        </th>
+        <th pSortableColumn="email">
+          Card Type<p-sortIcon field="to"></p-sortIcon>
+        </th>
+        <th pSortableColumn="from">
+          Product<p-sortIcon field="from"></p-sortIcon>
+        </th>
+        <th pSortableColumn="sent">
+          Product Type<p-sortIcon field="sent"></p-sortIcon>
+        </th>
+        <th pSortableColumn="sent">
+          Status<p-sortIcon field="sent"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+      <tr>
+        <td><input type="text" pInputText id="purchasedate" /></td>
+        <td></td>
+        <td><input type="text" pInputText id="purchasedate" /></td>
+        <td></td>
+        <td></td>
+        <td><input type="text" pInputText id="purchasedate" /></td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <!--In total there are 0 Transcript Entries.-->
+      </div>
+    </ng-template>
+
+  </p-table>
+</p-card>

@@ -1,0 +1,18 @@
+<p-panel>
+  <ng-template pTemplate="header">
+    Edit Form
+  </ng-template>
+  <form [formGroup]="edituserform" (ngSubmit)="onSubmit()" class="p-fluid">
+    <div>
+      <formly-form class="grid" [model]="model" [fields]="fields" [options]="options" [form]="edituserform">
+      </formly-form>
+    </div>
+    <!-- {{ edituserform.value | json }}
+    <br />
+    {{ model | json }} -->
+    <div class="grid mt-2">
+      <button pButton pRipple label="Save" type="submit" icon="pi pi-check" class="p-button-info col-1"></button>
+      <button pButton pRipple label="Cancel" type="button" icon="pi pi-times" class="p-button-danger col-1 ml-2" [routerLink]="['/registerlist']"></button>
+    </div>
+  </form>
+</p-panel>

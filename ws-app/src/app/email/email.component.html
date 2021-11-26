@@ -1,0 +1,53 @@
+<p-card [style]="{'margin-top':'13px'}">
+  <p-table>
+    <ng-template pTemplate="caption">
+      <div class="p-flex p-ai-center p-jc-between">
+        <h5 class="p-m-0">Transcript</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="events">
+          Events<p-sortIcon field="events"></p-sortIcon>
+        </th>
+        <th pSortableColumn="subject">
+          Subject<p-sortIcon field="subject"></p-sortIcon>
+        </th>
+        <th pSortableColumn="email">
+          To<p-sortIcon field="to"></p-sortIcon>
+        </th>
+        <th pSortableColumn="from">
+          From<p-sortIcon field="from"></p-sortIcon>
+        </th>
+        <th pSortableColumn="sent">
+          Sent<p-sortIcon field="sent"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="user"></p-tableCheckbox>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <!--In total there are 0 Transcript Entries.-->
+      </div>
+    </ng-template>
+
+  </p-table></p-card>
