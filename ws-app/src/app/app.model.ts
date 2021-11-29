@@ -42,6 +42,18 @@ export interface ITranscript {
   childAbuse: number;
   Opioids: number;
 }
+export interface IUserAssocLinked {
+  id?: number;
+  type: string;
+  email: string;
+  course: string;
+  role: string;
+}
+export interface IUserAssocNotLinked {
+  id?: number;
+  type: string;
+  name: string;
+}
 export interface ITranscriptRange {
   categoryActiveName: string;
   startDate: string;

@@ -1,7 +1,6 @@
 import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ConfirmationService } from 'primeng/api'
 import { FormlyFormOptions, FormlyFieldConfig, Field } from '@ngx-formly/core';

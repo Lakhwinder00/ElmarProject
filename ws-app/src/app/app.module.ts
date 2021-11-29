@@ -52,6 +52,8 @@ import { UserGroupsComponent } from './user-groups/user-groups.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { HistoryComponent } from './history/history.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { UserAssocLinkedComponent } from './user-assoc-linked/user-assoc-linked.component';
+import { UserAssocNotLinkedComponent } from './user-assoc-not-linked/user-assoc-not-linked.component';
 //import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
@@ -69,7 +71,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     CustomFieldsComponent,
     UserGroupsComponent,
     AddressesComponent,
-    HistoryComponent
+    HistoryComponent,
+    UserAssocLinkedComponent,
+    UserAssocNotLinkedComponent
   ],
   imports: [
     BrowserModule,
