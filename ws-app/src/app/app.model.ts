@@ -54,6 +54,12 @@ export interface IUserAssocNotLinked {
   type: string;
   name: string;
 }
+
+export interface IUserGroups {
+  id?: number;
+  userGroup: string;
+  status: string;
+}
 export interface ITranscriptRange {
   categoryActiveName: string;
   startDate: string;
