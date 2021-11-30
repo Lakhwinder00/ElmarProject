@@ -1,7 +1,7 @@
 <p-card [style]="{'margin-top':'13px'}">
   <p-panel>
     <ng-template pTemplate="header">
-      Course Form
+      <h5> Course Form</h5>
     </ng-template>
     <form [formGroup]="courseform" (ngSubmit)="onSubmit()" class="p-fluid">
       <div class="grid">
@@ -17,7 +17,7 @@
       <div class="grid">
         <p-card class="col-6">
           <ng-template pTemplate="header">
-            <h3>Prerequisties (0)</h3>
+            <h5>Prerequisties (0)</h5>
           </ng-template>
           <formly-form class="grid" [model]="model" [fields]="cardfields1" [options]="options" [form]="courseform">
           </formly-form>
@@ -26,7 +26,7 @@
         </p-card>
         <p-card class="col-6">
           <ng-template pTemplate="header">
-            <h3>Credits</h3>
+            <h5>Credits</h5>
             <button pButton pRipple label="+Add Credit" type="button" icon="pi pi-add" class="p-button-info col-3"></button>
           </ng-template>
           <formly-form class="grid" [model]="model" [fields]="cardfields2" [options]="options" [form]="courseform">
@@ -36,7 +36,7 @@
       <div class="grid">
         <p-card class="col-6">
           <ng-template pTemplate="header">
-            <h3>Member Type Settings</h3>
+            <h5>Member Type Settings</h5>
           </ng-template>
           <formly-form class="grid" [model]="model" [fields]="cardfields3" [options]="options" [form]="courseform">
           </formly-form>
