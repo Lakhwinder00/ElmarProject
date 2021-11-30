@@ -1,13 +1,16 @@
-import { Component,OnInit} from '@angular/core';
-
+import { Component,OnInit,AfterViewInit,ViewChild} from '@angular/core';
+import {SidebarComponent} from '../app/sidebar/sidebar.component'
 import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
-  items:MenuItem[]|any;
+export class AppComponent implements OnInit, AfterViewInit {
+  items: MenuItem[] | any;
+  menu: boolean = false;
+  isclass: boolean = false;
+  @ViewChild("sidebarComponent") sidebarComponent: SidebarComponent = new SidebarComponent;
   ngOnInit() {
     this.items = [
       {
@@ -87,6 +90,17 @@ export class AppComponent  {
         routerLink: '/history'
       }
     ];
+  }
+  expand(): void {
+    let boolen = this.sidebarComponent.pickclass();
+    if (boolen == true) {
+      this.isclass = true;
+    } else {
+      this.isclass = false;
+    }
+  }
+  ngAfterViewInit() {
+
   }
 }
 

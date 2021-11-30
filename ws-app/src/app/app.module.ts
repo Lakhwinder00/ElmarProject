@@ -54,6 +54,7 @@ import { HistoryComponent } from './history/history.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { UserAssocLinkedComponent } from './user-assoc-linked/user-assoc-linked.component';
 import { UserAssocNotLinkedComponent } from './user-assoc-not-linked/user-assoc-not-linked.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 //import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
@@ -73,7 +74,8 @@ import { UserAssocNotLinkedComponent } from './user-assoc-not-linked/user-assoc-
     AddressesComponent,
     HistoryComponent,
     UserAssocLinkedComponent,
-    UserAssocNotLinkedComponent
+    UserAssocNotLinkedComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

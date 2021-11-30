@@ -8,12 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AddressesComponent implements OnInit {
   addressList:any=[ {type: 'Course', name: 'Lorem Ipsum is simply dummy text of the printing'},
   {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'ScheduledItem'},
-  {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'UserGroup'},
-  {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'Discussion'},
-  {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'RoleTag'},
-  {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'User'},
-  {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'Registration'},
-  {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'MainRole'}];
+  {name: 'Lorem Ipsum is simply dummy text of the printing', type: 'UserGroup'}
+ 
+];
     courses = [
     {name: 'Course', code: 'Course'},
     {name: 'ScheduledItem', code: 'ScheduledItem'},
