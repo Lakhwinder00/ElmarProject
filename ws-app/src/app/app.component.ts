@@ -6,28 +6,29 @@ import { MenuItem } from 'primeng/api';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   items: MenuItem[] | any;
   menu: boolean = false;
   isclass: boolean = false;
+  systemRoles:any=[];
   @ViewChild("sidebarComponent") sidebarComponent: SidebarComponent = new SidebarComponent;
   ngOnInit() {
     this.items = [
       {
         label: 'DashBoard',
-        icon: 'pi pi-pw pi-file'
-        //items: [{
-        //  label: 'New',
-        //  icon: 'pi pi-fw pi-plus',
-        //  items: [
-        //    { label: 'User', icon: 'pi pi-fw pi-user-plus' },
-        //    { label: 'Filter', icon: 'pi pi-fw pi-filter' }
-        //  ]
-        //},
-        //{ label: 'Open', icon: 'pi pi-fw pi-external-link' },
-        //{ separator: true },
-        //{ label: 'Quit', icon: 'pi pi-fw pi-times' }
-        //]
+        icon: 'pi pi-pw pi-file',
+        items: [{
+         label: 'New',
+         icon: 'pi pi-fw pi-plus',
+         items: [
+           { label: 'User', icon: 'pi pi-fw pi-user-plus' },
+           { label: 'Filter', icon: 'pi pi-fw pi-filter' }
+         ]
+        },
+        { label: 'Open', icon: 'pi pi-fw pi-external-link' },
+        { separator: true },
+        { label: 'Quit', icon: 'pi pi-fw pi-times' }
+        ]
       },
       {
         label: 'Edit',
@@ -91,17 +92,15 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     ];
   }
-  expand(): void {
-    let boolen = this.sidebarComponent.pickclass();
-    if (boolen == true) {
-      this.isclass = true;
-    } else {
-      this.isclass = false;
-    }
-  }
-  ngAfterViewInit() {
-
-  }
+  // expand(): void {
+  //   let boolen = this.sidebarComponent.pickclass();
+  //   if (boolen == true) {
+  //     this.isclass = true;
+  //   } else {
+  //     this.isclass = false;
+  //   }
+  // }
+ 
 }
 
 

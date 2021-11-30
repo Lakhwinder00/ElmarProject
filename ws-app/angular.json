@@ -9,10 +9,10 @@
     "ws-app": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+        "@schematics/angular:component": {
+          "style": "scss"
+        } 
+},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -30,7 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/quill/dist/quill.core.css",
               "node_modules/quill/dist/quill.snow.css",
               "node_modules/primeng/resources/primeng.css",
@@ -106,7 +106,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/quill/dist/quill.core.css",
               "node_modules/quill/dist/quill.snow.css"
             ],

@@ -8,18 +8,17 @@ import { MenuItem } from 'primeng/api';
 export class SidebarComponent implements OnInit {
   isExpanded: boolean = false;
   items: MenuItem[] | any;
-  @Output() IsClass = new EventEmitter<boolean>();
+   
   handleSidebarToggle() {
-    if (this.isExpanded) {
-      this.isExpanded = false;
-    } else {
-      this.isExpanded = true;
-    }
+    this.isExpanded=!this.isExpanded;
+    // if (this.isExpanded) {
+    //   this.isExpanded = false;
+    // } else {
+    //   this.isExpanded = true;
+    // }
   };
   ngOnInit() {
     this.isExpanded = false;
   }
-  public pickclass():boolean{
-    return this.isExpanded;
-  }
+  
 }

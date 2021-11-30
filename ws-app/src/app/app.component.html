@@ -1,9 +1,39 @@
 <div class="grid">
-    <app-sidebar  (click)="expand()" #sidebarComponent></app-sidebar>
-  <div class="col-md-2 chil-menu">
-    <p-panelMenu [model]="items"></p-panelMenu>
+  <app-sidebar  #sidebarComponent></app-sidebar>
+   <div class="col-md-10 p-0 m-0 h-100 w-100">
+     <div class="fixedAdminHeader">
+    <nav class="navbar navbar-dark bg-dark m-0 d-flex">
+      
+      <h4>Test User Miljanovic </h4>
+       
+      <!-- <p-dropdown  [style]="{'margin-top': 'right'}"  name="course" [options]="systemRoles" optionLabel="label" placeholder="Actions"></p-dropdown> -->
+    </nav>
   </div>
-  <div [ngClass]="(isclass==true)?'col-md-8':'col-md-9'">
+  <div class="col-md-2 chil-menu p-0 m-0 mt-4 my-4" >
+    <p-panelMenu [style]="{'margin-top': '40px'}" [model]="items"></p-panelMenu>
+  </div>
+  <div [ngClass]="sidebarComponent?.isExpanded?'col-md-8':'col-md-10' " style="margin-top: 50px;" >
+   
     <router-outlet></router-outlet>
   </div>
+ 
 </div>
+<div class="footer fixedAdminFooter">
+<div class="p-d-flex justify-content-center" style="display: flex;">
+  <button type="button" pButton   
+  class="p-button mr-2" >Save & Close </button> 
+  <button type="button" pButton   
+  class="p-button mr-2" >Save</button> 
+</div>
+</div>
+</div>
+
+ 
+
+
+
+
+
+
+
+ 
