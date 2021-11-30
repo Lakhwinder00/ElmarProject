@@ -26,10 +26,13 @@
             </ng-template>
             <ng-template pTemplate="body" let-item>
                 <tr>
-                    <td> {{item?.type}}</td>
-                    <td> {{item?.Email}}</td>
-                    <td>{{item?.course}}</td>
+                    <td> {{item?.created}}</td>
+                    <td> {{item?.eventNames}}</td>
+                    <td class="p-col-md-4"><span style="font-size: 1.5em;">
+                        <i title="Chrome" class="fa fa-chrome"></i> <i title="Windows" class="fa fa-windows"></i>
+                         <i title="" class="fa fa-desktop"></i></span></td>
                     <td>  
+                        <span>Christopher Cody Cates  </span>
                         <button pButton pRipple icon="pi pi-minus"
                         class="p-button p-button-default ml-2"></button>
                     </td>
