@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   menu: boolean = false;
   isclass: boolean = false;
   systemRoles:any=[];
-  @ViewChild("sidebarComponent") sidebarComponent: SidebarComponent = new SidebarComponent;
+  /*@ViewChild("sidebarComponent") sidebarComponent: SidebarComponent = new SidebarComponent;*/
   ngOnInit() {
     this.items = [
       {
@@ -93,12 +93,12 @@ export class AppComponent implements OnInit {
     ];
   }
    expand(): void {
-     let boolen = this.sidebarComponent.pickclass();
-     if (boolen == true) {
-       this.isclass = true;
-     } else {
-       this.isclass = false;
-     }
+     //let boolen = false;
+     //if (boolen == true) {
+     //  this.isclass = true;
+     //} else {
+     //  this.isclass = false;
+     //}
    }
  
 }

@@ -56,6 +56,7 @@ import { UserAssocLinkedComponent } from './user-assoc-linked/user-assoc-linked.
 import { UserAssocNotLinkedComponent } from './user-assoc-not-linked/user-assoc-not-linked.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 //import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     EditorModule,
     FormsModule,
     AutoCompleteModule,
+    SidebarModule,
     FormlyModule.forRoot({
       validationMessages: [
         { name: 'required', message: 'This field is required',}
