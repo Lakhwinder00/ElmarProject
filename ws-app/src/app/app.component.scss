@@ -9,7 +9,7 @@
   width: 11%;
 }
 .fixedAdminHeader {
-  height: 8% !important;
+  height: 5% !important;
 }
 .margin-headertext {
   margin-left: 36px !important;
@@ -24,6 +24,9 @@
   position: relative;
   overflow: auto;
   max-height: 600px;
+}
+.user-panel-child {
+  width: 14.6667%!important;
 }
 .side-panel::-webkit-scrollbar {
   display: none;
