@@ -26,7 +26,7 @@
     width: 64px;
 
     &.expanded {
-      width: 198px;
+      width: 298px;
 
       .header {
         h1 {
@@ -46,7 +46,7 @@
         .link {
           .content {
             .title {
-              max-width: 100px;
+              max-width: 219px;
             }
 
             .icon {
@@ -64,7 +64,7 @@
     }
 
     background: #3f4659;
-    color: #6d6e7e;
+    color: #e0e1e7;
 
     .header {
       display: flex;
@@ -83,11 +83,11 @@
       }
 
       .title {
-        font-size: 13px !important;
+        font-size: 20px !important;
       }
 
       .chevron {
-        color: #6d6e7e;
+        color: #dcdce9;
         cursor: pointer;
         transition: 0.3s;
         margin-left: -25px;
@@ -161,12 +161,12 @@
           .title {
             flex: 1;
             // display: none;
-            color: #6d6e7e;
+            color: #d8d8dd;
             transition: 0.3s;
             max-width: 0px;
             overflow: hidden;
             font-weight: 600 !important;
-            font-size: 13px !important;
+            font-size: 20px !important;
           }
         }
       }

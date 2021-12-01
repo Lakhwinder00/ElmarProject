@@ -7,10 +7,89 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  //@ViewChild("sidebarComponent") sidebarComponent: SidebarComponent   
   items: MenuItem[] | any;
   menu: boolean = false;
   isclass: boolean = false;
   systemRoles:any=[];
+  items1:any = [
+    {
+      label: 'Help And Tutorials',
+      icon: 'fa fa-info-circle',
+      items: [{
+       label: 'New',
+       icon: 'pi pi-fw pi-plus',
+       items: [
+         { label: 'User', icon: 'pi pi-fw pi-user-plus' },
+         { label: 'Filter', icon: 'pi pi-fw pi-filter' }
+       ]
+      },
+      { label: 'Open', icon: 'pi pi-fw pi-external-link' },
+      { separator: true },
+      { label: 'Quit', icon: 'pi pi-fw pi-times' }
+      ]
+    },
+    {
+      label: 'Analytics',
+      icon: 'fa-fw fal fa-tachometer-alt-fast',
+      routerLink: '/registerlist'
+    },
+    {
+      label: 'Create New',
+      icon: 'fa fa-plus fa-fw',
+      routerLink: '/course'
+    },
+    {
+      label: 'Upload',
+      icon: 'fas fa-upload fa-fw',
+      routerLink: '/transcript'
+    },
+    {
+      label: 'Users',
+      icon: 'fa-fw far fa-calendar-alt',
+      routerLink: '/email'
+    },
+   {
+     label: 'Schedule/Calander',
+     icon: 'pi pi-fw pi-book',
+     routerLink: '/roles'
+    },
+    {
+      label: 'Cummunity/Messaging',
+      icon: 'pi pi-fw pi-list',
+      routerLink: '/orders'
+    },
+    {
+      label: 'Learning Content',
+      icon: 'pi pi-fw pi-list',
+      routerLink: '/discussions'
+    },
+    {
+      label: 'Files & Media',
+      icon: 'pi pi-fw pi-sitemap',
+      routerLink: '/userassoclinks'
+    },
+    {
+      label: 'Web & Email Content',
+      icon: 'pi pi-fw pi-user-plus',
+      routerLink: '/customfields'
+    },
+    {
+      label: 'StoreFront & Commerce',
+      icon: 'pi pi-fw pi-users',
+      routerLink: '/usergroups'
+    },
+    {
+      label: 'Advanced',
+      icon: 'pi pi-fw pi-book',
+      routerLink: '/addresses'
+    },
+    {
+      label: 'Configuration & Tools',
+      icon: 'pi pi-fw pi-slack',
+      routerLink: '/history'
+    }
+  ];
   /*@ViewChild("sidebarComponent") sidebarComponent: SidebarComponent = new SidebarComponent;*/
   ngOnInit() {
     this.items = [
@@ -93,6 +172,7 @@ export class AppComponent implements OnInit {
     ];
   }
    expand(): void {
+     this.isclass=!this.isclass
      //let boolen = false;
      //if (boolen == true) {
      //  this.isclass = true;

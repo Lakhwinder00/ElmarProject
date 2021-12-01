@@ -1,5 +1,6 @@
 <div class="col-12 grid">
-      <app-sidebar #sidebarComponent (click)="expand()"></app-sidebar>
+ 
+  <app-sidebar #sidebarComponent (click)="expand()"></app-sidebar>
       <div class="fixedAdminHeader">
       <nav class="navbar navbar-dark bg-dark m-0 d-flex">
         <h5 class="margin-headertext">Test User Miljanovic </h5>
@@ -8,7 +9,7 @@
       <div class="col-2 user-panel-child">
         <p-panelMenu [style]="{'margin-top': '40px'}" [model]="items"></p-panelMenu>
       </div>
-      <div [ngClass]="isclass?'col-8':'col-9'" class="side-panel">
+      <div [ngClass]="isclass?'col-6':'col-9'" class="side-panel">
         <router-outlet></router-outlet>
       </div>
   </div>
