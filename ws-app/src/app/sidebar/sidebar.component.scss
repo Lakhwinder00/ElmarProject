@@ -21,10 +21,10 @@
   top: 0;
   height: 100vh;
   transition: 0.3s;
-  width: 40px;
+  width: 64px;
 
   &.expanded {
-    width: 150px;
+    width: 198px;
 
     .header {
       h1 {
@@ -81,7 +81,7 @@
     }
 
     .title {
-      font-size: 12px;
+      font-size: 13px !important;
     }
 
     .chevron {
@@ -164,7 +164,7 @@
           max-width: 0px;
           overflow: hidden;
           font-weight: 600 !important;
-          font-size: 10px;
+          font-size: 13px!important;
         }
       }
     }

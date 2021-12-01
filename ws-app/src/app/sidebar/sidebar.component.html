@@ -1,4 +1,4 @@
-<div class="col-md-2 p-0 user-panel" >
+<div class="col-md-2 p-0 user-panel">
   <div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
     <div class="header">
       <h1 class="title">
@@ -8,91 +8,30 @@
         <span class="chevron"></span>
       </div>
     </div>
-    <div class="content">
-      <div class="link">
-        <div class="content" [routerLink]="['/home']" [routerLinkActive]="'active'">
-          <div class="icon">
+    <div class="content" *ngFor="let item of model">
+      <div *ngIf="item.childern=='false'; else elseBlock">
+        <div class="link">
+          <div class="content dropdown-toggle" [routerLink]="['{{item.route}}']" [routerLinkActive]="'active'"  data-toggle="collapse" aria-expanded="false">
+            <div class="icon">
+            </div>
+            <div class="title">{{item.text}}</div>
           </div>
-          <div class="title">Home</div>
         </div>
       </div>
-      <div class="content">
-        <div class="link">
-        <div class="content" [routerLink]="['/configuration']" [routerLinkActive]="'active'">
-          <div class="icon">
-            <i class="fa fa-info-circle" style="font-size:24px"></i>
-          </div>
-          <div class="title">Configuration</div>
-        </div>
-        </div>
+      <ng-template #elseBlock>
         <div class="children">
           <div class="link">
-            <div class="content" [routerLink]="['/configuration']" [queryParams]="{ 'child': '1' }"
+            <div class="content" [routerLink]="['{{item.route}}']" [queryParams]="{ 'child': '1' }"
                  [routerLinkActive]="'active'">
               <div class="icon">
-                <i class="fa fa-info-circle" style="font-size:24px"></i>
+                <i class="{{item.icon}}" style="font-size:24px"></i>
               </div>
-              <div class="title">Help And Tutorial</div>
-            </div>
-          </div>
-          <div class="link">
-            <div class="content" [routerLink]="['/configuration']" [queryParams]="{ 'child': '2' }"
-                 [routerLinkActive]="'active'">
-              <div class="icon">
-                <i class="fa-fw fal fa-tachometer-alt-fast" style="font-size:24px"></i>
-              </div>
-              <div class="title">Analytics</div>
-            </div>
-          </div>
-          <div class="link">
-            <div class="content" [routerLink]="['/configuration']" [queryParams]="{ 'child': '2' }"
-                 [routerLinkActive]="'active'">
-              <div class="icon">
-                <i class="fa fa-plus fa-fw" style="font-size:24px"></i>
-              </div>
-              <div class="title">Create New</div>
-            </div>
-          </div>
-          <div class="link">
-            <div class="content" [routerLink]="['/configuration']" [queryParams]="{ 'child': '3' }"
-                 [routerLinkActive]="'active'">
-              <div class="icon">
-                <i class="fa fa-search" style="font-size:24px"></i>
-              </div>
-              <div class="title">child 3</div>
+              <div class="title">{{item.text}}</div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="link">
-        <div class="content" [routerLink]="['/bookings']" [routerLinkActive]="'active'">
-          <div class="icon">
-            <i class="fas fa-upload fa-fw" style="font-size:24px"></i>
-            
-          </div>
-          <div class="title">Bookings</div>
-        </div>
-      </div>
-      <div class="link">
-        <div class="content" [routerLink]="['/bookings']" [routerLinkActive]="'active'">
-          <div class="icon">
-            <i class="fa-fw fas fa-users" style="font-size:24px"></i>
-            
-          </div>
-          <div class="title">Bookings</div>
-        </div>
-      </div>
-      <div class="link">
-        <div class="content" [routerLink]="['/bookings']" [routerLinkActive]="'active'">
-          <div class="icon">
-            <i class="fa-fw far fa-calendar-alt" style="font-size:24px"></i>
-            
-          </div>
-          <div class="title">Bookings</div>
-        </div>
-      </div>
+      </ng-template>
     </div>
-    <div class="footer"></div>
   </div>
 </div>
 

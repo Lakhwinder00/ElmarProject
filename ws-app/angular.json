@@ -37,11 +37,12 @@
               "node_modules/primeflex/primeflex.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeicons/primeicons.css"
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
 
 
             ],
-            "scripts": [ "node_modules/quill/dist/quill.js" ]
+            "scripts": [ "node_modules/quill/dist/quill.js", "node_modules/boostarp/dist/js/bootstarp.js" ]
           },
           "configurations": {
             "production": {
@@ -108,9 +109,10 @@
             "styles": [
               "src/styles.scss",
               "node_modules/quill/dist/quill.core.css",
-              "node_modules/quill/dist/quill.snow.css"
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": [ "node_modules/quill/dist/quill.js" ]
+            "scripts": [ "node_modules/quill/dist/quill.js", "node_modules/quill/dist/quill.js" ]
           }
         }
       }

@@ -92,14 +92,14 @@ export class AppComponent implements OnInit {
       }
     ];
   }
-  // expand(): void {
-  //   let boolen = this.sidebarComponent.pickclass();
-  //   if (boolen == true) {
-  //     this.isclass = true;
-  //   } else {
-  //     this.isclass = false;
-  //   }
-  // }
+   expand(): void {
+     let boolen = this.sidebarComponent.pickclass();
+     if (boolen == true) {
+       this.isclass = true;
+     } else {
+       this.isclass = false;
+     }
+   }
  
 }
 

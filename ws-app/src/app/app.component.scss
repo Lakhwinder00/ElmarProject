@@ -8,3 +8,23 @@
   padding-left: 0px !important;
   width: 11%;
 }
+.fixedAdminHeader {
+  height: 8% !important;
+}
+.margin-headertext {
+  margin-left: 36px !important;
+}
+.user-panel-child {
+  position: relative;
+  padding: 0 25px 10px 15px;
+  overflow: auto;
+}
+.side-panel {
+  margin-top: 50px;
+  position: relative;
+  overflow: auto;
+  max-height: 600px;
+}
+.side-panel::-webkit-scrollbar {
+  display: none;
+}

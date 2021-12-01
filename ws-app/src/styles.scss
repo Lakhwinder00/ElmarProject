@@ -16,6 +16,7 @@ app-root {
 html,
 body {
   height: 100%;
+  overflow:hidden!important;
 }
 
 body {
@@ -131,6 +132,8 @@ textarea {
 html,
 body {
   height: 100% !important;
+  overflow:hidden!important;
+  margin:0px!important;
 }
 .content-wrapper {
   min-height: 100%;
