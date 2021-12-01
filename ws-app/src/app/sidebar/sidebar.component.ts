@@ -7,6 +7,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class SidebarComponent implements OnInit {
   isExpanded: boolean = false;
+  collapsed = true;
   items: MenuItem[] | any;
   model: any = [];
   handleSidebarToggle() {
@@ -20,7 +21,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.isExpanded = false;
     this.model = [
-      { route: '/home', text:'Home', icon: 'fa fa-info-circle', queryParams: '',childern:false },
+      { route: '/home', text: 'Home', icon: 'fa fa-info-circle', queryParams: '', childern: false },
       { route: '/configuration', text:'Configuration', icon: 'fa-fw fal fa-tachometer-alt-fast', queryParams: '', childern: false },
       { route: '/configuration', text: 'Help And Tutorial', icon: 'fa fa-plus fa-fw', queryParams: '', childern: true },
       { route: '/configuration', text: 'Analytics', icon: 'fa fa-search', queryParams: '', childern: false },

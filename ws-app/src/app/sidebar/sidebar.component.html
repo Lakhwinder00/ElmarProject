@@ -1,37 +1,44 @@
 <div class="col-md-2 p-0 user-panel">
-  <div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
-    <div class="header">
-      <h1 class="title">
-        PROLERN
-      </h1>
-      <div class="toggle" (click)="handleSidebarToggle()">
-        <span class="chevron"></span>
-      </div>
-    </div>
-    <div class="content" *ngFor="let item of model">
-      <div *ngIf="item.childern=='false'; else elseBlock">
-        <div class="link">
-          <div class="content dropdown-toggle" [routerLink]="['{{item.route}}']" [routerLinkActive]="'active'"  data-toggle="collapse" aria-expanded="false">
-            <div class="icon">
-            </div>
-            <div class="title">{{item.text}}</div>
-          </div>
+  <div class="col-2">
+    <div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
+      <div class="header">
+        <h1 class="title">
+          PROLERN
+        </h1>
+        <div class="toggle" (click)="handleSidebarToggle()">
+          <span class="chevron"></span>
         </div>
       </div>
-      <ng-template #elseBlock>
-        <div class="children">
+      <p-panel class="collapse" header="Panel 4" [toggleable]="true" [(collapsed)]="collapsed" [style]="{'margin-bottom':'20px'}">
+      seach
+      </p-panel>
+      <div class="content" *ngFor="let item of model">
+        <div *ngIf="item.childern=='false'; else elseBlock">
           <div class="link">
-            <div class="content" [routerLink]="['{{item.route}}']" [queryParams]="{ 'child': '1' }"
-                 [routerLinkActive]="'active'">
+            <div class="content dropdown-toggle" [routerLink]="['{{item.route}}']" [routerLinkActive]="'active'" data-toggle="collapse" aria-expanded="false">
               <div class="icon">
-                <i class="{{item.icon}}" style="font-size:24px"></i>
               </div>
               <div class="title">{{item.text}}</div>
             </div>
           </div>
         </div>
-      </ng-template>
+        <ng-template #elseBlock>
+          <div class="children">
+            <div class="link">
+              <div class="content" [routerLink]="['{{item.route}}']" [queryParams]="{ 'child': '1' }"
+                   [routerLinkActive]="'active'">
+                <div class="icon">
+                  <i class="{{item.icon}}" style="font-size:24px"></i>
+                </div>
+                <div class="title">{{item.text}}</div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+      </div>
     </div>
   </div>
+  
 </div>
 
