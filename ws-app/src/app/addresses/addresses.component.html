@@ -1,64 +1,74 @@
-<div class="container-fluid">
-    <p-table [value]="addressList"    >
-        <ng-template pTemplate="caption">
-            <div class="p-d-flex p-ai-center p-jc-between">
-                Addresses(0)
-            </div>
-        </ng-template>
-        <ng-template pTemplate="header">
-            <tr>
-                <th style="width:100px;" >Address1
-                </th>
-                <th style="width:100px;" >Address2
-                </th>
-                <th style="width:100px;" >City
-                </th>
-                <th style="width:100px;" >State
-                </th>
-                <th style="width:100px;" >Provience
-                </th>
-                <th style="width:300px;">Postal Code</th>
-                <th style="width:300px;">Created</th>
-            </tr>
-            <tr>
-                <th> 
-                    <input pInputText type="text" placeholder="">
-                </th>
-                <th> 
-                    <input pInputText type="text" placeholder="">
-                </th>
-                <th> 
-                    <input pInputText type="text" placeholder="">
-                </th>
-                <th> 
-                    <input pInputText type="text" placeholder="">
-                </th> <th> 
-                    <input pInputText type="text" placeholder="">
-                </th>
-                <th> 
-                    <input pInputText type="text" placeholder="">
-                </th> <th> 
-                    <input pInputText type="text" placeholder="">
-                </th>
-                
+<p-card [style]="{'margin-top':'13px'}">
+    <p-table [value]="addressList"   responsiveLayout="scroll">
+      <ng-template pTemplate="caption">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          Addresses(0)
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="Address1">
+            Address1<p-sortIcon field="Address1"></p-sortIcon>
+          </th>
+          <th pSortableColumn="Address2">
+            Address2<p-sortIcon field="Address2"></p-sortIcon>
+          </th>
+          <th pSortableColumn="City">
+            City<p-sortIcon field="City"></p-sortIcon>
+          </th>
+          <th pSortableColumn="State">
+            State<p-sortIcon field="State"></p-sortIcon>
+          </th>
+          <th pSortableColumn="Provience">
+            Provience<p-sortIcon field="Provience"></p-sortIcon>
+          </th>
+          <th pSortableColumn="PostalCode">
+            Postal Code<p-sortIcon field="PostalCode"></p-sortIcon>
+          </th>
+          <th pSortableColumn="Created">
+            Created<p-sortIcon field="Created"></p-sortIcon>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <input class="col-6" pInputText type="text" placeholder="" />
+          </th>
+          <th>
+            <input class="col-6" pInputText type="text" placeholder="" />
+          </th>
+          <th>
+            <input class="col-6" pInputText type="text" placeholder="" />
+          </th>
+          <th>
+            <input class="col-6" pInputText type="text" placeholder="" />
+          </th>
+          <th>
+            <input class="col-6" pInputText type="text" placeholder="" />
+          </th>
+          <th>
+            <input class="col-6" pInputText type="text" placeholder="" />
+          </th>
+          <th>
+            <input class="col-6" pInputText type="text" placeholder="" />
+          </th>
+        </tr>
+      </ng-template>
 
-            </tr>
-        </ng-template>
-      
-        <ng-template pTemplate="body" let-item>
-            <tr>
-                <td> {{item?.name}}</td>
-                <td> {{item?.name}}</td>
-                <td> {{item?.name}}</td>
-                <td> {{item?.name}}</td>
-                <td> {{item?.name}}</td>
-                <td> {{item?.name}}</td>
-                <td style="display:inline-block">
-                    <div class="inlineLeft mr-3"> {{item?.name}} </div>
-                    <div class="inlineRight ml-2"> <button pButton icon="pi pi-plus" class="p-btn"></button> </div>
+      <ng-template pTemplate="body" let-item>
+        
+        <tr>
+          <td> {{item?.name}}</td>
+          <td> {{item?.name}}</td>
+          <td> {{item?.name}}</td>
+          <td> {{item?.name}}</td>
+          <td> {{item?.name}}</td>
+          <td> {{item?.name}}</td>
+          <td style="display:inline-block">
+            <div class="inlineLeft mr-3"> {{item?.name}} </div>
+            <div class="inlineRight ml-2"> <button pButton icon="pi pi-plus" class="p-btn"></button> </div>
 
-                </td>
-            </tr>
-        </ng-template>
+          </td>
+        </tr>
+      </ng-template>
     </p-table>
-</div>
+  </p-card>
