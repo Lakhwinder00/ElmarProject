@@ -14,16 +14,16 @@
         <div class="children">
           <div class="link">
 
-            <div class="content" [routerLink]="['{{item.route}}']" [queryParams]="{ 'child': '1' }"
+            <div (click)="isSubmenuOpened=false;" class="content" [routerLink]="['{{item.route}}']" [queryParams]="{ 'child': '1' }"
               [routerLinkActive]="'active'">
               <div class="icon">
                 <i class="{{item.icon}}" style="font-size:24px"></i>
               </div>
-              <div (click)="isSubmenuOpened=false;" class="title">{{item.label}}</div> <span (click)="subMenuClick(item)"
+              <div (click)="subMenuClick(item)" class="title">{{item.label}}</div> <span  
                 *ngIf="item.childern && isExpanded" class="pull-right"><i  *ngIf="!item.subMenu" class="fa fa-angle-left"></i> <i  *ngIf="item.subMenu" class="fa fa-angle-down"></i></span>
 
             </div>
-              <ul class="treeview-menu" *ngIf="item?.items?.length && item.subMenu">
+              <ul class="treeview-menu"  [ngClass]=" item?.items?.length && item.subMenu ? 'treview-display' : 'treeview-menu'"     >
                 <li  class="treeview title content" *ngFor="let menu of item?.items">
                <span (click)="isSubmenuOpened=true" >{{menu.label}} </span></li>
 
