@@ -1,3 +1,8 @@
+@function get-vw($target) {
+  $vw-context: (1000*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+$window-width: get-vw(400px);
 .main-menu {
   width: 2.333333%;
 }
@@ -20,14 +25,23 @@
   overflow: auto;
 }
 .side-panel {
-  margin-top: 50px;
+  margin-top: 2px;
   position: relative;
   overflow: auto;
-  max-height: 600px;
+  max-height: $window-width;
 }
 .user-panel-child {
   width: 14.6667%!important;
 }
+.render-component {
+  margin-top: 2px;
+  position: relative;
+  overflow: auto;
+  max-height: $window-width;
+}
 .side-panel::-webkit-scrollbar {
+  display: none;
+}
+.render-component::-webkit-scrollbar {
   display: none;
 }
