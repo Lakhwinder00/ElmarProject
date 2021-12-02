@@ -139,7 +139,7 @@ export class SidebarComponent implements OnInit {
     return this.isExpanded
   }
   subMenuClick(menu:any) {
-  if(menu.items.length)
+  if(menu?.items?.length)
   menu.subMenu=!menu?.subMenu
   }
 }
