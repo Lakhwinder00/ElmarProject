@@ -6,11 +6,11 @@
         <!--<h8 class="margin-headertext">Test User Miljanovic </h8>-->
       </nav>
     </div>
-      <div class="col-2 user-panel-child p-0" *ngIf="sidebarComponent?.isSubmenuOpened
-      ">
-        <p-panelMenu   [style]="{'margin-top': '40px'}" [model]="items"></p-panelMenu>
+      <div class="col-2 user-panel-child p-0"  *ngIf="sidebarComponent?.isSubmenuOpened
+      "  >
+        <p-panelMenu  [style]="{'margin-top': '40px'}" [model]="items"></p-panelMenu>
       </div>
-      <div [ngClass]="sidebarComponent.isSubmenuOpened?'col-8':'col-11'" class="side-panel">
+      <div class="col">
         <router-outlet></router-outlet>
       </div>
   </div>

@@ -1,7 +1,5 @@
 <div class="col-md-2 p-0 user-panel">
   <div class="col-2">
-
-
     <div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
       <div class="header">
         <h1 class="title">
@@ -11,9 +9,7 @@
           <span class="chevron"></span>
         </div>
       </div>
-      <!--<p-panel class="collapse" header="Panel 4" [toggleable]="true" [(collapsed)]="collapsed" [style]="{'margin-bottom':'20px'}">
-      seach
-      </p-panel>-->
+      
       <div class="content" *ngFor="let item of items1">
         <div class="children">
           <div class="link">
@@ -23,7 +19,7 @@
               <div class="icon">
                 <i class="{{item.icon}}" style="font-size:24px"></i>
               </div>
-              <div class="title">{{item.label}}</div> <span (click)="subMenuClick(item)"
+              <div (click)="isSubmenuOpened=false;" class="title">{{item.label}}</div> <span (click)="subMenuClick(item)"
                 *ngIf="item.childern && isExpanded" class="pull-right"><i  *ngIf="!item.subMenu" class="fa fa-angle-left"></i> <i  *ngIf="item.subMenu" class="fa fa-angle-down"></i></span>
 
             </div>
