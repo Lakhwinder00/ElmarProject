@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   //@ViewChild("sidebarComponent") sidebarComponent: SidebarComponent   
   items: MenuItem[] | any;
   menu: boolean = false;
+  isShowMenu: boolean = false;
   isclass: boolean = false;
   systemRoles:any=[];
   items1:any = [
@@ -90,7 +91,7 @@ export class AppComponent implements OnInit {
       routerLink: '/history'
     }
   ];
-  /*@ViewChild("sidebarComponent") sidebarComponent: SidebarComponent = new SidebarComponent;*/
+  @ViewChild("sidebarComponent") sidebarComponent!: SidebarComponent ;
   ngOnInit() {
     this.items = [
       {
@@ -172,6 +173,7 @@ export class AppComponent implements OnInit {
     ];
   }
    expand(): void {
+    this.sidebarComponent.isExpanded;
      this.isclass=!this.isclass
      //let boolen = false;
      //if (boolen == true) {

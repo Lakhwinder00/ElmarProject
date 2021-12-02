@@ -161,12 +161,12 @@
           .title {
             flex: 1;
             // display: none;
-            color: #d8d8dd;
+            color: #f6f6f9;
             transition: 0.3s;
             max-width: 0px;
             overflow: hidden;
-            font-weight: 600 !important;
-            font-size: 16px !important;
+            font-weight: 500 !important;
+            font-size: 18px !important;
           }
         }
       }
@@ -189,18 +189,7 @@
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
 }
-  :host {
-    ::ng-deep .p-sidebar {
-        background-color: #3f4659;
-        background-image:none;
-        border:none;
-        color:white;
-
-        .ui-slider-range {
-            background: red;
-        }
-    }    
-}
+  
   .edition-txt {
   padding: 5px 0;
   border-top: 1px solid #fff;
@@ -210,3 +199,22 @@
 .item-left {
   margin-right: auto;
 }
+.treeview-menu {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 5px;
+
+ // text-align: left !important;
+}
+.treeview{
+  list-style: none;
+  padding: 2;
+  margin-left: 60px !important;
+  padding-left: 10px;
+  justify-content: left !important;
+}
+ 
+
+ 
