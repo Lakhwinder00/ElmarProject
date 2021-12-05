@@ -3,7 +3,6 @@ var overlay = $(".overlay");
 var isClosed = true;
 
 function toggleSideBar() {
-    debugger;
   if (isClosed == true) {
     trigger.removeClass("is-open");
     trigger.addClass("is-closed");
@@ -27,7 +26,6 @@ $(document).on('click', '#toggelbtn', function () {
 })
 
 $(document).ready(function () {
-    debugger
   $('.sidebar-nav .nav-link[data-toggle="tooltip"]').tooltip({boundary: "#wrapper", container: '#wrapper', trigger: "hover", placement: "right"});
 
   toggleSideBar();
@@ -49,4 +47,17 @@ $(document).ready(function () {
   // Add slideUp animation to Bootstrap dropdown when collapsing.
 
 
+});
+$(document).on('click', '.hasDD', function (e) {
+  $(this)
+    .find("> ul")
+    .slideToggle();
+  $(this)
+    .find("> ul ul")
+    .css("display", "none");
+  $(this)
+    .find("> ul li")
+    .removeClass("on");
+  $(this).toggleClass("on");
+  e.stopPropagation();
 });

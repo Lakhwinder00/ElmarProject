@@ -42,8 +42,7 @@
 
             ],
             "scripts": [ "node_modules/quill/dist/quill.js"
-               ,"./src/assets/js/sidebar.js"
-               ,   "./src/assets/js/sidebar2.js"]
+               ,"./src/assets/js/sidebar.js"]
           },
           "configurations": {
             "production": {
@@ -115,8 +114,7 @@
               "node_modules/primeicons/primeicons.css"
             ],
             "scripts": [ "node_modules/quill/dist/quill.js",
-              "./src/assets/js/sidebar.js",
-              "./src/assets/js/sidebar2.js"]
+              "./src/assets/js/sidebar.js"]
           }
         }
       }
