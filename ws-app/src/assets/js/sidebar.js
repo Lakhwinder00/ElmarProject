@@ -3,17 +3,18 @@ var overlay = $(".overlay");
 var isClosed = true;
 
 function toggleSideBar() {
+  debugger
   if (isClosed == true) {
-    trigger.removeClass("is-open");
-    trigger.addClass("is-closed");
+    $("#toggelbtn").removeClass("is-open");
+    $("#toggelbtn").addClass("is-closed");
     $('#wrapper').removeClass('toggled');
     isClosed = false;
     // OPTIONAL Overlay overflow hidden in body
     overlay.hide();
    $("body").removeClass("overflow-hidden");
   } else {
-    trigger.removeClass("is-closed");
-    trigger.addClass("is-open");
+    $("#toggelbtn").removeClass("is-closed");
+    $("#toggelbtn").addClass("is-open");
     $('#wrapper').addClass('toggled');
     isClosed = true;
     // OPTIONAL Overlay overflow hidden in body
