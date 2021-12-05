@@ -22,10 +22,9 @@ function toggleSideBar() {
     $("body").addClass("overflow-hidden");
   }
 }
-
-$('#toggelbtn').click(function () { 
+$(document).on('click', '#toggelbtn', function () {
   toggleSideBar();
-});
+})
 
 $(document).ready(function () {
     debugger
