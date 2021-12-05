@@ -16,7 +16,7 @@
     </ng-template>
   </p-toolbar>
 
-  <p-table #dt [value]="register" [rows]="10" [paginator]="true"
+  <p-table #dt [value]="register" [rows]="10" [paginator]="true"[responsive]="true"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true"
     [loading]="(loading$ |async)||false" [scrollHeight]="'500px'">
     <ng-template pTemplate="caption">

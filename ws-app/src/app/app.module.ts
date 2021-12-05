@@ -57,6 +57,7 @@ import { UserAssocNotLinkedComponent } from './user-assoc-not-linked/user-assoc-
 import { SidebarComponent } from './sidebar/sidebar.component';
 //import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { SidebarModule } from 'primeng/sidebar';
+import { MainSidebarMenuComponent } from './main-sidebar-menu/main-sidebar-menu.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { SidebarModule } from 'primeng/sidebar';
     HistoryComponent,
     UserAssocLinkedComponent,
     UserAssocNotLinkedComponent,
-    SidebarComponent
+    SidebarComponent,
+    MainSidebarMenuComponent
   ],
   imports: [
     BrowserModule,
