@@ -4,9 +4,9 @@
 html,
 body,
 app-root {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+  overflow-x: visible;
   color: var(--color-primary);
 }
 
@@ -131,9 +131,9 @@ textarea {
 }
 html,
 body {
-  height: 100% !important;
-  overflow:hidden!important;
-  margin:0px!important;
+  height: auto !important;
+  overflow: visible !important;
+  margin: 0px !important;
 }
 .content-wrapper {
   min-height: 100%;
@@ -152,7 +152,10 @@ body {
   border-bottom: 1px solid #bbb;
   margin:0px;
   padding: 0px;
-  margin-left:35px;
+  margin-left: 70px;
+}
+.overflow-hidden .fixedAdminHeader{
+  margin-left: 290px;
 }
 .fixedAdminFooter {
   z-index: 120;
@@ -166,14 +169,17 @@ body {
   border-top: 1px solid #bbb;
   margin:0px;
   padding: 0px;
-  margin-left:35px;
+  margin-left: 70px;
 }
-  .user-panel {
-    position: relative;
-    width: 100%;
-    padding: 0 25px 10px 15px;
-    overflow: hidden;
-    z-index: 9999;
+.overflow-hidden .fixedAdminFooter{
+  margin-left: 290px; 
+}
+.user-panel {
+  position: relative;
+  width: 100%;
+  padding: 0 25px 10px 15px;
+  overflow: hidden;
+  z-index: 9999;
 }
   
 .container{

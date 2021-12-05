@@ -38,10 +38,27 @@ $window-width: get-vw(400px);
   position: relative;
   overflow: auto;
   max-height: $window-width;
+  margin-left: 15px;
 }
 .side-panel::-webkit-scrollbar {
   display: none;
 }
 .render-component::-webkit-scrollbar {
   display: none;
+}
+
+
+@media (max-width: 767px) {
+  .fixedAdminHeader {
+    margin-left: 0;
+    height: auto !important;
+  }
+  .fixedAdminFooter {
+    margin-left: 0;
+  }
+  .render-component {
+    max-height: none;
+    margin-left: 0;
+    width: 100%;
+  }
 }

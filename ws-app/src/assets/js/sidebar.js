@@ -3,7 +3,6 @@ var overlay = $(".overlay");
 var isClosed = true;
 
 function toggleSideBar() {
-  debugger
   if (isClosed == true) {
     $("#toggelbtn").removeClass("is-open");
     $("#toggelbtn").addClass("is-closed");
