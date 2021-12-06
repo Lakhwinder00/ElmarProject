@@ -46,7 +46,9 @@ $window-width: get-vw(400px);
 .render-component::-webkit-scrollbar {
   display: none;
 }
-
+.grid.rem-spacing{
+  padding-bottom: 0;
+}
 
 @media (max-width: 767px) {
   .fixedAdminHeader {

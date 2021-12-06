@@ -34,6 +34,9 @@ body.overflow-hidden {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  background: #2a3247;
+  height: 100%;
+  min-height: 100vh;
 }
 .cus-sidebar-menus .tooltip {
   position: fixed;
@@ -517,5 +520,8 @@ nav#sidebar-wrapper::-webkit-scrollbar {
   }
   .pro-edition {
     font-size: 14px;
+  }
+  .cus-sidebar-menus {
+    background: transparent;
   }
 }
