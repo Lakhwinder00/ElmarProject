@@ -524,4 +524,8 @@ nav#sidebar-wrapper::-webkit-scrollbar {
   .cus-sidebar-menus {
     background: transparent;
   }
+  .p-panel-header {
+    height: 72px !important
+  }
+
 }

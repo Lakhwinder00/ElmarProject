@@ -10,6 +10,9 @@ app-root {
   color: var(--color-primary);
 }
 
+.p-panel-header {
+  height: 72px !important
+}
 
 /* You can add global styles to this file, and also import other style files */
        
@@ -134,6 +137,7 @@ body {
   height: auto !important;
   overflow: visible !important;
   margin: 0px !important;
+  overflow-x: hidden !important;
 }
 .content-wrapper {
   min-height: 100%;

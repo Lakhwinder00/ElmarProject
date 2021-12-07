@@ -5,8 +5,8 @@
 
         <div class="col-4">
           <label style="font:bold">System Roles (0)</label><br />
-          <p-autoComplete (completeMethod)="filterroles($event)" [suggestions]="findroles" field="name" [dropdown]="true">
-            <ng-template let-role pTemplate="item">
+          <p-autoComplete (completemethod)="filterroles($event)" [suggestions]="findroles" field="name" [dropdown]="true">
+            <ng-template let-role ptemplate="item">
               <div class="country-item">
                 <div>{{role.label}}</div>
               </div>
@@ -27,4 +27,4 @@
       </div>
     </p-card>
   </form>
-  </p-card>
+</p-card>

@@ -3,13 +3,12 @@ import { select, Store } from '@ngrx/store';
 import { observable, Observable } from 'rxjs';
 import { addUser, editUser, deleteUser, requestRegistrationList, deletealluser, filterdata } from '../../store/app.action';
 import { selectAllRegistrationSelector, selectRegistrationLoading } from '../../store/app.selector';
-import { IAppState } from '../../../app/store/app.state'
-import { WebSocketService } from '../../web-socket.service';
+import { IAppState } from '../../store/app.state'
 import { ConfirmationService } from 'primeng/api'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as FileSaver from 'file-saver'
 import { state } from '@angular/animations';
-import { IRegistration } from '../.././app.model';
+import { IRegistration } from '../../app.model';
 import { Actions } from '@ngrx/effects';
 import { PrimeNGConfig } from 'primeng/api';
 let id = 45;

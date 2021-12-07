@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUserAssocLinked } from '../app.model';
+import { IUserAssocLinked } from '../app.model'
 
 @Component({
   selector: 'app-user-assoc-linked',

@@ -1,5 +1,5 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
-import { IRegistration } from "../app.model";
+import { IRegistration } from '../app.model';
 
 
 

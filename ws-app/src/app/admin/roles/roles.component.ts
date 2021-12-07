@@ -2,7 +2,7 @@ import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import {  } from 'primeng/api';
 import { FormlyFormOptions, FormlyFieldConfig, Field } from '@ngx-formly/core';
 
 @Component({

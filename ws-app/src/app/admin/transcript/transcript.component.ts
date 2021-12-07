@@ -4,8 +4,8 @@ import {  FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ConfirmationService } from 'primeng/api'
 import { FormlyFormOptions, FormlyFieldConfig, Field } from '@ngx-formly/core';
-import { ITranscript, ITranscriptRange} from '../app.model';
-import { IAppState } from '../../app/store/app.state'
+import { ITranscript, ITranscriptRange } from '../app.model';
+import { IAppState } from '../../admin/store/app.state'
 @Component({
   selector: 'app-transcript',
   templateUrl: './transcript.component.html',
