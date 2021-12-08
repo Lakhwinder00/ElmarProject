@@ -16,23 +16,79 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AdmincomponentComponent} from '../admin/admincomponent.component'
 const routes: Routes = [
-  { path: 'registerlist', component: RegisterlistComponent },
-  { path: 'User/:id/Edit', component: RegisterUserComponent },
-  { path: 'course', component: CourseComponent },
-  { path: 'transcript', component: TranscriptComponent },
-  { path: 'email', component: EmailComponent },
-  { path: 'roles', component: RolesComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'discussions', component: DiscussionsComponent },
-  { path: 'userassoclinks', component: UserAssocLinksComponent },
-  { path: 'customfields', component: CustomFieldsComponent },
-  { path: 'usergroups', component: UserGroupsComponent },
-  { path: 'addresses', component: AddressesComponent },
-  { path: 'history', component: HistoryComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  //{ path: '**', redirectTo: 'dashboard' },
-  //{ path: '', redirectTo: 'admin', pathMatch: 'full' },
-  { path: '', component: AdmincomponentComponent },
+  { path: '', component: AdmincomponentComponent,pathMatch:'full' },
+  {
+    path:'',
+    component: AdmincomponentComponent,
+    children: [{ path: 'registerlist', component: RegisterlistComponent}]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'user/:id/Edit', component: RegisterUserComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'course', component: CourseComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'transcript', component: TranscriptComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'email', component: EmailComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'roles', component: RolesComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'orders', component: OrdersComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'discussions', component: DiscussionsComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'userassoclinks', component: UserAssocLinksComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'customfields', component: CustomFieldsComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'usergroups', component: UserGroupsComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'addresses', component: AddressesComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'history', component: HistoryComponent }]
+  },
+  {
+    path: '',
+    component: AdmincomponentComponent,
+    children: [{ path: 'dashboard', component: DashboardComponent }]
+  }
+ 
+  
   
 ];
 @NgModule({

@@ -123,7 +123,7 @@ export class AdmincomponentComponent implements OnInit {
       {
         label: 'Transcript',
         icon: 'pi pi-fw pi-minus',
-        routerLink: '/transcript'
+        routerLink: '/admin/transcript'
       },
       {
         label: 'Email',

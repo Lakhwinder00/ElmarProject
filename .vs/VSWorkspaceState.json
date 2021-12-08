@@ -4,9 +4,11 @@
     "\\ws-app",
     "\\ws-app\\src",
     "\\ws-app\\src\\app",
-    "\\ws-app\\src\\assets",
-    "\\ws-app\\src\\assets\\js"
+    "\\ws-app\\src\\app\\users",
+    "\\ws-app\\src\\app\\users\\home",
+    "\\ws-app\\src\\app\\users\\store",
+    "\\ws-app\\src\\app\\users\\store\\home"
   ],
-  "SelectedNode": "\\ws-app\\src\\app\\app.component.scss",
+  "SelectedNode": "\\ws-app\\src\\app\\users\\store\\home\\app.effect.ts",
   "PreviewInSolutionExplorer": false
 }

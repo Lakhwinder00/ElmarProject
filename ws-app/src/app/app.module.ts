@@ -35,14 +35,15 @@ import { FormlyPrimeNGModule } from'@ngx-formly/primeng'
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { EditorModule } from 'primeng/editor';
 import { TabViewModule } from 'primeng/tabview';
-
-
+import { AppHomeEffect} from '../app/users/store/home/app.effect'
+import {appHomeReducer} from '../app/users/store/home/app.reducer'
 //import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { SidebarModule } from 'primeng/sidebar';
 
 import { HomeComponent } from './users/home/home.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { AdminModule } from './admin/admin.module';
+import { AppEffect } from './admin/store/app.effect';
+import { appReducer} from './admin/store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,8 @@ import { AdminModule } from './admin/admin.module';
     HomeComponent,
   ],
   imports: [
+    EffectsModule.forRoot([AppHomeEffect, AppEffect]),
+    StoreModule.forRoot({ apphome: appHomeReducer, app: appReducer }),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

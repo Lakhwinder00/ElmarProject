@@ -79,9 +79,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     AdmincomponentComponent
   ],
   imports: [
-    
-    EffectsModule.forRoot([AppEffect]),
-    StoreModule.forRoot({ app: appReducer }),
     CommonModule,
     AppAdminRoutingModule,
     StoreDevtoolsModule.instrument({

@@ -1,296 +1,253 @@
-<!--<div class="header">
-  <a href="#default" class="logo"><img src="https://chima.my.prolearn.io/customer/chima/images/cobrandingLogo.png" style="width:200px"/></a>
-  <div class="header-right">
-    <a class="active" href="#home">My Learning</a>
-    <a href="javascript">CheckOut</a>
-    <a href="#about">Course Catalog</a>
-    <a href="#about">Help</a>
-    <a href="#about"><select><option></option></select></a>
-</div>
-</div>-->
-<div class="topnav" id="myTopnav">
-  <a href="#default" class="logo"><img src="https://chima.my.prolearn.io/customer/chima/images/cobrandingLogo.png" style="width:200px" /></a>
-  <div class="dropdown right-side">
-    <button class="dropbtn">
-      My Profile
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content ">
-      <a href="#">My Course</a>
-      <a href="#">My Calendar</a>
-      <a href="#">Our History</a>
-      <a href="#">LogOut</a>
-    </div>
-  </div>
-  <a href="#news" class="right-side">My Learning</a>
-  <a href="#contact" class="right-side">CheckOut</a>
-  <a href="#contact" class="right-side">Course Catalog</a>
-  <a href="#contact" class="right-side">Help</a>
-</div>
-<div class="grid">
-  <div class="col-1"></div>
-  <div class="container col-10">
-    <div class="row">
-      <p-card [style]="{'margin-top':'13px'}">
-        <p-panel>
-          <ng-template pTemplate="header">
-            <h5>My Learning</h5>
-          </ng-template>
-          <p-tabView>
-            <p-tabPanel header="Courses:In Progerss">
-              <p-card [style]="{'margin-bottom':'13px'}">
-                <div class="row grid">
-                  <div class="sm-4 ">
-                    <img class="img-thumbnail" src="https://s3.amazonaws.com/pamedsoc-prolearnfiles/1ac3ac2e_b9fc_99ab_14af_6799943d77ad-images/emergencyprep-250.png" />
-                  </div>
-                  <div class="sm-12 property-margin">
-                    <h5 class="heading">Physician Resiliency Summit</h5>
-                    <label>Credits: 5.5 AMA PRA Category 1 Credits</label><br />
-                    <label>Access expired January 1st 2020, 10:29 am</label>
-                  </div>
-                </div>
-              </p-card>
-              <p-card [style]="{'margin-bottom':'13px'}">
-                <div class="row grid">
-                  <div class="sm-12 ">
-                    <img class="img-thumbnail" src="https://s3.amazonaws.com/pamedsoc-prolearnfiles/10ffbee6_0f89_30fa_79e9_c3e101130521-images/6-alternative-treatments-opioids-cme.png" />
-                  </div>
-                  <div class="col-8 property-margin">
-                    <h5 class="heading">Physician Resiliency Summit</h5>
-                    <label>Credits: 5.5 AMA PRA Category 1 Credits</label><br />
-                    <label>Access expired January 1st 2020, 10:29 am</label>
-                  </div>
-                </div>
-              </p-card>
-              <p-card [style]="{'margin-bottom':'13px'}">
-                <div class="row grid">
-                  <div class="sm-12">
-                    <img class="img-thumbnail" src="https://s3.amazonaws.com/pamedsoc-prolearnfiles/3968f6d3_855c_cf01_3c3b_cb6575fb5f47-images/leadership-250.png" />
-                  </div>
-                  <div class="sm-12 property-margin">
-                    <h5 class="heading">Physician Resiliency Summit</h5>
-                    <label>Credits: 5.5 AMA PRA Category 1 Credits</label><br />
-                    <label>Access expired January 1st 2020, 10:29 am</label>
-                  </div>
-                </div>
-              </p-card>
-            </p-tabPanel>
-            <p-tabPanel header="Courses :Completed">
-              <p-card [style]="{'margin-bottom':'13px'}">
-                <div class="row grid">
-                  <div class="sm-12">
-                    <img class="img-thumbnail" src="https://s3.amazonaws.com/pamedsoc-prolearnfiles/d6697411_2289_98db_fc66_aba71378ff61-images/5-pdmp-cme00039f5b7f434c77a799ee375f4947e7.png" />
-                  </div>
-                  <div class="col-8 property-margin">
-                    <h5 class="heading">PA Health Check UP (Erie)</h5>
-                    <label>Credits: 2.5 AMA PRA Category 1 Credits,</label><br />
-                    <label>Access expired January 1st 2020, 10:29 am</label>
-                  </div>
-                </div>
-              </p-card>
-              <p-card [style]="{'margin-bottom':'13px'}">
-                <div class="row grid">
-                  <div class="sm-12">
-                    <img class="img-thumbnail" src="https://s3.amazonaws.com/pamedsoc-prolearnfiles/10ffbee6_0f89_30fa_79e9_c3e101130521-images/6-alternative-treatments-opioids-cme.png" />
-                  </div>
-                  <div class="col-8">
-                    <h5 class="heading">Physician Resiliency Summit</h5>
-                    <label>Credits: 5.5 AMA PRA Category 1 Credits</label><br />
-                    <label>Access expired January 1st 2020, 10:29 am</label>
-                  </div>
-                </div>
-              </p-card>
-              <p-card [style]="{'margin-bottom':'13px'}">
-                <div class="row grid">
-                  <div class="sm-12">
-                    <img class="img-thumbnail" src="https://s3.amazonaws.com/pamedsoc-prolearnfiles/3968f6d3_855c_cf01_3c3b_cb6575fb5f47-images/leadership-250.png" />
-                  </div>
-                  <div class="col-8">
-                    <h5 class="heading">Physician Resiliency Summit</h5>
-                    <label>Credits: 5.5 AMA PRA Category 1 Credits</label><br />
-                    <label>Access expired January 1st 2020, 10:29 am</label>
-                  </div>
-                </div>
-              </p-card>
-            </p-tabPanel>
-            <p-tabPanel header="My User Groups">
-              <p>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-              </p>
-            </p-tabPanel>
-            <p-tabPanel header="My Discussion">
-              <p>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-              </p>
-            </p-tabPanel>
-          </p-tabView>
-        </p-panel>
-      </p-card>
-    </div>
+<!-- Header Section Start -->
 
-  </div>
-  <div class="col-1"></div>
-</div>
-<div class="grid">
-  <div class="col-1">
-
-  </div>
-  <div class="container col-8">
-    <div class="grid">
-      <h4>Catalogs</h4>
-      <div class="col-6" [style]="{'margin-top':'30px'}">
-        <ng-multiselect-dropdown #multiSelect
-                                 [placeholder]="'Select City'"
-                                 [settings]="settings"
-                                 [data]="data"
-                                 [disabled]="false"
-                                 (onFilterChange)="onFilterChange($event)"
-                                 (onDropDownClose)="onDropDownClose($event)"
-                                 (onSelect)="onItemSelect($event)"
-                                 (onDeSelect)="onDeSelect($event)"
-                                 (onSelectAll)="onSelectAll($event)"
-                                 (onDeSelectAll)="onDeSelectAll($event)">
-        </ng-multiselect-dropdown>
-      </div>
-    </div>
-  </div>
-  <div class="col-1"></div>
-</div>
-<div class="grid">
-  <div class="col-1">
-
-  </div>
-  <div class="container col-10">
-    <div class="grid">
-      <div class="col-2">
-        <h4>
-          Filter Fields
-        </h4>
-        <div [style]="{'margin-top':'30px'}">
-          <ng-multiselect-dropdown #multiSelect
-                                   [placeholder]="'Course Name and Description '"
-                                   [settings]="settings"
-                                   [data]="data"
-                                   [disabled]="false"
-                                   (onFilterChange)="onFilterChange($event)"
-                                   (onDropDownClose)="onDropDownClose($event)"
-                                   (onSelect)="onItemSelect($event)"
-                                   (onDeSelect)="onDeSelect($event)"
-                                   (onSelectAll)="onSelectAll($event)"
-                                   (onDeSelectAll)="onDeSelectAll($event)">
-          </ng-multiselect-dropdown>
-        </div>
-        <div [style]="{'margin-top':'30px'}">
-          <ng-multiselect-dropdown #multiSelect
-                                   [placeholder]="'Category'"
-                                   [settings]="settings"
-                                   [data]="data"
-                                   [disabled]="false"
-                                   (onFilterChange)="onFilterChange($event)"
-                                   (onDropDownClose)="onDropDownClose($event)"
-                                   (onSelect)="onItemSelect($event)"
-                                   (onDeSelect)="onDeSelect($event)"
-                                   (onSelectAll)="onSelectAll($event)"
-                                   (onDeSelectAll)="onDeSelectAll($event)">
-          </ng-multiselect-dropdown>
-        </div>
-        <div [style]="{'margin-top':'30px'}">
-          <ng-multiselect-dropdown #multiSelect
-                                   [placeholder]="'Credits'"
-                                   [settings]="settings"
-                                   [data]="data"
-                                   [disabled]="false"
-                                   (onFilterChange)="onFilterChange($event)"
-                                   (onDropDownClose)="onDropDownClose($event)"
-                                   (onSelect)="onItemSelect($event)"
-                                   (onDeSelect)="onDeSelect($event)"
-                                   (onSelectAll)="onSelectAll($event)"
-                                   (onDeSelectAll)="onDeSelectAll($event)">
-          </ng-multiselect-dropdown>
-        </div>
-        <div [style]="{'margin-top':'30px'}">
-          <ng-multiselect-dropdown #multiSelect
-                                   [placeholder]="'Sponsors'"
-                                   [settings]="settings"
-                                   [data]="data"
-                                   [disabled]="false"
-                                   (onFilterChange)="onFilterChange($event)"
-                                   (onDropDownClose)="onDropDownClose($event)"
-                                   (onSelect)="onItemSelect($event)"
-                                   (onDeSelect)="onDeSelect($event)"
-                                   (onSelectAll)="onSelectAll($event)"
-                                   (onDeSelectAll)="onDeSelectAll($event)">
-          </ng-multiselect-dropdown>
-        </div>
-
-      </div>
-      <div class="col-10">
-        <p-card [style]="{'margin-bottom':'13px','border':'1px solid green'}">
-          <div class="col-12 grid">
-            <img class="img-thumbnail" src="https://s3.amazonaws.com/pamedsoc-prolearnfiles/1ac3ac2e_b9fc_99ab_14af_6799943d77ad-images/emergencyprep-250.png" />
-            <h5 class="heading propery-margin">Physician Resiliency Summit</h5>
-            <button pButton pRipple label="Edit" type="button" class="p-button-secondary col-1 edit-button"></button>
-          </div><br />
-          <hr class="dashed">
-          <div class="grid">
-            <div class="vl box-width">
-              <h5>CREDITS</h5>
-              <label>1 Patient Safety/ Risk</label><br />
-              <label>Management Hours</label>
-            </div>
-            <div class="vl box-width">
-              <h5>TAGS</h5>
-              <label>ER</label>
-            </div>
-            <div class="vl box-width">
-              <h5>SPONSORS</h5>
-              <label>-</label>
-            </div>
-            <div class="vl box-width">
-              <h5>TYPE</h5>
-              <label>Course</label>
+<!-- Header Section Ends -->
+<!-- Tabs Section Start -->
+<div id="larutaContent" class="laruta-content">
+  <div id="catalogFilterTop" class="w-100 position-fixed">
+    <div class="cus-row no-gutters my-0">
+      <div class="cus-col-12 cus-top-filter">
+        <div class="page-title w-100 mw-1140 mx-auto position-relative" style="height: 150px; z-index: 10;">
+          <div class="min-width-25 mx-4 mx-xl-0 my-4 mt-md-5 position-absolute">
+            <div id="root" class="site-search-switcher">
+              <div class="search-switcher">
+                <div class="search-switcher-absolute-container">
+                  <div class="search-switcher-container">
+                    <select class="font-size-30 font-weight-normal primary-font py-3 px-4 d-flex justify-content-between align-items-center">
+                      <option>Events &amp; Products</option>
+                      <option>Site Search</option>
+                      <option>Course Library</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <hr class="dashed">
-          <div  class="grid" style="float:right"><button pButton pRipple label="Take Course" type="button" class="p-button-info button-width"></button></div>
-        </p-card>
+        </div>
       </div>
-      <div class="col-2"></div>
-      <div class="col-10">
-        <p-card [style]="{'margin-bottom':'13px','border':'1px solid green'}">
-          <div class="col-12 grid">
-            <img class="img-thumbnail" src="https://s3.us-east-1.amazonaws.com/pamedsoc-prolearnfiles/images/372b7285_33f7_4632_7d77_9f1e31ee08b4-cmeconsult2018_card_updated.jpg" />
-            <h5 class="heading propery-margin">Physician Resiliency Summit</h5>
-             <button pButton pRipple label="Edit" type="button" class="p-button-secondary col-1 edit-button"></button>
-          </div><br />
-          <hr class="dashed">
-          <div class="grid">
-            <div class="vl box-width">
-              <h5>CREDITS</h5>
-              <label>1 Patient Safety/ Risk</label><br />
-              <label>Management Hours</label>
-            </div>
-            <div class="vl box-width">
-              <h5>TAGS</h5>
-              <label>ER</label>
-            </div>
-            <div class="vl box-width">
-              <h5>SPONSORS</h5>
-              <label>-</label>
-            </div>
-            <div class="vl box-width">
-              <h5>TYPE</h5>
-              <label>Course</label>
-            </div>
+      <div class="cus-col-12">
+        <div id="facetDeliveryFormats" class="cus-col-12 px-0">
+          <div class="facetwp-facet facetwp-facet-product_delivery_formats facetwp-type-radio" data-name="product_delivery_formats" data-type="radio">
+            <nav class="scrollable mx-auto">
+              <div class="nav-tabs px-4 _px-sm-0">
+                <div id="radioAll" class="fwp-radio  checked" [ngClass]="{'selected': tab==='tab1'}" (click)="onClick('1')">
+                  <span>Courses: In Progress</span>
+                </div>
+                <div class="facetwp-radio fwp-radio " data-value="in-person" [ngClass]="{'selected': tab==='tab2'}" (click)="onClick('2')" data-counter="0">
+                  <span class="">Courses: Completed</span>
+                </div>
+                <div class="facetwp-radio fwp-radio " data-value="online" [ngClass]="{'selected': tab==='tab3'}" (click)="onClick('3')" data-counter="245">
+                  <span class="">Track my CME</span>
+                </div>
+                <div class="facetwp-radio fwp-radio disabled" data-value="on-demand" data-counter="67">
+                  <span class="">On-Demand</span>
+                </div>
+                <div class="facetwp-radio fwp-radio disabled" data-value="certificate-programs" data-counter="5">
+                  <span class="">Certificate Programs</span>
+                </div>
+                <div class="facetwp-radio fwp-radio disabled" data-value="publications" data-counter="0">
+                  <span class="">Publications</span>
+                </div>
+              </div>
+            </nav>
           </div>
-          <hr class="dashed">
-          <div class="grid" style="float:right"><button pButton pRipple label="Take Course" type="button" class="p-button-info button-width"></button></div>
-        </p-card>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Main Filter Section -->
+  <div class="cus-container catalog-container px-0" style="min-height: 40rem">
+    <div class="cus-row no-gutters my-0 py-4 py-sm-5">
+      <div id="catalogFiltersColumn" class="cus-col-12 cus-col-sm-5 cus-col-md-4 cus-col-lg-3" data-filter-segment="" style="">
+        <div class="d-flex d-sm-none align-items-start justify-content-between mb-3 mb-sm-4">
+          <span id="closeMobileFilter" class="icon-x mr-auto" style=""></span>
+        </div>
+        <div class="d-flex align-items-start justify-content-between mb-3 mb-sm-4">
+          <h3 class="secondary-color font-weight-bold m-0" style="">Filter Fields</h3>
+          <span id="resetFiltersTop" class="btn btn-link btn-reset-filters d--none" onclick="FWP.reset()" style="">Reset Filters</span>
+        </div>
+        <div id="catalogFilterSidebar" class="cus-row no-gutters my-0">
+          <div id="facetSearchProduct" class="cus-col-12">
+            <h5 class="facet-label">Course Name and Description</h5>
+            <div class="facetwp-facet facetwp-facet-product_catalog_search facetwp-type-search" data-name="product_catalog_search" data-type="search">
+              <span class="facetwp-input-wrap">
+                <i class="fas fa-search facetwp-icon"></i>
+                <input type="text" class="facetwp-search" value="" placeholder="Course Name and Description" />
+              </span>
+            </div>
+          </div>
+          <!--<div id="facetDateRange" class="cus-col-12">
+            <h5 class="facet-label">Date Range</h5>
+            <div class="facetwp-facet facetwp-facet-product_date_range facetwp-type-date_range">
+              <input type="text" class="facetwp-date facetwp-date-min ready fdate-alt-input" value="" placeholder="Start Date" readonly="readonly" />
+              <input type="text" class="facetwp-date facetwp-date-max ready fdate-alt-input" value="" placeholder="End Date" readonly="readonly" />
+            </div>
+          </div>-->
+          <div class="cus-col-12">
+            <h5 class="facet-label">Credits</h5>
+            <div class="facetwp-facet facetwp-facet-product_field_of_study facetwp-type-fselect">
+              <ng-multiselect-dropdown #multiSelect
+                                       [placeholder]="'Select Credits'"
+                                       [settings]="creditssettings"
+                                       [data]="credits"
+                                       [disabled]="false"
+                                       (onFilterChange)="onFilterChange($event)"
+                                       (onDropDownClose)="onDropDownClose($event)"
+                                       (onSelect)="onItemSelect($event)"
+                                       (onDeSelect)="onDeSelect($event)"
+                                       (onSelectAll)="onSelectAll($event)"
+                                       (onDeSelectAll)="onDeSelectAll($event)">
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
+          <div class="cus-col-12">
+            <h5 class="facet-label">TAGS</h5>
+            <div class="facetwp-facet facetwp-facet-product_field_of_study facetwp-type-fselect">
+              <ng-multiselect-dropdown #multiSelect
+                                       [placeholder]="'Select Tags'"
+                                       [settings]="tagssettings"
+                                       [data]="tags"
+                                       [disabled]="false"
+                                       (onFilterChange)="onFilterChange($event)"
+                                       (onDropDownClose)="onDropDownClose($event)"
+                                       (onSelect)="onItemSelect($event)"
+                                       (onDeSelect)="onDeSelect($event)"
+                                       (onSelectAll)="onSelectAll($event)"
+                                       (onDeSelectAll)="onDeSelectAll($event)">
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
+          <div class="cus-col-12">
+            <h5 class="facet-label">SPONSORS</h5>
+            <div class="facetwp-facet facetwp-facet-product_field_of_study facetwp-type-fselect">
+              <ng-multiselect-dropdown #multiSelect
+                                       [placeholder]="'Select Sponsors'"
+                                       [settings]="sponsersettings"
+                                       [data]="sponser"
+                                       [disabled]="false"
+                                       (onFilterChange)="onFilterChange($event)"
+                                       (onDropDownClose)="onDropDownClose($event)"
+                                       (onSelect)="onItemSelect($event)"
+                                       (onDeSelect)="onDeSelect($event)"
+                                       (onSelectAll)="onSelectAll($event)"
+                                       (onDeSelectAll)="onDeSelectAll($event)">
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
+          <div class="cus-col-12">
+            <h5 class="facet-label">TYPE</h5>
+            <div class="facetwp-facet facetwp-facet-product_field_of_study facetwp-type-fselect">
+              <ng-multiselect-dropdown #multiSelect
+                                       [placeholder]="'Select Type'"
+                                       [settings]="typesettings "
+                                       [data]="type"
+                                       [disabled]="false"
+                                       (onFilterChange)="onFilterChange($event)"
+                                       (onDropDownClose)="onDropDownClose($event)"
+                                       (onSelect)="onItemSelect($event)"
+                                       (onDeSelect)="onDeSelect($event)"
+                                       (onSelectAll)="onSelectAll($event)"
+                                       (onDeSelectAll)="onDeSelectAll($event)">
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
+          <!--<div class="cus-col-12">
+            <h5 class="facet-label">Location</h5>
+            <div class="facetwp-facet facetwp-facet-product_field_of_study facetwp-type-fselect">
+              <select class="facetwp-dropdown">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+              </select>
+            </div>
+          </div>
+          <div class="cus-col-12">
+            <h5 class="facet-label">Content</h5>
+            <div class="facetwp-facet facetwp-facet-product_field_of_study facetwp-type-fselect">
+              <select class="facetwp-dropdown">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+              </select>
+            </div>
+          </div>-->
+          <span id="resetFiltersBottom" class="btn btn-link btn-reset-filters" style="">Reset Filters</span>
+        </div>
+      </div>
+      <div class="cus-col-12 cus-col-sm-7 cus-col-md-8 cus-col-lg-9">
+        <div class="facetwp-results mb-3 mb--sm-5 pl-0 pl-sm-5" style="">
+          <div class="facetwp-selections">
+            <ul>
+              <li data-facet="product_field_of_study">
+                <span class="facetwp-selection-label">[Product] Field of Study:</span>
+                <span class="facetwp-selection-value">Accounting</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="catalogContent" class="pl-0 pl-sm-5" style="">
+          <div class="facetwp-template" *ngFor="let item of courseCatalog">
+            <div class="catalog-item cus-col-md-12 mb-5 p-0">
+              <a class="card" href="#">
+                <div class="card-header cus-row no-gutters my-0 hid">
+                  <div class="cus-col-12 d-flex justify-content-between align-items-center flex-wrap flex-md-nowrap">
+                    <div class="date order-0">
+                      <div class="desktop-only px-2">
+                        <div class="month">{{item.expiration | date:'MMM'}}</div>
+                        <div class="day">{{item.expiration | date:'dd'}}</div>
+                        <div class="year">{{item.expiration | date:'yyyy'}}</div>
+                      </div>
+                      <div class="mobile-only pl-0 pr-2">
+                        <div class="month year"><span class="day">{{item.expiration | date:'dd'}}</span> {{item.expiration | date:'MMM'}}  {{item.expiration | date:'yyyy'}}</div>
+                      </div>
+                    </div>
+                    <h4 class="card-title w-100 mr-auto mt-2 mt-md-0 px-md-4 order-2 order-md-1">{{item.name}}</h4>
+                    <div class="cpe-label order-1"><span class="badge"> CPE 8.0 </span></div>
+                  </div>
+                </div>
+                <div class="card-footer cus-row no-gutters my-0">
+                  <div class="card-details cus-col-12">
+                    <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
+                      <div class="detail-item">
+                        <label>CREDITS</label>
+                        <div>{{item.creditstype}}</div>
+                      </div>
+                      <div class="detail-item">
+                        <label>TAGS</label>
+                        <div>{{item.tag}}</div>
+                      </div>
+                      <div class="detail-item">
+                        <label>SPONSORS</label>
+                        <div>{{item.sponser}}</div>
+                      </div>
+                      <div class="detail-item">
+                        <label>TYPE</label>
+                        <div>{{item.type}}</div>
+                      </div>
+                      <div class="detail-item w-100 mt-3 mb-0 pt-3 border-top d-md-flex align-items-start">
+                        <label class="flex-shrink-0 mb-3 mb-md-0 pr-3">Field of Study</label>
+                        <div class="w-100">Accounting</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="mobileFilter" class="mobile-filter-btn position-fixed fixed-bottom d-block d-sm-none w-100 btn btn-lg btn-block bg-primary-color text-white py-4 rounded-0" type="button" data-action="see-filters" style="display: none;">
+    <label class="d-flex flex-row justify-content-around align-items-center mb-0">
+      <span class="text-uppercase" for="see-filters">Filter Results</span>
+      <span class="icon-menu hide"></span>
+    </label>
+  </button>
+
 </div>
+<!-- Tabs Section Ends -->
+

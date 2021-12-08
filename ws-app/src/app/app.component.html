@@ -1,9 +1,304 @@
+<header class="cus-header">
+
+  <!-- Top Header Section -->
+  <div class="super-nav-container" *ngIf="this.isLayout!='admin'">
+    <div class="cus-container nav-container-inner">
+      <div class="super-nav-links static">
+        <div class="scroll-button scroll-left">
+          <span class="icon-chevron-left"></span>
+        </div>
+        <nav>
+          <a href="#">
+            <div>Advertise &amp; Sponsor</div>
+          </a>
+          <a href="#" target="_new">
+            <div>Student's Website</div>
+            <i class="fas fa-external-link-alt gray-dark"></i>
+          </a>
+          <a href="#">
+            <div>COCPA Connect</div>
+          </a>
+          <a href="#">
+            <div>COVID-19 Resources</div>
+          </a>
+        </nav>
+        <div class="scroll-button scroll-right">
+          <span class="icon-chevron-right"></span>
+        </div>
+      </div>
+      <div class="user-account-menu logged-out">
+        <a href="#" class="login-con">
+          <div>Login</div>
+        </a>
+      </div>
+      <div class="membership-badge-container">
+        <a href="#" class="membership-badge has-tooltip" aria-expanded="false">
+          <div class="membership-badge-label"> Join </div>
+        </a>
+        <div class="tooltip-con">Join COCPA and enjoy exclusive member benefits.</div>
+        <div id="badgeMessage" style="display: none; font-size: 19px !important;"> Join COCPA and enjoy exclusive member benefits. </div>
+      </div>
+    </div>
+  </div>
+  <!-- Logo/Menus Header Section -->
+  <div id="primaryNav" class="primary-nav-container" *ngIf="this.isLayout!='admin'">
+    <div class="primary-nav">
+      <div id="headerSiteLogo" class="header-site-logo">
+        <a href="#">
+          <img src="/assets/images/logo.png" class="light-over-dark">
+          <img src="/assets/images/logo.png" class="dark-over-light">
+        </a>
+      </div>
+      <nav id="primaryLinks" class="primary-links">
+        <a href="#" class="primary-link has-submenu">
+          <div>My learning</div>
+        </a>
+        <a href="#" class="primary-link has-submenu">
+          <div>CME Catalog</div>
+        </a>
+        <a href="#" class="primary-link has-submenu">
+          <div>Contact Us</div>
+        </a>
+        <a href="#" class="primary-link has-submenu">
+          <div>My Courses</div>
+        </a>
+        <a href="#" class="primary-link has-submenu">
+          <div>Return to PAMED Website</div>
+        </a>
+        <a href="#" class="primary-link has-submenu">
+          <div>Help</div>
+        </a>
+        <!--<a href="#" class="primary-link">
+          <div>Contact</div>
+        </a>-->
+      </nav>
+      <div id="siteActions" class="site-actions">
+        <div id="siteSearch">
+          <a href="#" class="site-action primary-link has-submenu">
+            <span class="fas fa-search"></span>
+          </a>
+        </div>
+        <label class="site-action" id="mobileNavToggle" for="toggleMobileNav" href="">
+          <span class="fas fa-bars"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</header>
 <router-outlet></router-outlet>
+<!-- Footer Section Start -->
+<footer class="laruta-footer bootstrap cocpa-bootstrap content-info" *ngIf="this.isLayout!='admin'">
+  <div class="cus-container">
+    <div class="cus-row">
+      <div class="cus-col-sm-12 cus-col-md-3">
+        <div class="footer-left-nav nav-item section-link">
+          <div class="footer-logo text-center">
+            <a href="#">
+              <img class="img-fluid"
+                   src="/assets/images/logo.png" />
+            </a>
+          </div>
+          <hr />
+          <div>
+            <address>
+              <span>7887 E. Belleview Ave., Suite 200</span> <span>Englewood, CO 80111-6076</span>
+              <span> <a class="phone-link" href="tel:303-773-2877" target="_blank">303-773-2877</a> <a class="phone-link" href="tel:800-523-9082" target="_blank">800-523-9082</a> </span>
+            </address>
+          </div>
+          <hr />
+          <div>Copyright © 2021 COCPA</div>
+          <hr />
+          <div>
+            <ul class="footer-social-links">
+              <li class="nav-item">
+                <a href="#" target="_blank">
+                  <span class="fab fa-facebook-f"></span>
+                  <span>Facebook</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" target="_blank">
+                  <span class="fab fa-twitter"></span>
+                  <span>Twitter</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" target="_blank">
+                  <span class="fab fa-linkedin-in"></span>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" target="_blank">
+                  <span class="fab fa-youtube"></span>
+                  <span>YouTube</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" target="_blank">
+                  <span class="fab fa-instagram"></span>
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" target="_blank">
+                  <span class="fas fa-rss"></span>
+                  <span>RSS</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div class="cus-col-sm-12 cus-col-md-9 d-none d-md-block">
+        <div class="cus-row footer-right-nav">
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <div class="nav-item section-link">
+              <h3>Member Benefits</h3>
+              <ul>
+                <li>
+                  <a class="nav-link" href="#">Career Center</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Volunteer Opportunities</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <div class="nav-item section-link">
+              <h3>Learning &amp; CPE</h3>
+              <ul>
+                <li>
+                  <a class="nav-link" href="#">CPE Catalog Search</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">CPE Calendar</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">CPE &amp; Ethics Requirements</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">On-Demand CPE</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">On-Site Learning</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">CPE FAQs &amp; Policies</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <div class="nav-item section-link">
+              <h3>Member Communities</h3>
+              <ul>
+                <li>
+                  <a class="nav-link" href="#">Member Chapters</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Chapter Events</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Member Communities</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Career Stages</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">CFO Roundtable</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <div class="nav-item section-link">
+              <h3>Advocacy</h3>
+              <ul>
+                <li>
+                  <a class="nav-link" href="#">Colorado Dept. of CDOR</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Legislative Efforts</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Regulatory Efforts</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">COCPA PAC</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">COCPA &amp; AICPA</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <div class="nav-item section-link">
+              <h3>For the Public</h3>
+              <ul>
+                <li>
+                  <a class="nav-link" href="#">Why CPAs?</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Why COCPA?</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Referral Service</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Classifieds</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Room Rental</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Financial Literacy Resources</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <div class="nav-item section-link">
+              <h3>About COCPA</h3>
+              <ul>
+                <li>
+                  <a class="nav-link" href="#">Vision &amp; History</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Staff</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Board of Directors</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Code of Professional Conduct</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Bylaws &amp; Financial Statements</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Visiting COCPA</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <a class="section-link nav-link" href="#">
+              <h3>Contact</h3>
+            </a>
+          </div>
+          <div class="cus-col-sm-12 cus-col-md-4">
+            <a class="section-link nav-link" href="#">
+              <h3>Advertise &amp; Sponsor</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-
-
-
-
-
-
-
+<!-- Footer Section Ends -->

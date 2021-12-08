@@ -6,7 +6,7 @@ import { IAppState, initialState } from './app.state';
 
 
 
-const _appReducer = createReducer(
+const _appHomeReducer = createReducer(
   initialState,
   on(appActions.courseCatalogList, (state) => {
     return {
@@ -53,6 +53,6 @@ const _appReducer = createReducer(
   
 );
 
-export function appReducer(state: any, action: any) {
-    return _appReducer(state, action);
+export function appHomeReducer(state: any, action: any) {
+  return _appHomeReducer(state, action);
 }

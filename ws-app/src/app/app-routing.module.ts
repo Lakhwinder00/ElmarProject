@@ -9,7 +9,6 @@ import { AdmincomponentComponent } from './admin/admincomponent.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'admin', loadChildren: () => import('../app/admin/admin.module').then(m => m.AdminModule) },
- // {path:'admin',component:AdmincomponentComponent},
    { path: '**', redirectTo: 'home' }
 ];
 
