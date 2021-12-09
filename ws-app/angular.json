@@ -41,8 +41,11 @@
 
 
             ],
-            "scripts": [ "node_modules/quill/dist/quill.js"
-               ,"./src/assets/js/sidebar.js"]
+            "scripts": [
+              "node_modules/quill/dist/quill.js",
+              "./src/assets/js/sidebar.js",
+              "./src/assets/js/sidebar2.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -113,8 +116,11 @@
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css"
             ],
-            "scripts": [ "node_modules/quill/dist/quill.js",
-              "./src/assets/js/sidebar.js"]
+            "scripts": [
+              "node_modules/quill/dist/quill.js",
+              "./src/assets/js/sidebar.js",
+              "./src/assets/js/sidebar2.js"
+            ]
           }
         }
       }

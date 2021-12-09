@@ -45,16 +45,7 @@ $(document).ready(function () {
   });
 
   // Add slideUp animation to Bootstrap dropdown when collapsing.
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 300) {
-      $('#catalogFilterTop').addClass('position-fixed');
-      $('.cus-top-filter').addClass('hide-sec');
-    }
-    else {
-      $('#catalogFilterTop').removeClass('position-fixed');
-      $('.cus-top-filter').removeClass('hide-sec');
-    }
-  });
+  
 
 });
 $(document).on('click', '.hasDD', function (e) {
@@ -69,4 +60,14 @@ $(document).on('click', '.hasDD', function (e) {
     .removeClass("on");
   $(this).toggleClass("on");
   e.stopPropagation();
+});
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 300) {
+    $('#catalogFilterTop').addClass('position-fixed');
+    $('.cus-top-filter').addClass('hide-sec');
+  }
+  else {
+    $('#catalogFilterTop').removeClass('position-fixed');
+    $('.cus-top-filter').removeClass('hide-sec');
+  }
 });

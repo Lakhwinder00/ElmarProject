@@ -3,10 +3,14 @@
   width: 100%important;
   width: 100%Important;
 }
-.flex-md-nowrap {
-  -ms-flex-wrap: nowrap !important;
-  flex-wrap: nowrap !important;
+
+@media (min-width: 768px) {
+  .flex-md-nowrap {
+    -ms-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
 }
+
 .pl-0 {
   padding-left: 2rem !important;
 }

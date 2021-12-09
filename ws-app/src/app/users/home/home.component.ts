@@ -142,9 +142,7 @@ export class HomeComponent implements OnInit {
   public onDeSelectAll(items: any) {
     console.log(items);
   }
-  lazyload() {
-    this.router.navigate(['admin'])
-  }
+ 
   onClick(isCheck: any) {
     if (isCheck == 1) {
       this.tab = 'tab1';

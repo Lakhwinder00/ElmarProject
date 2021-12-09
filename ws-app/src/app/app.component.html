@@ -1,6 +1,311 @@
 <header class="cus-header">
 
   <!-- Top Header Section -->
+  <div id="subMenus" class="submenus" *ngIf="this.isLayout!='admin'">
+    <div class="submenu closed" data-primary-link="for-members" style="background-image: url('/assets/images/Background-For-Members.svg')">
+      <div class="mobile-controls">
+        <div>
+          <div class="mobile-control-close-submenus mobile-control return-to-primary">
+            <span class="icon-arrow-left"></span>
+          </div>
+          <div class="nav-label">For Members</div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav">
+            <span class="icon-x"></span>
+          </label>
+        </div>
+      </div>
+      <div class="submenu-content">
+        <div class="submenu-column column-1">
+          <div class="block link-list link-group major-links">
+            <div class="links">
+              <a href="#">For New Members</a>
+              <a href="#">Member Discounts</a>
+              <a href="#">Preferred Partners</a>
+              <a href="#" target="_new">COCPA Career Center</a>
+              <a href="#">NewsAccount Bi-Monthly Magazine</a>
+              <a href="#">NewsQuick Weekly E-Newsletter</a>
+              <a href="#">QuickSearch CPE Catalog</a>
+              <a href="#">COCPA Connect</a>
+              <a href="#">Educational Foundation</a>
+              <a href="#">Volunteer Opportunities</a>
+              <a href="#">Member Logos</a>
+            </div>
+          </div>
+        </div>
+        <div class="submenu-column column-2">
+          <div class="block header">
+            <h5>Professional Interest Areas</h5>
+          </div>
+          <div class="block link-list link-group major-links">
+            <div class="links">
+              <a href="#">Accounting &amp; Auditing</a>
+              <a href="#">Members In Industry</a>
+              <a href="#">Tax</a>
+              <a href="#">Technology</a>
+            </div>
+          </div>
+          <div class="block header">
+            <h5>Partner</h5>
+          </div>
+          <div class="block special-image">
+            <a href="#">
+              <img src="/assets/images//Website-Display-Ad-White-Paper-Download-10.11.21.jpg" class="" alt="" longdesc="" />
+            </a>
+          </div>
+        </div>
+        <div class="submenu-column column-3">
+          <div class="block featured-links featured-items">
+            <h5>Featured CPE Events</h5>
+            <div>
+              <a href="#" class="featured-link">
+                <img src="/assets/images/300x100-web-COCPA-SEC-PCAOB-2021.jpg" alt="" />
+              </a>
+              <a href="#" class="featured-link">
+                <img src="/assets/images/300x100-web-COCPA-Mix-Match-2021.jpg" alt="" />
+              </a>
+              <a href="#" class="featured-link">
+                <img src="/assets/images/300x100-web-COCPA-Don-Farmer-2020-21-Federal.jpg" alt="" />
+              </a>
+              <a href="#" class="featured-link see-more-link is-text">
+                <div>See All Featured Events</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="submenu closed" data-primary-link="learning-cpe" style="background-image: url('/assets/images/Background-Learning-CPE-1.svg');">
+      <div class="mobile-controls">
+        <div>
+          <div class="mobile-control-close-submenus mobile-control return-to-primary">
+            <span class="icon-arrow-left"></span>
+          </div>
+          <div class="nav-label">Learning &amp; CPE</div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav">
+            <span class="icon-x"></span>
+          </label>
+        </div>
+      </div>
+      <div class="submenu-content">
+        <div class="submenu-column column-1">
+          <div class="block header">
+            <h5>CPE Programs</h5>
+          </div>
+          <div class="block link-list link-group major-links">
+            <div class="links">
+              <a href="#">CPE Catalog Search</a>
+              <a href="#">CPE Calendar</a>
+              <a href="#">CPE &amp; Ethics Requirements</a>
+              <a href="#">On-Demand CPE</a>
+              <a href="#">Customized Team Training</a>
+              <a href="#">CPE FAQs &amp; Policies</a>
+              <a href="#">Web Programs</a>
+            </div>
+          </div>
+        </div>
+        <div class="submenu-column column-2">
+          <div class="block header">
+            <h5>Featured CPE Products</h5>
+          </div>
+          <div class="block link-list link-group minor-links">
+            <div class="links">
+              <a href="#">CPExpress</a>
+              <a href="#">CPE Season Pass</a>
+              <a href="#">Certificate Programs</a>
+            </div>
+          </div>
+          <div class="block header">
+            <h5>Partner</h5>
+          </div>
+          <div class="block special-image">
+            <a href="#">
+              <img src="/assets/images/Website-Display-Ad-White-Paper-Download-10.11.21.jpg" class="" alt="" longdesc="" />
+            </a>
+          </div>
+        </div>
+        <div class="submenu-column column-3">
+          <div class="block featured-links featured-items">
+            <h5>Featured CPE Events</h5>
+            <div>
+              <a href="#" class="featured-link">
+                <img src="/assets/images/300x100-web-COCPA-SEC-PCAOB-2021.jpg" alt="" />
+              </a>
+              <a href="#" class="featured-link">
+                <img src="/assets/images/300x100-web-COCPA-Mix-Match-2021.jpg" alt="" />
+              </a>
+              <a href="#" class="featured-link">
+                <img src="/assets/images/300x100-web-COCPA-Don-Farmer-2020-21-Federal.jpg" alt="" />
+              </a>
+              <a href="" class="featured-link see-more-link is-text">
+                <div>See All Featured Events</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="submenu closed" data-primary-link="member-communities" style="background-image: url('/assets/images/Background-Member-Communities.svg');">
+      <div class="mobile-controls">
+        <div>
+          <div class="mobile-control-close-submenus mobile-control return-to-primary">
+            <span class="icon-arrow-left"></span>
+          </div>
+          <div class="nav-label">Member Communities</div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav">
+            <span class="icon-x"></span>
+          </label>
+        </div>
+      </div>
+      <div class="submenu-content">
+        <div class="submenu-column column-1">
+          <div class="block link-list link-group major-links">
+            <div class="links">
+              <a href="#">Member Chapters</a>
+              <a href="#">Member Connections Committee</a>
+              <a href="#">Volunteer Opportunities</a>
+              <a href="#">Aspiring CPAs</a>
+              <a href="#">CFO Roundtable</a>
+              <a href="#">Technology Users Group</a>
+              <a href="#">Diversity, Equity, and Inclusion Working Group</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="submenu closed" data-primary-link="advocacy" style="background-image: url('/assets/images/Background-For-Members.svg');">
+      <div class="mobile-controls">
+        <div>
+          <div class="mobile-control-close-submenus mobile-control return-to-primary">
+            <span class="icon-arrow-left"></span>
+          </div>
+          <div class="nav-label">Advocacy</div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav">
+            <span class="icon-x"></span>
+          </label>
+        </div>
+      </div>
+      <div class="submenu-content">
+        <div class="submenu-column column-1">
+          <div class="block link-list link-group major-links">
+            <div class="links">
+              <a href="#">Colorado Department of Revenue</a>
+              <a href="#">Legislative &amp; Regulatory Efforts</a>
+              <a href="#">COCPA PAC</a>
+              <a href="#">COCPA &amp; AICPA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="submenu closed" data-primary-link="for-the-public" style="background-image: url('/assets/images/Background-Learning-CPE-1.svg');">
+      <div class="mobile-controls">
+        <div>
+          <div class="mobile-control-close-submenus mobile-control return-to-primary">
+            <span class="icon-arrow-left"></span>
+          </div>
+          <div class="nav-label">For The Public</div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav">
+            <span class="icon-x"></span>
+          </label>
+        </div>
+      </div>
+      <div class="submenu-content">
+        <div class="submenu-column column-1">
+          <div class="block link-list link-group major-links">
+            <div class="links">
+              <a href="#">Why CPAs?</a>
+              <a href="#">Why COCPA?</a>
+              <a href="#">Peer Review</a>
+              <a href="#">Classifieds</a>
+              <a href="#">Room Rental</a>
+              <a href="#">Financial Literacy Review</a>
+              <a href="#">Referral Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="submenu closed" data-primary-link="about" style="background-image: url('/assets/images/Background-Member-Communities.svg');">
+      <div class="mobile-controls">
+        <div>
+          <div class="mobile-control-close-submenus mobile-control return-to-primary">
+            <span class="icon-arrow-left"></span>
+          </div>
+          <div class="nav-label">About</div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav">
+            <span class="icon-x"></span>
+          </label>
+        </div>
+      </div>
+      <div class="submenu-content">
+        <div class="submenu-column column-1">
+          <div class="block link-list link-group major-links">
+            <div class="links">
+              <a href="#">Member Promise</a>
+              <a href="#">Vision &amp; History</a>
+              <a href="#">Core Purpose and Values</a>
+              <a href="#">Staff</a>
+              <a href="#">Board of Directors</a>
+              <a href="#">COCPA Code of Professional Conduct</a>
+              <a href="#">Bylaws &amp; Financial Statements</a>
+              <a href="#">Visiting COCPA</a>
+              <a href="#">Membership Plans</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="siteSearchSubMenu" class="site-search submenu closed" data-primary-link="site-search" style="background-image: url('/assets/images/Background-For-Members.svg');">
+      <div class="mobile-controls">
+        <div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav">
+            <span class="icon-x"></span>
+          </label>
+        </div>
+      </div>
+      <div class="submenu-content">
+        <div class="site-search-container bootstrap">
+          <div class="sub-main search-form-container fwp-search-form">
+            <form id="fwpSearchForm" method="" action="" class="fwp-global-search needs-validation">
+              <div class="row form-group fwp-search-group justify-content-center _justify-content-md-between hide">
+                <div class="custom-control custom-radio">
+                  <input type="radio"
+                         name="fwpSearchFormRoute"
+                         id="fwp_site_search"
+                         class="custom-control-input"
+                         data-route="query"
+                         data-placeholder="Type to search…"
+                         data-page=""
+                         checked="" />
+                  <label class="custom-control-label" for="fwp_site_search">Blog, Website, &amp; Team Training</label>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="input-group facetwp-search-wrap mt-0">
+                  <input type="text"
+                         id="fwpSearchFormInput"
+                         class="form-control"
+                         name="query"
+                         value=""
+                         placeholder="Type to search…"
+                         aria-label=""
+                         aria-describedby="fwpSearchFormSubmitBtn"
+                         pattern=".{3,}"
+                         title="3 characters minimum"
+                         required="" />
+                  <div class="input-group-append">
+                    <button class="btn w-100 h-100 m-0 px-3 border-0" id="fwpSearchFormSubmitBtn">
+                      <span class="icon-search body-text-large"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="super-nav-container" *ngIf="this.isLayout!='admin'">
     <div class="cus-container nav-container-inner">
       <div class="super-nav-links static">
@@ -41,46 +346,48 @@
     </div>
   </div>
   <!-- Logo/Menus Header Section -->
-  <div id="primaryNav" class="primary-nav-container" *ngIf="this.isLayout!='admin'">
-    <div class="primary-nav">
-      <div id="headerSiteLogo" class="header-site-logo">
-        <a href="#">
-          <img src="/assets/images/logo.png" class="light-over-dark">
-          <img src="/assets/images/logo.png" class="dark-over-light">
-        </a>
-      </div>
-      <nav id="primaryLinks" class="primary-links">
-        <a href="#" class="primary-link has-submenu">
-          <div>My learning</div>
-        </a>
-        <a href="#" class="primary-link has-submenu">
-          <div>CME Catalog</div>
-        </a>
-        <a href="#" class="primary-link has-submenu">
-          <div>Contact Us</div>
-        </a>
-        <a href="#" class="primary-link has-submenu">
-          <div>My Courses</div>
-        </a>
-        <a href="#" class="primary-link has-submenu">
-          <div>Return to PAMED Website</div>
-        </a>
-        <a href="#" class="primary-link has-submenu">
-          <div>Help</div>
-        </a>
-        <!--<a href="#" class="primary-link">
-          <div>Contact</div>
-        </a>-->
-      </nav>
-      <div id="siteActions" class="site-actions">
-        <div id="siteSearch">
-          <a href="#" class="site-action primary-link has-submenu">
-            <span class="fas fa-search"></span>
+  <div id="superAndPrimaryNavContainer" class="super-and-primary-nav-container">
+    <div id="primaryNav" class="primary-nav-container" *ngIf="this.isLayout!='admin'">
+      <div class="primary-nav">
+        <div id="headerSiteLogo" class="header-site-logo">
+          <a href="#">
+            <img src="/assets/images/logo.png" class="light-over-dark">
+            <img src="/assets/images/logo.png" class="dark-over-light">
           </a>
         </div>
-        <label class="site-action" id="mobileNavToggle" for="toggleMobileNav" href="">
-          <span class="fas fa-bars"></span>
-        </label>
+        <nav id="primaryLinks" class="primary-links">
+          <a href="javascript:void(0)" class="primary-link has-submenu"  data-primary-link="for-members">
+            <div>My learning</div>
+          </a>
+          <a href="javascript:void(0)" class="primary-link has-submenu" data-primary-link="learning-cpe">
+            <div>CME Catalog</div>
+          </a>
+          <a href="javascript:void(0)" class="primary-link has-submenu" data-primary-link="member-communities">
+            <div>Contact Us</div>
+          </a>
+          <a href="javascript:void(0)" class="primary-link has-submenu" data-primary-link="advocacy">
+            <div>My Courses</div>
+          </a>
+          <a href="javascript:void(0)" class="primary-link has-submenu" data-primary-link="for-the-public">
+            <div>Return to PAMED Website</div>
+          </a>
+          <a href="javascript:void(0)" class="primary-link has-submenu" data-primary-link="about">
+            <div>Help</div>
+          </a>
+          <!--<a href="#" class="primary-link">
+            <div>Contact</div>
+          </a>-->
+        </nav>
+        <div id="siteActions" class="site-actions">
+          <div id="siteSearch">
+            <a href="#" class="site-action primary-link has-submenu">
+              <span class="fas fa-search"></span>
+            </a>
+          </div>
+          <label class="site-action" id="mobileNavToggle" for="toggleMobileNav" href="">
+            <span class="fas fa-bars"></span>
+          </label>
+        </div>
       </div>
     </div>
   </div>
