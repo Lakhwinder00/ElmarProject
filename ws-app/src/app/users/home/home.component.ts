@@ -144,28 +144,32 @@ export class HomeComponent implements OnInit {
     console.log(item);
     switch (code) {
       case 1: {
-      this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-        this.courseCatalog = res.filter(f => this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase()))
-        )});
+        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+          this.courseCatalog = res.filter(f => this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase()))
+          )
+        });
 
         break;
       }
       case 2: {
         this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
           this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase()))
-          )});
+          )
+        });
         break;
       }
       case 3: {
         this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          this.courseCatalog = res.filter((f:any) => this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase()))
-          )}); 
+          this.courseCatalog = res.filter((f: any) => this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase()))
+          )
+        });
         break;
       }
       case 4: {
         this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          this.courseCatalog = res.filter((f:any) => this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
-          )}); 
+          this.courseCatalog = res.filter((f: any) => this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
+          )
+        });
         break;
       }
 
@@ -178,11 +182,64 @@ export class HomeComponent implements OnInit {
     // this.commonfilter(this.searchValue, this.creditSettingValue, this.sponsersvalue, this.tagsvalue, this.typevalue);
 
   }
-  public onDeSelect(item: any) {
+  public onDeSelect(item: any, code: number) {
     debugger
-    console.log(item);
-  }
+    switch (code) {
+      case 1: {
 
+        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+          if (this.creditSettingValue?.length > 0) {
+            this.courseCatalog = res.filter(f => this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())))
+          } else {
+            this.courseCatalog = res;
+          }
+
+        });
+
+        break;
+      }
+      case 2: {
+        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+          if (this.tagsvalue?.length > 0) {
+            this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase()))
+            )
+          } else {
+            this.courseCatalog = res;
+          }
+        });
+        break;
+      }
+      case 3: {
+        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+          if (this.sponsersvalue?.length > 0) {
+            this.courseCatalog = res.filter((f: any) => this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase()))
+            )
+          } else {
+            this.courseCatalog = res;
+          }
+        });
+        break;
+      }
+      case 4: {
+        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+          if (this.typevalue?.length > 0) {
+            this.courseCatalog = res.filter((f: any) => this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
+            )
+          } else {
+            this.courseCatalog = res;
+
+          }
+        });
+        break;
+      }
+
+      default: {
+        //statements; 
+        break;
+      }
+        console.log(item);
+    }
+  }
   public onSelectAll(items: any) {
     console.log(items);
   }
@@ -201,13 +258,13 @@ export class HomeComponent implements OnInit {
     this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
 
       // this.courseCatalog = res.filter(f => tags?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase()))
-      this.courseCatalog = res; 
-      });
-      //  this.courseCatalog= this.courseCatalog.filter((f:any) => f.name.toLowerCase().includes(search.toLowerCase()) || credit?.some(x => x.item_text?.toLowerCase().includes(f.creditsvalue.toLowerCase())) || tags?.some(x => x.item_text?.toLowerCase().incluedes(f.tag.toLowerCase())) || type?.some(x => x.item_text?.toLowerCase().incluedes(f.type.toLowerCase()))|| this.sponsersvalue?.some(x => x.item_text?.toLowerCase().incluedes(f.sponser.toLowerCase())))
-    }
+      this.courseCatalog = res;
+    });
+    //  this.courseCatalog= this.courseCatalog.filter((f:any) => f.name.toLowerCase().includes(search.toLowerCase()) || credit?.some(x => x.item_text?.toLowerCase().includes(f.creditsvalue.toLowerCase())) || tags?.some(x => x.item_text?.toLowerCase().incluedes(f.tag.toLowerCase())) || type?.some(x => x.item_text?.toLowerCase().incluedes(f.type.toLowerCase()))|| this.sponsersvalue?.some(x => x.item_text?.toLowerCase().incluedes(f.sponser.toLowerCase())))
+  }
 
   onClick(isCheck: any) {
-      if(isCheck == 1) {
+    if (isCheck == 1) {
       this.tab = 'tab1';
     } else if (isCheck == 2) {
       this.tab = 'tab2';
@@ -215,12 +272,12 @@ export class HomeComponent implements OnInit {
       this.tab = 'tab3';
     }
   }
-  resetFilters(){
-    this.creditSettingValue=[];
-    this.searchValue="";
-    this.sponsersvalue=[];
-    this.tagsvalue=[];
-    this.typevalue=[];
+  resetFilters() {
+    this.creditSettingValue = [];
+    this.searchValue = "";
+    this.sponsersvalue = [];
+    this.tagsvalue = [];
+    this.typevalue = [];
     this.commonfilter();
   }
 }
