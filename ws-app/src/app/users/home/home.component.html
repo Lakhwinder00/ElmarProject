@@ -72,7 +72,7 @@
             <div class="facetwp-facet facetwp-facet-product_catalog_search facetwp-type-search" data-name="product_catalog_search" data-type="search">
               <span class="facetwp-input-wrap">
                 <i class="fas fa-search facetwp-icon"></i>
-                <input type="text" class="facetwp-search" value="" (keyup)="KeyupFunc($event)" placeholder="Course Name and Description" />
+                <input type="text" class="facetwp-search" [(ngModel)]="searchValue" value="" (keyup)="KeyupFunc($event)" placeholder="Course Name and Description" />
               </span>
             </div>
           </div>
@@ -90,10 +90,11 @@
                                        [placeholder]="'Select Credits'"
                                        [settings]="creditssettings"
                                        [data]="credits"
+                                       [(ngModel)]="creditSettingValue"
                                        [disabled]="false"
                                        (onFilterChange)="onFilterChange($event)"
                                        (onDropDownClose)="onDropDownClose($event)"
-                                       (onSelect)="onItemSelect($event)"
+                                       (onSelect)="onItemSelect($event,1)"
                                        (onDeSelect)="onDeSelect($event)"
                                        (onSelectAll)="onSelectAll($event)"
                                        (onDeSelectAll)="onDeSelectAll($event)">
@@ -107,10 +108,11 @@
                                        [placeholder]="'Select Tags'"
                                        [settings]="tagssettings"
                                        [data]="tags"
+                                       [(ngModel)]="tagsvalue"
                                        [disabled]="false"
                                        (onFilterChange)="onFilterChange($event)"
                                        (onDropDownClose)="onDropDownClose($event)"
-                                       (onSelect)="onItemSelect($event)"
+                                       (onSelect)="onItemSelect($event,2)"
                                        (onDeSelect)="onDeSelect($event)"
                                        (onSelectAll)="onSelectAll($event)"
                                        (onDeSelectAll)="onDeSelectAll($event)">
@@ -124,10 +126,11 @@
                                        [placeholder]="'Select Sponsors'"
                                        [settings]="sponsersettings"
                                        [data]="sponser"
+                                       [(ngModel)]="sponsersvalue"
                                        [disabled]="false"
                                        (onFilterChange)="onFilterChange($event)"
                                        (onDropDownClose)="onDropDownClose($event)"
-                                       (onSelect)="onItemSelect($event)"
+                                       (onSelect)="onItemSelect($event,3)"
                                        (onDeSelect)="onDeSelect($event)"
                                        (onSelectAll)="onSelectAll($event)"
                                        (onDeSelectAll)="onDeSelectAll($event)">
@@ -141,10 +144,11 @@
                                        [placeholder]="'Select Type'"
                                        [settings]="typesettings "
                                        [data]="type"
+                                       [(ngModel)]="typevalue"
                                        [disabled]="false"
                                        (onFilterChange)="onFilterChange($event)"
                                        (onDropDownClose)="onDropDownClose($event)"
-                                       (onSelect)="onItemSelect($event)"
+                                       (onSelect)="onItemSelect($event,4)"
                                        (onDeSelect)="onDeSelect($event)"
                                        (onSelectAll)="onSelectAll($event)"
                                        (onDeSelectAll)="onDeSelectAll($event)">
@@ -173,7 +177,7 @@
               </select>
             </div>
           </div>-->
-          <span id="resetFiltersBottom" class="btn btn-link btn-reset-filters" style="">Reset Filters</span>
+          <span id="resetFiltersBottom" class="btn btn-link btn-reset-filters"  (click)="resetFilters()">Reset Filters</span>
         </div>
       </div>
       <div class="cus-col-12 cus-col-sm-7 cus-col-md-8 cus-col-lg-9">
