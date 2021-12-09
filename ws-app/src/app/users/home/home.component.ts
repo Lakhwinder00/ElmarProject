@@ -7,6 +7,7 @@ import { IAppState } from '../store/home/app.state'
 import { selectAllCourseCatalogSelector, selectCourseCatalogLoading } from '../store/home/app.selector'
 import { courseCatalogList, loadCourseCatalogSuccess } from '../store/home/app.action';
 import {AppHomeEffect } from './../store/home/app.effect';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
   credits: any = [];
   sponser: any = [];
   type: any = [];
-  courseCatalog: any = [];
+  courseCatalog: any[] = [];
   tab: any = 'tab1';
   tab1: any;
   tab2: any;
@@ -123,6 +124,7 @@ export class HomeComponent implements OnInit {
     };
   }
   public onFilterChange(item: any) {
+    debugger
     console.log(item);
   }
   public onDropDownClose(item: any) {
@@ -133,6 +135,7 @@ export class HomeComponent implements OnInit {
     console.log(item);
   }
   public onDeSelect(item: any) {
+    debugger
     console.log(item);
   }
 
@@ -142,7 +145,11 @@ export class HomeComponent implements OnInit {
   public onDeSelectAll(items: any) {
     console.log(items);
   }
- 
+  KeyupFunc($filter: any) {
+    this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+      this.courseCatalog = res.filter((f) => f.name.toLowerCase().includes($filter.target.value.toLowerCase()))
+    })
+  }
   onClick(isCheck: any) {
     if (isCheck == 1) {
       this.tab = 'tab1';

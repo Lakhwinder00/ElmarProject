@@ -64,7 +64,7 @@
         </div>
         <div class="d-flex align-items-start justify-content-between mb-3 mb-sm-4">
           <h3 class="secondary-color font-weight-bold m-0" style="">Filter Fields</h3>
-          <span id="resetFiltersTop" class="btn btn-link btn-reset-filters d--none" onclick="FWP.reset()" style="">Reset Filters</span>
+          <!--<span id="resetFiltersTop" class="btn btn-link btn-reset-filters d--none" onclick="FWP.reset()" style="">Reset Filters</span>-->
         </div>
         <div id="catalogFilterSidebar" class="cus-row no-gutters my-0">
           <div id="facetSearchProduct" class="cus-col-12">
@@ -72,7 +72,7 @@
             <div class="facetwp-facet facetwp-facet-product_catalog_search facetwp-type-search" data-name="product_catalog_search" data-type="search">
               <span class="facetwp-input-wrap">
                 <i class="fas fa-search facetwp-icon"></i>
-                <input type="text" class="facetwp-search" value="" placeholder="Course Name and Description" />
+                <input type="text" class="facetwp-search" value="" (keyup)="KeyupFunc($event)" placeholder="Course Name and Description" />
               </span>
             </div>
           </div>
@@ -177,7 +177,7 @@
         </div>
       </div>
       <div class="cus-col-12 cus-col-sm-7 cus-col-md-8 cus-col-lg-9">
-        <div class="facetwp-results mb-3 mb--sm-5 pl-0 pl-sm-5" style="">
+        <!--<div class="facetwp-results mb-3 mb--sm-5 pl-0 pl-sm-5" style="">
           <div class="facetwp-selections">
             <ul>
               <li data-facet="product_field_of_study">
@@ -186,7 +186,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div>-->
         <div id="catalogContent" class="pl-0 pl-sm-5" style="">
           <div class="facetwp-template" *ngFor="let item of courseCatalog">
             <div class="catalog-item cus-col-md-12 mb-5 p-0">
