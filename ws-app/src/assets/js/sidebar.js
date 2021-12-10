@@ -71,3 +71,12 @@ $(window).scroll(function () {
     $('.cus-top-filter').removeClass('hide-sec');
   }
 });
+
+$(document).ready(function(){
+  $("#mobileFilter").click(function(){
+    $("#catalogFiltersColumn").show().addClass('filter-show');
+  });
+  $("#closeMobileFilter").click(function(){
+    $("#catalogFiltersColumn").hide();
+  });
+});
