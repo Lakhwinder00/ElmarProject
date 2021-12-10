@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   public sponsersettings = {};
   public typesettings = {};
   public selectedItems = [];
-  public commanArray:any = [];
+  public commanArray: any = [];
   cradits: any = [];
   creditSettingValue: any = [];
   tagsvalue: any = [];
@@ -142,33 +142,11 @@ export class HomeComponent implements OnInit {
   }
 
   public onItemSelect(item: any) {
-    this.courseCatalog = [];
-    this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-      //this.courseCatalog = res;
-      this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase())) ||
-      this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())) ||
-      this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase())) ||
-      this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
-        )
-    });
+    this.commonfilter();
   }
 
-  // this.commonfilter(this.searchValue, this.creditSettingValue, this.sponsersvalue, this.tagsvalue, this.typevalue);
-
-
   public onDeSelect(item: any) {
-    this.courseCatalog = [];
-    this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-      //this.courseCatalog = res;
-      this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase())) ||
-        this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())) ||
-        this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase())) ||
-        this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
-      )
-      if (this.courseCatalog.length == 0) {
-        this.courseCatalog = res;
-      }
-    });
+    this.commonfilter()
   }
   public onSelectAll(items: any) {
     // console.log(items);
@@ -177,20 +155,20 @@ export class HomeComponent implements OnInit {
     console.log(items);
   }
   KeyupFunc($filter: any) {
-    this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-      this.courseCatalog = res.filter((f) => f.name.toLowerCase().includes($filter.target.value.toLowerCase()))
-    })
-
-    // this.commonfilter(this.searchValue, this.creditSettingValue, this.sponsersvalue, this.tagsvalue, this.typevalue);
+this.commonfilter(); 
   }
-  commonfilter(search = "", credit: any = [], sponser: any = [], tags: any = [], type: any = []) {
-    debugger;
+  
+  commonfilter() {
+    this.courseCatalog = [];
     this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-
-      // this.courseCatalog = res.filter(f => tags?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase()))
-      this.courseCatalog = res;
+      this.courseCatalog = res.filter(f =>f.name.toLowerCase().includes(this.searchValue.toLowerCase()) || this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase())) ||
+        this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())) ||
+        this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase())) ||
+        this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
+      )
+      if (this.courseCatalog.length == 0)
+        this.courseCatalog = res;
     });
-    //  this.courseCatalog= this.courseCatalog.filter((f:any) => f.name.toLowerCase().includes(search.toLowerCase()) || credit?.some(x => x.item_text?.toLowerCase().includes(f.creditsvalue.toLowerCase())) || tags?.some(x => x.item_text?.toLowerCase().incluedes(f.tag.toLowerCase())) || type?.some(x => x.item_text?.toLowerCase().incluedes(f.type.toLowerCase()))|| this.sponsersvalue?.some(x => x.item_text?.toLowerCase().incluedes(f.sponser.toLowerCase())))
   }
 
   onClick(isCheck: any) {
