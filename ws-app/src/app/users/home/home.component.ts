@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   public sponsersettings = {};
   public typesettings = {};
   public selectedItems = [];
+  public commanArray:any = [];
   cradits: any = [];
   creditSettingValue: any = [];
   tagsvalue: any = [];
@@ -134,114 +135,43 @@ export class HomeComponent implements OnInit {
   public onFilterChange(item: any) {
     debugger
     console.log(item);
-    this.commonfilter()
+    //this.commonfilter()
   }
   public onDropDownClose(item: any) {
     console.log(item);
   }
 
-  public onItemSelect(item: any, code: number) {
-    console.log(item);
-    switch (code) {
-      case 1: {
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          this.courseCatalog = res.filter(f => this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase()))
-          )
-        });
-
-        break;
-      }
-      case 2: {
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase()))
-          )
-        });
-        break;
-      }
-      case 3: {
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          this.courseCatalog = res.filter((f: any) => this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase()))
-          )
-        });
-        break;
-      }
-      case 4: {
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          this.courseCatalog = res.filter((f: any) => this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
-          )
-        });
-        break;
-      }
-
-      default: {
-        //statements; 
-        break;
-      }
-    }
-
-    // this.commonfilter(this.searchValue, this.creditSettingValue, this.sponsersvalue, this.tagsvalue, this.typevalue);
-
+  public onItemSelect(item: any) {
+    this.courseCatalog = [];
+    this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+      //this.courseCatalog = res;
+      this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase())) ||
+      this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())) ||
+      this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase())) ||
+      this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
+        )
+    });
   }
-  public onDeSelect(item: any, code: number) {
-    debugger
-    switch (code) {
-      case 1: {
 
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          if (this.creditSettingValue?.length > 0) {
-            this.courseCatalog = res.filter(f => this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())))
-          } else {
-            this.courseCatalog = res;
-          }
+  // this.commonfilter(this.searchValue, this.creditSettingValue, this.sponsersvalue, this.tagsvalue, this.typevalue);
 
-        });
 
-        break;
+  public onDeSelect(item: any) {
+    this.courseCatalog = [];
+    this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
+      //this.courseCatalog = res;
+      this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase())) ||
+        this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())) ||
+        this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase())) ||
+        this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
+      )
+      if (this.courseCatalog.length == 0) {
+        this.courseCatalog = res;
       }
-      case 2: {
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          if (this.tagsvalue?.length > 0) {
-            this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase()))
-            )
-          } else {
-            this.courseCatalog = res;
-          }
-        });
-        break;
-      }
-      case 3: {
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          if (this.sponsersvalue?.length > 0) {
-            this.courseCatalog = res.filter((f: any) => this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase()))
-            )
-          } else {
-            this.courseCatalog = res;
-          }
-        });
-        break;
-      }
-      case 4: {
-        this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-          if (this.typevalue?.length > 0) {
-            this.courseCatalog = res.filter((f: any) => this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
-            )
-          } else {
-            this.courseCatalog = res;
-
-          }
-        });
-        break;
-      }
-
-      default: {
-        //statements; 
-        break;
-      }
-        console.log(item);
-    }
+    });
   }
   public onSelectAll(items: any) {
-    console.log(items);
+    // console.log(items);
   }
   public onDeSelectAll(items: any) {
     console.log(items);

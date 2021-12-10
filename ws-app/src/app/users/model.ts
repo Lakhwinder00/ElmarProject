@@ -21,4 +21,5 @@ export interface ICourseCatalog {
   PrerequistiesCreated: string;
   avilable: boolean;
   memberType: boolean;
+  sponser: string;  
 }
