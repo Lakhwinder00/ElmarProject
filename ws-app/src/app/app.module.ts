@@ -44,11 +44,13 @@ import { HomeComponent } from './users/home/home.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AppEffect } from './admin/store/app.effect';
 import { appReducer} from './admin/store/app.reducer';
+import { PamedFeaturedComponent } from './users/pamed-featured/pamed-featured.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    PamedFeaturedComponent,
   ],
   imports: [
     EffectsModule.forRoot([AppHomeEffect, AppEffect]),

@@ -161,13 +161,15 @@ this.commonfilter();
   commonfilter() {
     this.courseCatalog = [];
     this.store.select(selectAllCourseCatalogSelector).subscribe((res) => {
-      this.courseCatalog = res.filter(f =>f.name.toLowerCase().includes(this.searchValue.toLowerCase()) || this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase())) ||
+      //this.courseCatalog = res;
+      this.courseCatalog = res.filter(f => this.tagsvalue?.some(x => x.item_text?.toLowerCase().includes(f.tag.toLowerCase())) ||
         this.creditSettingValue?.some(x => x.item_text?.toLowerCase().includes(f.creditstype.toLowerCase())) ||
         this.sponsersvalue?.some(x => x.item_text?.toLowerCase().includes(f?.sponser.toLowerCase())) ||
         this.typevalue?.some(x => x.item_text?.toLowerCase().includes(f?.type.toLowerCase()))
       )
-      if (this.courseCatalog.length == 0)
+      if (this.courseCatalog.length == 0) {
         this.courseCatalog = res;
+      }
     });
   }
 

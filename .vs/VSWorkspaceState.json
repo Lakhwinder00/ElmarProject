@@ -5,10 +5,11 @@
     "\\ws-app\\src",
     "\\ws-app\\src\\app",
     "\\ws-app\\src\\app\\users",
-    "\\ws-app\\src\\app\\users\\home",
-    "\\ws-app\\src\\app\\users\\store",
-    "\\ws-app\\src\\app\\users\\store\\home"
+    "\\ws-app\\src\\app\\users\\pamed-featured",
+    "\\ws-app\\src\\assets",
+    "\\ws-app\\src\\assets\\css",
+    "\\ws-app\\src\\assets\\images"
   ],
-  "SelectedNode": "\\ws-app\\src\\app\\users\\store\\home\\app.effect.ts",
+  "SelectedNode": "\\ws-app\\src\\app\\users\\pamed-featured\\pamed-featured.component.ts",
   "PreviewInSolutionExplorer": false
 }
