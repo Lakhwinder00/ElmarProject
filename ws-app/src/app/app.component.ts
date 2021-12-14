@@ -10,12 +10,8 @@ import { Location } from '@angular/common';
 export class AppComponent implements OnInit {
   isLayout: any;
   constructor(private route: Router, private Location: Location) {
-    let getUrl = this.Location.path().split('/');
-    if (getUrl.length!=0)
-    this.isLayout = getUrl[1];
   }
   ngOnInit() {
-  
     
   }
 }

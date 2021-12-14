@@ -45,12 +45,20 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AppEffect } from './admin/store/app.effect';
 import { appReducer} from './admin/store/app.reducer';
 import { PamedFeaturedComponent } from './users/pamed-featured/pamed-featured.component';
+import { LayoutComponent } from './shared/layout/layout.component';
+import { HeaderComponent } from './shared/layout/header/header.component';
+import { FooterComponent } from './shared/layout/footer/footer.component';
+import { MenuComponent } from './shared/layout/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PamedFeaturedComponent,
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent,
   ],
   imports: [
     EffectsModule.forRoot([AppHomeEffect, AppEffect]),
