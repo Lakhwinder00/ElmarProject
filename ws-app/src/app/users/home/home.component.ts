@@ -133,7 +133,7 @@ export class HomeComponent implements OnInit {
 
   }
   public onFilterChange(item: any) {
-    debugger
+    
     console.log(item);
     //this.commonfilter()
   }

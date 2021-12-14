@@ -8,6 +8,10 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+
 </head>
 <body>
    
@@ -15,75 +19,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+
 </body>
-<!-- <script>
-  var trigger = $(".hamburger");
-  var overlay = $(".overlay");
-  var isClosed = true;
-
-  function toggleSideBar() {
-    if (isClosed == true) {
-    trigger.removeClass("is-open");
-    trigger.addClass("is-closed");
-    $('#wrapper').removeClass('toggled');
-    isClosed = false;
-    // OPTIONAL Overlay overflow hidden in body
-    overlay.hide();
-     $("body").removeClass("overflow-hidden");
-    } else {
-    trigger.removeClass("is-closed");
-    trigger.addClass("is-open");
-    $('#wrapper').addClass('toggled');
-    isClosed = true;
-    // OPTIONAL Overlay overflow hidden in body
-    overlay.show();
-    $("body").addClass("overflow-hidden");
-    }
-  }
-
-  trigger.click(function () {
-    toggleSideBar();
-  });
-
-  $(document).ready(function () {
-    $('.sidebar-nav .nav-link[data-toggle="tooltip"]').tooltip({boundary: "#wrapper", container: '#wrapper', trigger: "hover", placement: "right"});
-
-    toggleSideBar();
-
-    // Active tooltip in dropdowns
-    $("#sidebar-wrapper a.dropdown-toggle").tooltip({boundary: "#wrapper", container: '#wrapper', trigger: "hover", placement: "right"});
-
-    // Add slideDown animation to Bootstrap dropdown when expanding.
-    $(".sidebar-nav .dropdown").on('show.bs.dropdown', function() {
-    trigger.removeClass('is-closed');
-    trigger.addClass('is-open');
-    isClosed = true;
-    $('#wrapper').addClass('toggled');
-    // OPTIONAL Overlay overflow hidden in body
-    overlay.show();
-    $('body').addClass('overflow-hidden');
-    });
-
-    // Add slideUp animation to Bootstrap dropdown when collapsing.
-
-
-  });
-</script>	
-<script>
-  $(".hasDD").click(function(e) {
-    $(this)
-      .find("> ul")
-      .slideToggle();
-    $(this)
-      .find("> ul ul")
-      .css("display", "none");
-    $(this)
-      .find("> ul li")
-      .removeClass("on");
-    $(this).toggleClass("on");
-    e.stopPropagation();
-  });
-</script> -->
-
-
 </html>

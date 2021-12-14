@@ -80,3 +80,32 @@ $(document).ready(function(){
     $("#catalogFiltersColumn").hide();
   });
 });
+
+$(document).ready(function(){
+  $('.slider-nav').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true
+  });
+
+  $('.cus-slide-image').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.cus-slide-image',
+    dots: false,
+    prevArrow: false,
+    nextArrow: false
+  });
+  $('.slide-tiles').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    asNavFor: '.slide-tiles',
+    dots: true,
+    prevArrow: false,
+    nextArrow: false
+  });
+
+});
