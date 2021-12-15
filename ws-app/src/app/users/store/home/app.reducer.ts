@@ -1,10 +1,7 @@
-import { state } from '@angular/animations';
 import { Action, createReducer, on } from '@ngrx/store';
 import * as appActions from './app.action';
 import { courseCatalogAdapter } from './app.entity';
 import { IAppState, initialState } from './app.state';
-
-
 
 const _appHomeReducer = createReducer(
   initialState,

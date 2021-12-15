@@ -14,83 +14,36 @@ import { HistoryComponent } from './history/history.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {AdminComponent} from '../admin/admin.component'
+import { AdminComponent } from '../admin/admin.component'
 const routes: Routes = [
-  { path: '', component: AdminComponent,pathMatch:'full' },
   {
-    path:'',
-    component: AdminComponent,
-    children: [{ path: 'registerlist', component: RegisterlistComponent}]
+    path: '', component: AdminComponent,
+     children: [{ path: 'registerlist', component: RegisterlistComponent },
+    {
+      path: 'dashboard', component: DashboardComponent,
+    },
+    { path: 'user/:id/Edit', component: RegisterUserComponent }
+      ,
+    { path: 'course', component: CourseComponent },
+
+    { path: 'transcript', component: TranscriptComponent },
+
+    { path: 'email', component: EmailComponent }
+      ,
+    { path: 'roles', component: RolesComponent }
+      ,
+    { path: 'orders', component: OrdersComponent }
+      , { path: 'discussions', component: DiscussionsComponent }
+      , { path: 'userassoclinks', component: UserAssocLinksComponent },
+    { path: 'customfields', component: CustomFieldsComponent },
+    { path: 'usergroups', component: UserGroupsComponent },
+    { path: 'addresses', component: AddressesComponent },
+    { path: 'history', component: HistoryComponent }
+    ]
   },
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [{ path: 'user/:id/Edit', component: RegisterUserComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'course', component: CourseComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'transcript', component: TranscriptComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'email', component: EmailComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'roles', component: RolesComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'orders', component: OrdersComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'discussions', component: DiscussionsComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'userassoclinks', component: UserAssocLinksComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'customfields', component: CustomFieldsComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'usergroups', component: UserGroupsComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'addresses', component: AddressesComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'history', component: HistoryComponent }]
-  },
-  {
-    path: '',
-    component: AdminComponent,
-    children: [{ path: 'dashboard', component: DashboardComponent }]
-  }
- 
-  
-  
-];
+
+]
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

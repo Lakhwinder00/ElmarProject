@@ -49,6 +49,11 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { MenuComponent } from './shared/layout/menu/menu.component';
+import { AdminLayoutComponent } from './shared/admin-layout/layout/admin-layout.component';
+import { AdminHeaderComponent } from './shared/admin-layout/layout/header/admin-header.component';
+import { AdminMenuComponent } from './shared/admin-layout/layout/menu/admin-menu.component';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { AdminFooterComponent } from './shared/admin-layout/layout/footer/admin-footer.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +62,8 @@ import { MenuComponent } from './shared/layout/menu/menu.component';
     PamedFeaturedComponent,
     LayoutComponent,
     HeaderComponent,
-    FooterComponent,
-    MenuComponent,
+    FooterComponent, 
+    AdminLayoutComponent,AdminHeaderComponent,AdminMenuComponent,AdminFooterComponent
   ],
   imports: [
     EffectsModule.forRoot([AppHomeEffect, AppEffect]),
@@ -96,7 +101,7 @@ import { MenuComponent } from './shared/layout/menu/menu.component';
     EditorModule,
     FormsModule,
     SidebarModule,
-    TabViewModule,
+    TabViewModule,OverlayPanelModule,
     NgMultiSelectDropDownModule.forRoot(),
     FormlyModule.forRoot({
       validationMessages: [

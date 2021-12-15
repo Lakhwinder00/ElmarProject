@@ -55,10 +55,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AdminComponent } from './admin.component';
 import { TabViewModule } from 'primeng/tabview';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgPrimeModule } from '../app.ngprime.module';
+import { ChartModule } from 'primeng/chart';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
+    
     TranscriptComponent,
     EmailComponent,
     RolesComponent,
@@ -75,8 +78,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     RegisterUserComponent,
     RegisterlistComponent,
     CourseComponent,
-    MainSidebarMenuComponent,
-    AdminComponent
+    AdminComponent ,DashboardComponent,MainSidebarMenuComponent
   ],
   imports: [
     CommonModule,
@@ -111,7 +113,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     FormsModule,
     SidebarModule,
     AutoCompleteModule,
-    TabViewModule,
+    TabViewModule,NgPrimeModule,ChartModule,
     NgMultiSelectDropDownModule.forRoot(),
     FormlyModule.forRoot({
       validationMessages: [

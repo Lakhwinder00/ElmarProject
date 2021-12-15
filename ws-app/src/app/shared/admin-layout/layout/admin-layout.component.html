@@ -1,0 +1,15 @@
+ 
+ <div class="col-12 grid">
+   <app-admin-header></app-admin-header>
+  <div class="fixedAdminHeader">
+</div>
+<!-- <div class="ng-content" [ngClass]="{'hidden-menu-content': !isMenuVisible}"> -->
+   <!-- <app-admin-menu></app-admin-menu> -->
+   <div class="col render-component">
+  <router-outlet></router-outlet>
+ </div>
+ <div class="footer fixedAdminFooter">
+<app-admin-footer></app-admin-footer>
+ </div>
+ </div>
+ 
