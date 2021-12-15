@@ -1,3 +1,5 @@
+
+ 
 <p-messages [(value)]="msgs"></p-messages>
 <div class="grid" [style]="{'margin-top':'30px'}">
   <div class="col-3">
@@ -34,12 +36,14 @@
   </div>
 </div>
 <div class="grid">
-  <p-panel header="Employees List">
-    <div class="ui-g">
-      <div class="ui-g-10 ui-sm-8"><label style="float:right;">Page Size:</label></div>
-      <div class="ui-g-2 ui-sm-4"><input type="text" pInputText [(ngModel)]="pageSize"></div>
+
+  
+  <p-panel header="Employees List" class="col-12 mx-auto"  >
+    <div class="col-12">
+      <div class=" col-10"><label style="float:right;">Page Size:</label></div>
+      <div class="col-2  "><input type="text" pInputText [(ngModel)]="pageSize"></div>
     </div>
-    <p-table [value]="employees" [paginator]="true" [rows]="pageSize">
+    <p-table [value]="employees" [paginator]="true" [style]="{'height':'100%'}" [rows]="pageSize"  >
       <ng-template pTemplate="header">
         <tr>
           <th *ngFor="let col of columns">
@@ -58,3 +62,4 @@
     </p-table>
   </p-panel>
 </div>
+ 
