@@ -3,7 +3,8 @@
   @return ($target/$vw-context) * 1vw;
 }
 
-$window-width: get-vw(500px);
+$window-width: get-vw(300px);
+$window-router: get-vw(700px);
 
 .main-menu {
   width: 2.333333%;
@@ -46,7 +47,7 @@ $window-width: get-vw(500px);
   margin-top: 2px;
   position: relative;
   overflow: auto;
-  max-height: $window-width;
+  max-height: $window-router;
   margin-left: 15px;
 }
 
