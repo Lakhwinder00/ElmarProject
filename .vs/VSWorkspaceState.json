@@ -4,9 +4,12 @@
     "\\ws-app",
     "\\ws-app\\src",
     "\\ws-app\\src\\app",
+    "\\ws-app\\src\\app\\admin",
+    "\\ws-app\\src\\app\\admin\\course",
+    "\\ws-app\\src\\app\\shared\\layout",
     "\\ws-app\\src\\app\\users",
-    "\\ws-app\\src\\assets"
+    "\\ws-app\\src\\app\\users\\home"
   ],
-  "SelectedNode": "\\ws-app\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\ws-app\\src\\app\\admin\\course\\course.component.ts",
   "PreviewInSolutionExplorer": false
 }

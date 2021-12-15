@@ -14,77 +14,77 @@ import { HistoryComponent } from './history/history.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {AdmincomponentComponent} from '../admin/admincomponent.component'
+import {AdminComponent} from '../admin/admin.component'
 const routes: Routes = [
-  { path: '', component: AdmincomponentComponent,pathMatch:'full' },
+  { path: '', component: AdminComponent,pathMatch:'full' },
   {
     path:'',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'registerlist', component: RegisterlistComponent}]
   },
   {
-    path: '',
-    component: AdmincomponentComponent,
+    path: 'admin',
+    component: AdminComponent,
     children: [{ path: 'user/:id/Edit', component: RegisterUserComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'course', component: CourseComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'transcript', component: TranscriptComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'email', component: EmailComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'roles', component: RolesComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'orders', component: OrdersComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'discussions', component: DiscussionsComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'userassoclinks', component: UserAssocLinksComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'customfields', component: CustomFieldsComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'usergroups', component: UserGroupsComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'addresses', component: AddressesComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'history', component: HistoryComponent }]
   },
   {
     path: '',
-    component: AdmincomponentComponent,
+    component: AdminComponent,
     children: [{ path: 'dashboard', component: DashboardComponent }]
   }
  

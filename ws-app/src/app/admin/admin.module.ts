@@ -52,7 +52,7 @@ import { StoreModule } from '@ngrx/store';
 import { appReducer} from './../admin/store/app.reducer'
 import { AppAdminRoutingModule } from './admin-routing.moule';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AdmincomponentComponent } from './admincomponent.component';
+import { AdminComponent } from './admin.component';
 import { TabViewModule } from 'primeng/tabview';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
@@ -76,7 +76,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     RegisterlistComponent,
     CourseComponent,
     MainSidebarMenuComponent,
-    AdmincomponentComponent
+    AdminComponent
   ],
   imports: [
     CommonModule,

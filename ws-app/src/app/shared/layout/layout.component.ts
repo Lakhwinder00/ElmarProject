@@ -13,10 +13,7 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
-    if (this.Location.path.length == 0) {
-      this.route.navigate[('/featured')];
-    }
+   
   }
 
 }

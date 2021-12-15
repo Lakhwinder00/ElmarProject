@@ -2,11 +2,11 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component'
 import { MenuItem } from 'primeng/api';
 @Component({
-  selector: 'app-admincomponent',
-  templateUrl: './admincomponent.component.html',
-  styleUrls: ['./admincomponent.component.scss']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss']
 })
-export class AdmincomponentComponent implements OnInit {
+export class AdminComponent implements OnInit {
 
   items: MenuItem[] | any;
   menu: boolean = false;
