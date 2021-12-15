@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
           borderColor: '#7CB342',
           data: [28, 48, 40, 19, 86, 27, 90]
         }
+        
       ]
     }
 
@@ -58,6 +59,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

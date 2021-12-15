@@ -16,12 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('../app/admin/admin.module').then(m => m.AdminModule)
   },
   {
-    path: '', component: LayoutComponent ,pathMatch:'full',
+    path: '', component: LayoutComponent,
     children: [
       {
         path: 'home', component: PamedFeaturedComponent
       },
       { path: 'search', component: HomeComponent },
+      {
+        path: '**',
+        redirectTo: 'home'
+      }
     ]
   },
   // {
@@ -53,10 +57,7 @@ const routes: Routes = [
     //     canActivate: [AuthGuard]
     // }]
   //},
-  {
-    path: '**',
-    redirectTo: 'home'
-  }
+  
 ]
 
 @NgModule({
