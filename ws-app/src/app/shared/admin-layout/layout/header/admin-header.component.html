@@ -1,8 +1,12 @@
 <div class="ng-header">
   <div class="ng-header-left left">
     <div class="logo right">
-      <img src="https://chima.my.prolearn.io/syng_components/common/clientandui/uitemplates/customer/prolearn/images/prolearn-logo-aqua-white.png" class="logo-large">
-      <img src="https://chima.my.prolearn.io/syng_components/common/clientandui/uitemplates/customer/prolearn/images/prolearn-logo-aqua-white.png" class="logo-small">
+      <img
+        src="https://chima.my.prolearn.io/syng_components/common/clientandui/uitemplates/customer/prolearn/images/prolearn-logo-aqua-white.png"
+        class="logo-large">
+      <img
+        src="https://chima.my.prolearn.io/syng_components/common/clientandui/uitemplates/customer/prolearn/images/prolearn-logo-aqua-white.png"
+        class="logo-small">
     </div>
   </div>
   <div class="ng-header-right right">
@@ -12,28 +16,36 @@
     <div class="ng-header-right-item right" (click)="themeChooser.toggle($event)">
       <a class="icon"><i class="fa fa-cog"></i></a>
     </div>
-    <div class="ng-header-right-item right" (click)="showNotificationSidebar()">
+    <div class="ng-header-right-item right" (click)="notificationdetails.toggle($event)">
       <a class="icon"><i class="fa fa-bell"></i><span class="badge">5</span></a>
     </div>
-    <div class="ng-header-right-item right">
+    <div class="ng-header-right-item right" (click)="userdetails.toggle($event)">
       <a class="icon"><i class="fa fa-user"></i></a>
     </div>
   </div>
 </div>
 <!-- user detials overlay panel -->
-<!--<p-overlayPanel #userdetails>
-  <div><b>User Name: </b><i [innerHtml]="user.userName"></i></div>
-  <div><b>Email Id: </b><i [innerHtml]="user.emailId"></i></div>
-  <div><b>Birthdate: </b><i [innerHtml]="user.birthDate | date:'dd/MM/yyyy'"></i></div>
-</p-overlayPanel>-->
+<p-overlayPanel #userdetails>
+  <div><b>User Name: </b><i [innerHtml]="'TestingUser'"></i></div>
+  <div><b>Email Id: </b><i [innerHtml]="'Testinguser@gmail.com'"></i></div>
+  <div><b>Role: </b><i [innerHtml]="'Admin'"></i></div>
+</p-overlayPanel>
+
+<p-overlayPanel #notificationdetails>
+  <div><b> <i [innerHtml]="'first notification'"></i></b></div>
+  <div> <b><i [innerHtml]="'second notification'"></i></b></div>
+  <div> <b> <i [innerHtml]="'third notification'"></i></b></div>
+  <div><b> <i [innerHtml]="'fourth notification'"></i></b></div>
+  <div><b> <i [innerHtml]="'fifth notification'"></i></b></div>
+</p-overlayPanel>
 
 <!-- notifications sidebar -->
-<!--<p-sidebar [(visible)]="displayNotifications" position="right">
-  <div *ngFor="let notification of notifications; let i=index" class="notification-message">
-    <div><b>Message: </b><i [innerHtml]="notification.message"></i></div>
-    <div><i>Created On: </i><i [innerHtml]="notification.createdOn | date:'dd/MM/yyyy'"></i></div>
+<!-- <p-sidebar [(visible)]="displayNotifications" position="right">
+  <div class="notification-message">
+    <div><b>Message: </b><i [innerHtml]="'this is first notification'"></i></div>
+    <div><i>Created On: </i><i [innerHtml]="'01/01/2021'"></i></div>
   </div>
-</p-sidebar>-->
+</p-sidebar> -->
 
 <!-- theme chooser overlay panel -->
 <p-overlayPanel #themeChooser>
@@ -41,31 +53,31 @@
   <div class=" col-12 grid">
     <div class="col-2">
       <button pButton type="button" (click)="selectTheme('theme-teal')"
-              style="background-color: #427976; width: 39px;"></button>
+        style="background-color: #427976; width: 39px;"></button>
     </div>
     <div class="col-2">
       <button pButton type="button" (click)="selectTheme('theme-rose')"
-              style="background-color: #79425a; width: 39px;"></button>
+        style="background-color: #79425a; width: 39px;"></button>
     </div>
     <div class="col-2">
       <button pButton type="button" (click)="selectTheme('theme-light')"
-              style="background-color: #cccccc; width: 39px; "></button>
+        style="background-color: #cccccc; width: 39px; "></button>
     </div>
     <div class="col-2">
       <button pButton type="button" (click)="selectTheme('theme-dark')"
-              style="background-color: #3b3b48; width: 39px;"></button>
+        style="background-color: #3b3b48; width: 39px;"></button>
     </div>
     <div class="col-2">
       <button pButton type="button" (click)="selectTheme('theme-Turquoise')"
-              style="background-color: #04838f; width: 39px;"></button>
+        style="background-color: #04838f; width: 39px;"></button>
     </div>
     <div class="col-2">
       <button pButton type="button" (click)="selectTheme('theme-green')"
-              style="background-color: #1e8455; width: 39px;"></button>
+        style="background-color: #1e8455; width: 39px;"></button>
     </div>
     <div class="col-2">
       <button pButton type="button" (click)="selectTheme('theme-blue')"
-              style="background-color: #2d5394; width: 39px;"></button>
+        style="background-color: #2d5394; width: 39px;"></button>
     </div>
   </div>
 </p-overlayPanel>

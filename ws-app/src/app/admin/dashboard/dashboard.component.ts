@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from 'src/app/core/services/theme.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'dashboard.component.html',
@@ -12,26 +13,26 @@ export class DashboardComponent implements OnInit {
 
   msgs: any[];
 
-  employees: any = [{ Id: 1, Name: 'Nilav', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 26 },
-  { Id: 2, Name: 'Nilav1', Department: '.net', DepartmentId: 1, Address: 'Surat, Gujarat', Age: 25 },
-  { Id: 3, Name: 'Nilav2', Department: 'PHP', DepartmentId: 4, Address: 'Ahmedabad, Gujarat', Age: 25 },
-  { Id: 4, Name: 'Nilav3', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 30 },
-  { Id: 5, Name: 'Nilav4', Department: 'HR', DepartmentId: 2, Address: 'Baroda, Gujarat', Age: 25 },
-  { Id: 6, Name: 'Nilav5', Department: 'HR', DepartmentId: 2, Address: 'Ahmedabad, Gujarat', Age: 28 },
-  { Id: 7, Name: 'Nilav6', Department: 'Admin', DepartmentId: 3, Address: 'Ahmedabad, Gujarat', Age: 26 },
-  { Id: 8, Name: 'Nilav7', Department: '.net', DepartmentId: 1, Address: 'Surat, Gujarat', Age: 25 },
-  { Id: 9, Name: 'Nilav8', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 27 },
-  { Id: 10, Name: 'Nilav9', Department: 'Admin', DepartmentId: 3, Address: 'Baroda, Gujarat', Age: 25 },
-  { Id: 11, Name: 'Nilav10', Department: '.net', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 35 },
+  employees: any = [{ Id: 1, Name: 'Nilav', Email: '.net@gmail.com', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 26 },
+  { Id: 2, Name: 'Nilav1', Email: '.net@gmail.com', DepartmentId: 1, Address: 'Surat, Gujarat', Age: 25 },
+  { Id: 3, Name: 'Nilav2', Email: 'PHP@gmail.com', DepartmentId: 4, Address: 'Ahmedabad, Gujarat', Age: 25 },
+  { Id: 4, Name: 'Nilav3', Email: '.net@gmail.com', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 30 },
+  { Id: 5, Name: 'Nilav4', Email: 'HR@gmail.com', DepartmentId: 2, Address: 'Baroda, Gujarat', Age: 25 },
+  { Id: 6, Name: 'Nilav5', Email: 'HR@gmail.com', DepartmentId: 2, Address: 'Ahmedabad, Gujarat', Age: 28 },
+  { Id: 7, Name: 'Nilav6', Email: 'Admin@gmail.com', DepartmentId: 3, Address: 'Ahmedabad, Gujarat', Age: 26 },
+  { Id: 8, Name: 'Nilav7', Email: '.net@gmail.com', DepartmentId: 1, Address: 'Surat, Gujarat', Age: 25 },
+  { Id: 9, Name: 'Nilav8', Email: '.net@gmail.com', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 27 },
+  { Id: 10, Name: 'Nilav9', Email: 'Admin@gmail.com', DepartmentId: 3, Address: 'Baroda, Gujarat', Age: 25 },
+  { Id: 11, Name: 'Nilav10', Email: '.net@gmail.com', DepartmentId: 1, Address: 'Ahmedabad, Gujarat', Age: 35 },
   ];
   columns = [
     { field: 'Name', header: 'Name' },
-    { field: 'Department', header: 'Department' },
+    { field: 'Email', header: 'Email' },
     { field: 'Address', header: 'Address' },
     { field: 'Age', header: 'Age' }
   ];
   pageSize: number = 5;
-  constructor() {
+  constructor(private themeService: ThemeService) {
     this.barChartData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
@@ -80,5 +81,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     console.log("employee=>", this.employees)
   }
-
+  goToDepartmentDetails(id){
+this.themeService.navigationToggel.next(true);
+  }
 }

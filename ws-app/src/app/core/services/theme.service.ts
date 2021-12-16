@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
  */
 export class ThemeService {
     public theme: BehaviorSubject<string> = new BehaviorSubject<string>("theme-teal");
+    public navigationToggel: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     /**
      * 
@@ -16,5 +17,8 @@ export class ThemeService {
      */
     selectTheme(value: string) {
         this.theme.next(value);
+    }
+    selectSubNavigation(value) {
+        this.navigationToggel.next(value);
     }
 }

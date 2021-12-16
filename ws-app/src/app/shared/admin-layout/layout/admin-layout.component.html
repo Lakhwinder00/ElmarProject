@@ -5,7 +5,7 @@
   <!-- <div class="ng-content" [ngClass]="{'hidden-menu-content': !isMenuVisible}"> -->
  <app-admin-menu></app-admin-menu>
  
-  <app-admin-sidebar class="side-panel"></app-admin-sidebar>
+  <app-admin-sidebar *ngIf="themeService.navigationToggel |async" class="side-panel"></app-admin-sidebar>
   <div class="col render-component">
     <router-outlet></router-outlet>
   </div>

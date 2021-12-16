@@ -15,7 +15,7 @@ export class AdminLayoutComponent implements OnInit {
   isMenuVisible: boolean=false;
   theme: string;
   constructor(private menuDataService: MenuDataService,
-    private applicationStateService: ApplicationStateService, private themeService: ThemeService, private sessionService: SessionService) {
+    private applicationStateService: ApplicationStateService, public themeService: ThemeService, private sessionService: SessionService) {
     var theme = this.sessionService.getItem("selected-theme");
     if (theme != null && theme.length > 0) {
       this.theme = theme;
@@ -28,6 +28,11 @@ export class AdminLayoutComponent implements OnInit {
   ngOnInit() {
     var that = this;
     this.menuDataService.toggleMenuBar.subscribe(function (data: any) {
+      if (data && data != null) {
+        that.isMenuVisible = !that.isMenuVisible;
+      }
+    });
+    this.themeService.navigationToggel.subscribe(data=> {
       if (data && data != null) {
         that.isMenuVisible = !that.isMenuVisible;
       }

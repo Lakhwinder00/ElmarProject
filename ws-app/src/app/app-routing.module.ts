@@ -11,7 +11,7 @@ DashboardModule
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '',
     loadChildren: () => import('../app/admin/admin.module').then(m => m.AdminModule)
   },
   {

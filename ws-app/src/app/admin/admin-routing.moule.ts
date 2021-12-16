@@ -17,7 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminLayoutComponent } from '../shared/admin-layout/layout/admin-layout.component';
 const routes: Routes = [
   {
-    path: '', component: AdminLayoutComponent,
+    path: 'admin', component: AdminLayoutComponent,
     children: [{ path: 'registerlist', component: RegisterlistComponent },
     {path: 'dashboard', component: DashboardComponent,},
     { path: 'user/:id/Edit', component: RegisterUserComponent },
@@ -31,7 +31,8 @@ const routes: Routes = [
     { path: 'customfields', component: CustomFieldsComponent },
     { path: 'usergroups', component: UserGroupsComponent },
     { path: 'addresses', component: AddressesComponent },
-    { path: 'history', component: HistoryComponent }
+    { path: 'history', component: HistoryComponent },
+    { path: '**', redirectTo: 'dashboard' },
     ]
   },
 

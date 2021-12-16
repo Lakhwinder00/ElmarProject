@@ -19,88 +19,17 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="fa fa-info-circle"></i>
-          <span>Help And Tutorials</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="fa-fw fa-tachometer-alt-fast fal"></i>
-          <span>Create New</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="fa fa-fw fa-plus"></i>
-          <span>Analytics</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="fa-fw fa-upload fas"></i>
-          <span>Upload</span>
-        </a>
-      </li>
-      <li class="nav-item hasDD">
-        <a aria-expanded="false" class="nav-link dropdown-toggle no_caret" id="dropdownMenu1" title="" x-placement="right" data-original-title="">
-          <i class="fa-calendar-alt fa-fw far"></i>
-          <span>Users</span>
-          <span class="caret"></span>
+      <li class="nav-item hasDD" *ngFor="let item of itemsMenu" >
+        <a  aria-expanded="false"  class="nav-link dropdown-toggle no_caret" data-toggle="tooltip"   id="dropdownMenu1" title="" x-placement="right" data-original-title="">
+          <i class="{{item.icon}}"></i>
+          <span>{{item?.label}}</span>
+          <span class="caret" *ngIf="item?.childern"></span>
         </a>
         <ul>
-          <li><a href="#">Illustration</a></li>
-          <li><a href="#">Third level </a></li>
+          <li *ngFor="let val of item?.items" >
+            <a >{{val?.label}}</a></li>
+          
         </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="pi pi-book pi-fw"></i>
-          <span>Schedule/Calander</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="pi pi-fw pi-list"></i>
-          <span>Cummunity/Messaging</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="pi pi-fw pi-list"></i>
-          <span>Learning Content</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="fa-fw fa-upload fas"></i>
-          <span>Files & Media</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="pi pi-fw pi-user-plus"></i>
-          <span>Web & Email Content</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="pi pi-fw pi-users"></i>
-          <span>StoreFront & Commerce</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="pi pi-book pi-fw"></i>
-          <span>Advanced</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" href="#" title="" x-placement="right" data-original-title="">
-          <i class="pi pi-fw pi-slack"></i>
-          <span>Configuration & Tools</span>
-        </a>
       </li>
     </ul>
   </nav>
