@@ -1,5 +1,46 @@
-<header class="cus-header">
+<header 
+  id="larutaHeader"
+  data-header-version="2.1"
+  class="cus-header laruta-header d-print-none"
+>
   <!-- Top Header Section -->
+
+  <div id="mobileNav" class="mobile-nav-container closed">
+    <div class="mobile-nav">
+      <div class="mobile-controls">
+        <div>
+          <label for="toggleMobileNav" class="mobile-control-toggle-nav mobile-control close-mobile-nav"> <span class="icon-x"></span> </label>
+        </div>
+      </div>
+      <div class="mobile-links-scroll-container">
+        <div id="mobileLinks" class="mobile-links">
+          <nav id="mobilePrimaryLinks" class="mobile-primary-links">
+            <a href="#0" class="has-submenu" data-primary-link="for-members"> For Members </a>
+            <a href="#0" class="has-submenu" data-primary-link="learning-cpe"> Learning &amp; CPE </a>
+            <a href="#0" class="has-submenu" data-primary-link="member-communities"> Member Communities </a>
+            <a href="#0" class="has-submenu" data-primary-link="advocacy"> Advocacy </a>
+            <a href="#0" class="has-submenu" data-primary-link="for-the-public"> For The Public </a>
+            <a href="#0" class="has-submenu" data-primary-link="about"> About </a>
+            <a href="#"> Contact </a>
+          </nav>
+          <hr />
+          <nav id="mobileSuperNavLinks" class="mobile-super-nav-links">
+            <div><a href="#"> Advertise &amp; Sponsor </a></div>
+            <div><a href="#" target="_new"> Student's Website </a></div>
+            <div><a href="#"> COCPA Connect </a></div>
+            <div><a href="#"> COVID-19 Resources </a></div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="checkbox" name="toggleMobileAccountMenu" id="toggleMobileAccountMenu" />
+  <div id="mobileAccountMenu" class="mobile-user-account-menu closed logged-out" data-user-is-staff="">
+      <div id="mobileCallToActionButtons" class="mobile-nav-account-actions">
+          <a href="" id="larutaAccountLogin" data-trigger="auth0Modal"> <div>Login</div> </a>
+      </div>
+  </div>
+
   <div id="subMenus" class="submenus" *ngIf="this.isLayout!='admin'">
     <div class="submenu closed" data-primary-link="for-members" style="background-image: url('/assets/images/Background-For-Members.svg')">
       <div class="mobile-controls">

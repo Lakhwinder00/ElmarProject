@@ -1,7 +1,14 @@
 $(document).ready(function () {
   var themosis = {
-    features: { "larutaHeader": { "isEnabled": true } },
-  };
+	features: {
+		"siteSearch": {
+			"HeaderImage": {}
+		}, "larutaHeader": {
+			"isEnabled": true
+		}
+	},
+};
+
   !function (e) { function t(i) { if (n[i]) return n[i].exports; var o = n[i] = { i: i, l: !1, exports: {} }; return e[i].call(o.exports, o, o.exports, t), o.l = !0, o.exports } var n = {}; t.m = e, t.c = n, t.d = function (e, n, i) { t.o(e, n) || Object.defineProperty(e, n, { configurable: !1, enumerable: !0, get: i }) }, t.n = function (e) { var n = e && e.__esModule ? function t() { return e.default } : function t() { return e }; return t.d(n, "a", n), n }, t.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, t.p = "/app/themes/laruta-themosis-parent/dist/", t(t.s = 665) }({
     100: function (e, t, n) { "use strict"; function i(e) { var t = e.state, n = e.options, i = e.name, m = n.mainAxis, v = void 0 === m || m, g = n.altAxis, b = void 0 !== g && g, y = n.boundary, w = n.rootBoundary, _ = n.altBoundary, k = n.padding, T = n.tether, E = void 0 === T || T, O = n.tetherOffset, S = void 0 === O ? 0 : O, x = Object(d.a)(t, { boundary: y, rootBoundary: w, padding: k, altBoundary: _ }), C = Object(r.a)(t.placement), $ = Object(f.a)(t.placement), j = !$, A = Object(s.a)(C), D = Object(a.a)(A), N = t.modifiersData.popperOffsets, L = t.rects.reference, P = t.rects.popper, I = "function" == typeof S ? S(Object.assign({}, t.rects, { placement: t.placement })) : S, M = { x: 0, y: 0 }; if (N) { if (v || b) { var F = "y" === A ? o.m : o.f, H = "y" === A ? o.c : o.k, R = "y" === A ? "height" : "width", z = N[A], B = N[A] + x[F], q = N[A] - x[H], W = E ? -P[R] / 2 : 0, U = $ === o.l ? L[R] : P[R], V = $ === o.l ? -P[R] : -L[R], Y = t.elements.arrow, Q = E && Y ? Object(c.a)(Y) : { width: 0, height: 0 }, X = t.modifiersData["arrow#persistent"] ? t.modifiersData["arrow#persistent"].padding : Object(p.a)(), G = X[F], K = X[H], Z = Object(l.a)(0, L[R], Q[R]), J = j ? L[R] / 2 - W - Z - G - I : U - Z - G - I, ee = j ? -L[R] / 2 + W + Z + K + I : V + Z + K + I, te = t.elements.arrow && Object(u.a)(t.elements.arrow), ne = te ? "y" === A ? te.clientTop || 0 : te.clientLeft || 0 : 0, ie = t.modifiersData.offset ? t.modifiersData.offset[t.placement][A] : 0, oe = N[A] + J - ie - ne, re = N[A] + ee - ie; if (v) { var se = Object(l.a)(E ? Object(h.b)(B, oe) : B, z, E ? Object(h.a)(q, re) : q); N[A] = se, M[A] = se - z } if (b) { var ae = "x" === A ? o.m : o.f, le = "x" === A ? o.c : o.k, ce = N[D], ue = ce + x[ae], de = ce - x[le], fe = Object(l.a)(E ? Object(h.b)(ue, oe) : ue, ce, E ? Object(h.a)(de, re) : de); N[D] = fe, M[D] = fe - ce } } t.modifiersData[i] = M } } var o = n(6), r = n(18), s = n(58), a = n(162), l = n(90), c = n(57), u = n(30), d = n(32), f = n(44), p = n(92), h = n(31); t.a = { name: "preventOverflow", enabled: !0, phase: "main", fn: i, requiresIfExists: ["offset"] } }, 101: function (e, t, n) { "use strict"; var i = n(65), o = n(60), r = n(64), s = n(59), a = n(56), l = [o.a, r.a, s.a, a.a], c = Object(i.a)({ defaultModifiers: l }) }, 114: function (e, t, n) {
       "use strict"; (function (e) {

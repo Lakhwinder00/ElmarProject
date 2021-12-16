@@ -798,6 +798,9 @@ address, dl, ol, ul {
   padding: 3px 13px;
   margin-bottom: 0;
 }
+#mobileNav {
+  z-index: 100000;
+}
 /* Header section css end */
 
 /* Tabs section css start */
@@ -1771,6 +1774,54 @@ footer hr {
   text-align: left;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+.laruta-header #toggleMobileAccountMenu {
+ display: none;
+}
+.laruta-header #mobileAccountMenu {
+  z-index: 100002;
+}
+.laruta-header .mobile-user-account-menu {
+  -webkit-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+  background-color: #235b9c;
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  border-top: 1px solid #fff;
+}
+.laruta-header .mobile-user-account-menu.closed {
+  -webkit-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+  bottom: -100px;
+}
+.laruta-header #larutaAccountLogin {
+  border-left: 1px solid #fff;
+  color: #fff;
+  padding: 15px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.laruta-header #larutaAccountLogin, 
+.laruta-header #larutaAccountLogin:hover, 
+.laruta-header #larutaAccountLogout:hover {
+  -webkit-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+html.page-scroll-disabled {
+  overflow: hidden;
 }
 /* Menus Section Css Ends */
 
@@ -2790,12 +2841,90 @@ section.cus-banner .jumbotron h1, section.cus-banner .jumbotron p {
     height: auto;
   }
 }
+@media (max-width: 960px) {
+  .laruta-header .submenus {
+    position: fixed;
+  }
+  .laruta-header .submenus {
+    z-index: 100001;
+  }
+  .laruta-header .submenus .submenu.closed {
+    left: 100vw;
+  }
+  .laruta-header .mobile-controls {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .laruta-header .mobile-controls>div {
+    border-bottom: 1px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0 15px;
+  } 
+  .laruta-header .mobile-controls .mobile-control-close-submenus, 
+  .laruta-header .mobile-controls .mobile-control-toggle-nav {
+    cursor: pointer;
+  }
+  .laruta-header .mobile-controls .mobile-control.return-to-primary {
+    margin-right: auto;
+  }
+  .laruta-header .mobile-controls .mobile-control-close-submenus span, 
+  .laruta-header .mobile-controls .mobile-control-toggle-nav span {
+    color: #fff;
+    font-size: 3.6rem;
+  }
+  .laruta-header .mobile-controls .nav-label {
+    color: #fff;
+    font-size: 1.8rem;
+  }
+  .laruta-header .mobile-controls .mobile-control.close-mobile-nav {
+    margin-left: auto;
+  }
+  .laruta-header.mobile-opened {
+    height: 100vh;
+  }
+}
 @media (max-width: 959px) {
   #headerSiteLogo img {
     width: 150px;
   }
   nav#primaryLinks {
     display: none;
+  }
+  .mobile-control-toggle-nav.icon-mobile-menu {
+    width: 50px;
+    height: 50px;
+    background: red;
+    display: inline-block;
+  }
+  .mobile-nav-container {
+    height: 100vh;
+    background: #0b1257;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .mobile-nav-container.closed {
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    left: 100vw;
+  }
+
+  #mobileNavToggle {
+    background: red;
   }
 }
 @media (max-width: 767px) {
