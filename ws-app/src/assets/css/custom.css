@@ -54,7 +54,7 @@ nav#sidebar-wrapper {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   padding: 0;
-  background: #2a3247;
+ /* background: #2a3247;*/
 }
 nav#sidebar-wrapper::-webkit-scrollbar {
   display: none;
@@ -498,7 +498,7 @@ nav#sidebar-wrapper::-webkit-scrollbar {
     left: 0;
     top: 0;
     z-index: 9999999;
-    background: #2a3247;
+    background-color: var(--menubar-background) !important;
     right: auto;
   }
   .col-12.grid {
@@ -510,6 +510,7 @@ nav#sidebar-wrapper::-webkit-scrollbar {
     position: fixed;
     height: 100vh;
     overflow: auto;
+    background-color: var(--menubar-background) !important;
   }
   .cus-sidebar-menus .sidebar-nav > li a {
     padding: 12px 8px;
@@ -523,6 +524,7 @@ nav#sidebar-wrapper::-webkit-scrollbar {
   }
   .cus-sidebar-menus {
     background: transparent;
+    min-height: 0vh;
   }
   .p-panel-header {
     height: 72px !important

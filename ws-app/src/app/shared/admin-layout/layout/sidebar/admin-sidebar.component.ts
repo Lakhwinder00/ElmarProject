@@ -1,97 +1,124 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
-import { SidebarComponent } from './sidebar/sidebar.component'
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  selector: 'app-admin-sidebar',
+  templateUrl: './admin-sidebar.component.html',
+  styleUrls: ['./admin-sidebar.component.scss']
 })
-export class AdminComponent implements OnInit {
-
+export class AdminSidebarComponent implements OnInit {
+  isSubmenuOpened:boolean=false;
+  isExpanded: boolean = false;
+  collapsed = true;
   items: MenuItem[] | any;
-  menu: boolean = false;
-  isShowMenu: boolean = false;
-  isclass: boolean = false;
-  systemRoles: any = [];
+  model: any = [];
   items1: any = [
-     {
+    {
       label: 'Help And Tutorials',
       icon: 'fa fa-info-circle',
-      items: [{
-        label: 'New',
-        icon: 'pi pi-fw pi-plus',
-        items: [
-          { label: 'User', icon: 'pi pi-fw pi-user-plus' },
-          { label: 'Filter', icon: 'pi pi-fw pi-filter' }
-        ]
-      },
-      { label: 'Open', icon: 'pi pi-fw pi-external-link' },
-      { separator: true },
-      { label: 'Quit', icon: 'pi pi-fw pi-times' }
-      ]
+      routerLink: '/registerlist',
+      childeren: false, subMenu: false
     },
     {
       label: 'Analytics',
       icon: 'fa-fw fal fa-tachometer-alt-fast',
-      routerLink: '/admin/registerlist'
+      routerLink: '/registerlist',
+      childeren: false, subMenu: false
     },
     {
       label: 'Create New',
       icon: 'fa fa-plus fa-fw',
-      routerLink: '/admin/course'
+      routerLink: '/course'
+      ,
+      childeren: false, subMenu: false
     },
     {
       label: 'Upload',
       icon: 'fas fa-upload fa-fw',
       routerLink: '/transcript'
+      ,
+      childern: false,
+      subMenu: false
     },
     {
       label: 'Users',
       icon: 'fa-fw far fa-calendar-alt',
-      routerLink: '/admin/email'
+      routerLink: '/email'
+      ,
+      childern: true,
+      subMenu: false,
+      items: [{
+        label: 'Users(8,676)',
+        icon: 'pi pi-fw pi-plus',
+        childeren: false, subMenu: false
+
+      },
+      { label: 'Address(223)', icon: 'pi pi-fw pi-external-link' },
+      { label: 'Registrations(1,053)', icon: 'pi pi-fw pi-times' },
+      { label: 'Roles(7)', icon: 'pi pi-fw pi-times' },
+      { label: 'Duplicate Detector', icon: 'pi pi-fw pi-times' },
+      { label: 'Member Type(1)', icon: 'pi pi-fw pi-times' }
+      ]
     },
     {
       label: 'Schedule/Calander',
       icon: 'pi pi-fw pi-book',
-      routerLink: '/admin/roles'
+      routerLink: '/roles'
+      ,
+      childern: false,
+      subMenu: false
     },
     {
       label: 'Cummunity/Messaging',
       icon: 'pi pi-fw pi-list',
-      routerLink: '/admin/orders'
+      routerLink: '/orders'
+      ,
+      childern: false,
+      subMenu: false
     },
     {
       label: 'Learning Content',
       icon: 'pi pi-fw pi-list',
-      routerLink: '/admin/discussions'
+      routerLink: '/discussions',
+      childern: false,
+      subMenu: false
     },
     {
       label: 'Files & Media',
       icon: 'pi pi-fw pi-sitemap',
-      routerLink: '/userassoclinks'
+      routerLink: '/userassoclinks',
+      subMenu: false,
+      childern: false,
     },
     {
       label: 'Web & Email Content',
       icon: 'pi pi-fw pi-user-plus',
-      routerLink: '/admin/customfields'
+      routerLink: '/customfields',
+      childern: false,subMenu: false
     },
     {
       label: 'StoreFront & Commerce',
       icon: 'pi pi-fw pi-users',
-      routerLink: '/admin/usergroups'
+      routerLink: '/usergroups',
+      childern: false,subMenu: false
     },
     {
       label: 'Advanced',
       icon: 'pi pi-fw pi-book',
-      routerLink: '/admin/addresses'
+      routerLink: '/addresses',
+      childern: false,subMenu: false
     },
     {
       label: 'Configuration & Tools',
       icon: 'pi pi-fw pi-slack',
-      routerLink: '/admin/history'
+      routerLink: '/history'
+      ,
+      childern: false,subMenu: false
     }
   ];
-  @ViewChild("sidebarComponent") sidebarComponent!: SidebarComponent;
+  handleSidebarToggle() {
+ this.isExpanded = !this.isExpanded;
+    
+  };
   ngOnInit() {
     this.items = [
       {
@@ -172,16 +199,11 @@ export class AdminComponent implements OnInit {
       }
     ];
   }
-  expand(): void {
-    this.sidebarComponent.isExpanded;
-    this.isclass = !this.isclass
-    //let boolen = false;
-    //if (boolen == true) {
-    //  this.isclass = true;
-    //} else {
-    //  this.isclass = false;
-    //}
+  pickclass(): boolean {
+    return this.isExpanded
   }
-
-
+  subMenuClick(menu:any) {
+  if(menu?.items?.length)
+  menu.subMenu=!menu?.subMenu
+  }
 }

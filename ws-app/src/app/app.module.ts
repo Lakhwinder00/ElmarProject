@@ -52,6 +52,7 @@ import { MenuComponent } from './shared/layout/menu/menu.component';
 import { AdminLayoutComponent } from './shared/admin-layout/layout/admin-layout.component';
 import { AdminHeaderComponent } from './shared/admin-layout/layout/header/admin-header.component';
 import { AdminMenuComponent } from './shared/admin-layout/layout/menu/admin-menu.component';
+import { AdminSidebarComponent} from './shared/admin-layout/layout/sidebar/admin-sidebar.component';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AdminFooterComponent } from './shared/admin-layout/layout/footer/admin-footer.component';
 
@@ -63,7 +64,7 @@ import { AdminFooterComponent } from './shared/admin-layout/layout/footer/admin-
     LayoutComponent,
     HeaderComponent,
     FooterComponent, 
-    AdminLayoutComponent,AdminHeaderComponent,AdminMenuComponent,AdminFooterComponent
+    AdminLayoutComponent, AdminHeaderComponent, AdminMenuComponent, AdminFooterComponent, AdminSidebarComponent
   ],
   imports: [
     EffectsModule.forRoot([AppHomeEffect, AppEffect]),

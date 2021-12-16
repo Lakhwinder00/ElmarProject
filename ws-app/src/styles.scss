@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("./assets/css/custom.css");
 @import url("./assets/css/home/home.css");
-@import url('primeicons/primeicons.css');
+@import '~primeicons/primeicons.css';
 @import '~primeng/resources/primeng.min.css';
 // @import '~primeng/resources/themes/bootstrap4-light-blue/theme.css';
 // @import '~primeicons/primeicons.css';
@@ -168,12 +168,25 @@ html, body, app-root {
   }
 
   .overflow-hidden .fixedAdminHeader {
-    margin-left: 290px;
+    margin-left: 278px;
   }
+.ng-header, .ng-footer {
+  height: 50px;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--header-footer-bg-color)), to(var(--header-footer-bg-color2)));
+  color: var(--header-footer-color);
+}
+.p-panelmenu .p-panelmenu-header > a {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  color: white!important;
+  background-color: var(--menubar-background) !important;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
 
   .fixedAdminFooter {
     z-index: 120;
-    background-color: #fff;
     position: fixed;
     bottom: 0;
     left: 0;

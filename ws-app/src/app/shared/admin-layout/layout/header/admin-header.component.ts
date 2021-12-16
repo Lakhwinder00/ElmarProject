@@ -40,23 +40,23 @@ export class AdminHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.sessionService.getItem("currentUser");
-    this.notifications = [];
-    for (var i = 1; i <= 5; i++) {
-      var notificationObj = new notification("Message " + i, new Date(), null)
-      this.notifications.push(notificationObj);
-    }
+    //this.user = this.sessionService.getItem("currentUser");
+    //this.notifications = [];
+    //for (var i = 1; i <= 5; i++) {
+    //  var notificationObj = new notification("Message " + i, new Date(), null)
+    //  this.notifications.push(notificationObj);
+    //}
 
-    //Start watching for user inactivity.
-    this.userIdle.startWatching();
+    ////Start watching for user inactivity.
+    //this.userIdle.startWatching();
 
-    // Start watching when user idle is starting.
-    this.userIdle.onTimerStart().subscribe();
+    //// Start watching when user idle is starting.
+    //this.userIdle.onTimerStart().subscribe();
 
-    // Start watch when time is up.
-    this.userIdle.onTimeout().subscribe(() => {
-      this.logout();
-    });
+    //// Start watch when time is up.
+    //this.userIdle.onTimeout().subscribe(() => {
+    //  this.logout();
+    //});
   }
 
   logout() {

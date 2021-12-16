@@ -40,7 +40,6 @@ import { AddressesComponent } from './addresses/addresses.component';
 import { HistoryComponent } from './history/history.component';
 import { UserAssocLinkedComponent } from './user-assoc-linked/user-assoc-linked.component';
 import { UserAssocNotLinkedComponent } from './user-assoc-not-linked/user-assoc-not-linked.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { RegisterlistComponent } from './register-user/registerlist/registerlist.component';
 import { UserService } from './services/user.service';
@@ -52,7 +51,6 @@ import { StoreModule } from '@ngrx/store';
 import { appReducer} from './../admin/store/app.reducer'
 import { AppAdminRoutingModule } from './admin-routing.moule';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AdminComponent } from './admin.component';
 import { TabViewModule } from 'primeng/tabview';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgPrimeModule } from '../app.ngprime.module';
@@ -74,11 +72,10 @@ import { PaginatorModule } from 'primeng/paginator';
     HistoryComponent,
     UserAssocLinkedComponent,
     UserAssocNotLinkedComponent,
-    SidebarComponent,
     RegisterUserComponent,
     RegisterlistComponent,
     CourseComponent,
-    AdminComponent ,DashboardComponent,MainSidebarMenuComponent
+   DashboardComponent, MainSidebarMenuComponent
   ],
   imports: [
     CommonModule,

@@ -5,11 +5,9 @@
     "\\ws-app\\src",
     "\\ws-app\\src\\app",
     "\\ws-app\\src\\app\\admin",
-    "\\ws-app\\src\\app\\admin\\course",
-    "\\ws-app\\src\\app\\shared\\layout",
-    "\\ws-app\\src\\app\\users",
-    "\\ws-app\\src\\app\\users\\home"
+    "\\ws-app\\src\\app\\shared\\admin-layout",
+    "\\ws-app\\src\\app\\shared\\admin-layout\\layout"
   ],
-  "SelectedNode": "\\ws-app\\src\\app\\admin\\course\\course.component.ts",
+  "SelectedNode": "\\ws-app\\src\\styles.scss",
   "PreviewInSolutionExplorer": false
 }

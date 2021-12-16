@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MenuDataService } from 'src/app/core/services/menu-data.service';
 import { ApplicationStateService } from 'src/app/core/services/application-state.service';
+import { ThemeService} from '../../../../../src/app/core/services/theme.service'
+import { SessionService } from '../../../../../src/app/core/services/session.service'
 
 @Component({
   selector: 'app-admin-layout',
@@ -11,9 +13,16 @@ import { ApplicationStateService } from 'src/app/core/services/application-state
 export class AdminLayoutComponent implements OnInit {
 
   isMenuVisible: boolean=false;
-
+  theme: string;
   constructor(private menuDataService: MenuDataService,
-    private applicationStateService: ApplicationStateService) {
+    private applicationStateService: ApplicationStateService, private themeService: ThemeService, private sessionService: SessionService) {
+    var theme = this.sessionService.getItem("selected-theme");
+    if (theme != null && theme.length > 0) {
+      this.theme = theme;
+      this.themeService.selectTheme(theme);
+    } else {
+      this.theme = "theme-teal";
+    }
   }
 
   ngOnInit() {
@@ -23,7 +32,9 @@ export class AdminLayoutComponent implements OnInit {
         that.isMenuVisible = !that.isMenuVisible;
       }
     });
-
+    this.themeService.theme.subscribe((val: string) => {
+      this.theme = val;
+    });
     if (this.applicationStateService.getIsMobileResolution()) {
       this.isMenuVisible = false;
     } else {
@@ -33,6 +44,7 @@ export class AdminLayoutComponent implements OnInit {
 
   ngOnDestroy() {
     this.menuDataService.toggleMenuBar.observers.forEach(function (element) { element.complete(); });
+    this.themeService.theme.observers.forEach(function (element) { element.complete(); });
   }
 
 }
