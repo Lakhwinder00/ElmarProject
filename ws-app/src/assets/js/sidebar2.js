@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   var themosis = {
     features: { "larutaHeader": { "isEnabled": true } },
   };

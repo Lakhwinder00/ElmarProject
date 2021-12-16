@@ -124,18 +124,19 @@ export class AdminSidebarComponent implements OnInit {
       {
         label: 'DashBoard',
         icon: 'pi pi-pw pi-file',
-        items: [{
-          label: 'New',
-          icon: 'pi pi-fw pi-plus',
-          items: [
-            { label: 'User', icon: 'pi pi-fw pi-user-plus' },
-            { label: 'Filter', icon: 'pi pi-fw pi-filter' }
-          ]
-        },
-        { label: 'Open', icon: 'pi pi-fw pi-external-link' },
-        { separator: true },
-        { label: 'Quit', icon: 'pi pi-fw pi-times' }
-        ]
+        routerLink: '/admin/dashboard'
+        //items: [{
+        //  label: 'New',
+        //  icon: 'pi pi-fw pi-plus',
+        //  items: [
+        //    { label: 'User', icon: 'pi pi-fw pi-user-plus' },
+        //    { label: 'Filter', icon: 'pi pi-fw pi-filter' }
+        //  ]
+        //},
+        //{ label: 'Open', icon: 'pi pi-fw pi-external-link' },
+        //{ separator: true },
+        //{ label: 'Quit', icon: 'pi pi-fw pi-times' }
+        //]
       },
       {
         label: 'Edit',

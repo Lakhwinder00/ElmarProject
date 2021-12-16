@@ -17,7 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminLayoutComponent } from '../shared/admin-layout/layout/admin-layout.component';
 const routes: Routes = [
   {
-    path: 'admin', component: AdminLayoutComponent,
+    path: '', component: AdminLayoutComponent,
     children: [{ path: 'registerlist', component: RegisterlistComponent },
     {path: 'dashboard', component: DashboardComponent,},
     { path: 'user/:id/Edit', component: RegisterUserComponent },
