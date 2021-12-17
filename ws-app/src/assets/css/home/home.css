@@ -1797,6 +1797,9 @@ footer hr {
   transition: all .25s ease-out;
   bottom: -100px;
 }
+.laruta-header.mobile-opened .mobile-user-account-menu.closed{
+  bottom: 0;
+}
 .laruta-header #larutaAccountLogin {
   border-left: 1px solid #fff;
   color: #fff;
@@ -2883,7 +2886,7 @@ section.cus-banner .jumbotron h1, section.cus-banner .jumbotron p {
   .laruta-header .mobile-controls .mobile-control-close-submenus span, 
   .laruta-header .mobile-controls .mobile-control-toggle-nav span {
     color: #fff;
-    font-size: 3.6rem;
+    font-size: 2.6rem;
   }
   .laruta-header .mobile-controls .nav-label {
     color: #fff;
@@ -2894,6 +2897,60 @@ section.cus-banner .jumbotron h1, section.cus-banner .jumbotron p {
   }
   .laruta-header.mobile-opened {
     height: 100vh;
+  }
+  .laruta-header .mobile-nav-container.opened {
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    left: 0;
+  }
+  body {
+    width: 100vw;
+    -webkit-overflow-scrolling: touch;
+  }
+  .laruta-header .mobile-links-scroll-container {
+    position: static;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 80vh;
+  }
+  .laruta-header .mobile-nav .mobile-links {
+    padding-bottom: 5rem;
+    margin: 0 15px;
+  }
+  .laruta-header .mobile-nav .mobile-primary-links a, 
+  .laruta-header .mobile-nav .mobile-super-nav-links a {
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-weight: 500;
+  }
+  .laruta-header .mobile-nav .mobile-primary-links a {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  .laruta-header hr {
+    background-color: #fff;
+    width: 5%;
+    margin-left: 0;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+  .laruta-header #larutaAccountLogin {
+    padding: 10px 30px;
+  }
+}
+@media (max-width: 960px) and (max-width: 960px){
+  .laruta-header .mobile-nav .mobile-links a {
+    color: #fff;
+    text-decoration: underline;
+    padding: 5px;
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 959px) {
@@ -2921,10 +2978,6 @@ section.cus-banner .jumbotron h1, section.cus-banner .jumbotron p {
     -o-transition: all .25s ease-out;
     transition: all .25s ease-out;
     left: 100vw;
-  }
-
-  #mobileNavToggle {
-    background: red;
   }
 }
 @media (max-width: 767px) {
@@ -3097,6 +3150,9 @@ section.cus-banner .jumbotron h1, section.cus-banner .jumbotron p {
   }
   .event-panel .bottom h3 {
     font-size: 16px;
+  }
+  .laruta-header .mobile-nav .mobile-primary-links a, .laruta-header .mobile-nav .mobile-links a{
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 400px){
