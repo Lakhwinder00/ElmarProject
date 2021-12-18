@@ -24,24 +24,24 @@ function toggleSideBar() {
 $(document).on('click', '#toggelbtn', function () {
   toggleSideBar();
 })
-//$(document).on('click', '#mobileNavToggle', function () {
-//  //debugger
-//  if ($('#mobileNav').hasClass("closed") || $('#larutaHeader').hasClass("mobile-closed") || $('#larutaHeader').hasClass("mobile-closed")==false) {
+$(document).on('click', '#mobileNavToggle', function () {
+  //debugger
+  if ($('#mobileNav').hasClass("closed") || $('#larutaHeader').hasClass("mobile-closed") || $('#larutaHeader').hasClass("mobile-closed")==false) {
     
-//    $('#larutaHeader').removeClass('mobile-closed');
-//    $('#larutaHeader').addClass('mobile-opened');
+    $('#larutaHeader').removeClass('mobile-closed');
+    $('#larutaHeader').addClass('mobile-opened');
 
-//    $('#mobileNav').removeClass('closed');
-//    $('#mobileNav').addClass('opened');
-//  }
-//  else if ($('#mobileNav').hasClass("opened") && $('#larutaHeader').hasClass("mobile-opened")) {
-//    $('#larutaHeader').removeClass('mobile-opened');
-//    $('#larutaHeader').addClass('mobile-closed');;
+    $('#mobileNav').removeClass('closed');
+    $('#mobileNav').addClass('opened');
+  }
+  else if ($('#mobileNav').hasClass("opened") && $('#larutaHeader').hasClass("mobile-opened")) {
+    $('#larutaHeader').removeClass('mobile-opened');
+    $('#larutaHeader').addClass('mobile-closed');;
 
-//    $('#mobileNav').removeClass('opened');
-//    $('#mobileNav').addClass('closed');
-//  }
-//})
+    $('#mobileNav').removeClass('opened');
+    $('#mobileNav').addClass('closed');
+  }
+})
 $(document).ready(function () {
   $('.sidebar-nav .nav-link[data-toggle="tooltip"]').tooltip({boundary: "#wrapper", container: '#wrapper', trigger: "hover", placement: "right"});
 
