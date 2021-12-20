@@ -55,6 +55,7 @@ import { AdminMenuComponent } from './shared/admin-layout/layout/menu/admin-menu
 import { AdminSidebarComponent} from './shared/admin-layout/layout/sidebar/admin-sidebar.component';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AdminFooterComponent } from './shared/admin-layout/layout/footer/admin-footer.component';
+import {CourseCatalogsComponent} from'../app/users/course-catalogs/course-catalogs.component'
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { AdminFooterComponent } from './shared/admin-layout/layout/footer/admin-
     LayoutComponent,
     HeaderComponent,
     FooterComponent, 
-    AdminLayoutComponent, AdminHeaderComponent, AdminMenuComponent, AdminFooterComponent, AdminSidebarComponent
+    AdminLayoutComponent, AdminHeaderComponent, AdminMenuComponent, AdminFooterComponent, AdminSidebarComponent, CourseCatalogsComponent
   ],
   imports: [
     EffectsModule.forRoot([AppHomeEffect, AppEffect]),

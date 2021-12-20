@@ -5,7 +5,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { DashboardModule } from './admin/dashboard/dashboard.module';
 import { AdminLayoutComponent } from './shared/admin-layout/layout/admin-layout.component';
 import { LayoutComponent } from './shared/layout/layout.component';
+import { CourseCatalogsComponent } from './users/course-catalogs/course-catalogs.component';
 import { PamedFeaturedComponent } from './users/pamed-featured/pamed-featured.component';
+
 
 DashboardModule
 
@@ -19,6 +21,9 @@ const routes: Routes = [
     children: [
       {
         path: 'home', component: PamedFeaturedComponent
+      },
+      {
+        path: 'coursecatalogs', component: CourseCatalogsComponent
       },
       { path: 'search', component: HomeComponent },
       {
