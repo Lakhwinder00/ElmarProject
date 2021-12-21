@@ -10,6 +10,8 @@ export class CourseCatalogsComponent implements OnInit {
   tab1: any;
   tab2: any;
   tab3: any;
+  list: boolean = true;
+  grid: boolean = false;
   constructor() {}
 
   ngOnInit() {
@@ -24,5 +26,13 @@ export class CourseCatalogsComponent implements OnInit {
       this.tab = 'tab3';
     }
   }
-
+  displayRecord(event: any) {
+    if (event == 'list') {
+      this.list = true
+      this.grid = false;
+    } else {
+      this.grid = true;
+      this.list = false;
+    }
+  }
 }
