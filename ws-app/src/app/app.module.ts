@@ -43,7 +43,9 @@ import { SidebarModule } from 'primeng/sidebar';
 import { HomeComponent } from './users/home/home.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AppEffect } from './admin/store/app.effect';
-import { appReducer} from './admin/store/app.reducer';
+import {CourseCatalogEffect} from '../app/users/store/course-catalogs/course-catalog.effect'
+import { appReducer } from './admin/store/app.reducer';
+import {appCourseCatalogsReducer} from '../app/users/store/course-catalogs/course-catalog.reducer'
 import { PamedFeaturedComponent } from './users/pamed-featured/pamed-featured.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
@@ -68,8 +70,8 @@ import {CourseCatalogsComponent} from'../app/users/course-catalogs/course-catalo
     AdminLayoutComponent, AdminHeaderComponent, AdminMenuComponent, AdminFooterComponent, AdminSidebarComponent, CourseCatalogsComponent
   ],
   imports: [
-    EffectsModule.forRoot([AppHomeEffect, AppEffect]),
-    StoreModule.forRoot({ apphome: appHomeReducer, app: appReducer }),
+    EffectsModule.forRoot([AppHomeEffect, AppEffect, CourseCatalogEffect]),
+    StoreModule.forRoot({ apphome: appHomeReducer, app: appReducer, appcourseCatlogs: appCourseCatalogsReducer}),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

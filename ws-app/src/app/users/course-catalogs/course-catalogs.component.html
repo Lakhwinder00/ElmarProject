@@ -42,10 +42,10 @@
               <nav class="scrollable mx-auto">
                 <div class="nav-tabs px-4 _px-sm-0">
                   <div id="radioAll" class="fwp-radio  checked" data-value="courses-inprogress" [ngClass]="{'selected': tab==='tab1'}" (click)="onClick('1')">
-                    <span>Courses: In Progress(5)</span>
+                    <span>Courses: In Progress ({{courseCatalogs.length}})</span>
                   </div>
                   <div class="facetwp-radio fwp-radio " data-value="courses-person" [ngClass]="{'selected': tab==='tab2'}" (click)="onClick('2')" data-counter="0">
-                    <span class="">Courses: Completed(3)</span>
+                    <span class="">Courses: Completed({{courseCatalogsComplete.length}})</span>
                   </div>
                   <!--<div class="facetwp-radio fwp-radio " data-value="online" [ngClass]="{'selected': tab==='tab3'}" (click)="onClick('3')" data-counter="245">
                     <span class="">Track my CME</span>
@@ -62,54 +62,15 @@
       <div class="cus-row no-gutters my-0 py-4 py-sm-5">
         <div class="cus-col-12 cus-col-sm-12 cus-col-md-12 cus-col-lg-12">
           <div id="courses-inprogress" class="pl-0 pl-sm-5" [ngStyle]="(tab==='tab1')?{'display':'block'}:{'display':'none'}">
-            <div class="facetwp-template">
+            <div class="facetwp-template" *ngFor="let item of courseCatalogs">
               <div class="catalog-item cus-col-md-12 mb-5 p-0">
                 <a class="card" href="#">
                   <div class="card-footer cus-row no-gutters my-0">
                     <div class="card-details cus-col-12">
                       <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
                         <img class="img-thumbnail" src="https://s3.us-east-1.amazonaws.com/alabar-prolearnfiles/images/b94e87cd_fcd6_4bf6_8032_18582ba6026a-ASBlogoBlue.png" />
-                        <p class="p-text"><span class="list-heading"> Online Course on Alabama Law - 2018 Edition</span></p>
-                        <div class="cpe-label order-1"><label>14 Activities</label><br /><input type="button" class="btn btn-default" value="Access" /></div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="catalog-item cus-col-md-12 mb-5 p-0">
-                <a class="card" href="#">
-                  <div class="card-footer cus-row no-gutters my-0">
-                    <div class="card-details cus-col-12">
-                      <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
-                        <img class="img-thumbnail" src="https://s3.us-east-1.amazonaws.com/alabar-prolearnfiles/images/b94e87cd_fcd6_4bf6_8032_18582ba6026a-ASBlogoBlue.png" />
-                        <p class="p-text"><span class="list-heading"> Online Course on Alabama Law - 2018 Edition</span></p>
-                        <div class="cpe-label order-1"><label>1 Activities</label><br /><input type="button" class="btn btn-default" value="Access" /></div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="catalog-item cus-col-md-12 mb-5 p-0">
-                <a class="card" href="#">
-                  <div class="card-footer cus-row no-gutters my-0">
-                    <div class="card-details cus-col-12">
-                      <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
-                        <img class="img-thumbnail" src="https://s3.us-east-1.amazonaws.com/alabar-prolearnfiles/images/b94e87cd_fcd6_4bf6_8032_18582ba6026a-ASBlogoBlue.png" />
-                        <p class="p-text"><span class="list-heading"> Embracing Health & Wellness in the Legal Profession</span></p>
-                        <div class="cpe-label order-1"><label>1 Activities</label><br /><input type="button" class="btn btn-default" value="Access" /></div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="catalog-item cus-col-md-12 mb-5 p-0">
-                <a class="card" href="#">
-                  <div class="card-footer cus-row no-gutters my-0">
-                    <div class="card-details cus-col-12">
-                      <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
-                        <img class="img-thumbnail" src="https://s3.us-east-1.amazonaws.com/alabar-prolearnfiles/images/b94e87cd_fcd6_4bf6_8032_18582ba6026a-ASBlogoBlue.png" />
-                        <p class="p-text"><span class="list-heading"> What Every Divorce Lawyer Needs to Know - Social Security, Divorce & Domestic Violence</span></p>
-                        <div class="cpe-label order-1"><label>1 Activities</label><br /><input type="button" class="btn btn-default" value="Access" /></div>
+                        <p class="p-text"><span class="list-heading"> {{item.name}}</span><br /><span style="font-weight: 600; font-size: smaller" *ngIf="item.creditstype!=''">Credits: {{item.creditstype}}</span></p>
+                        <div class="cpe-label order-1"><label>{{item.activity}}</label><br /><input type="button" class="btn btn-default" value="Access" /></div>
                       </div>
                     </div>
                   </div>
@@ -120,7 +81,7 @@
           <div id="courses-person" class="pl-0 pl-sm-5" [ngStyle]="(tab==='tab2')?{'display':'block'}:{'display':'none'}">
             <div class="cus-row no-gutters my-0 py-4 py-sm-5">
               <div class="cus-row  cus-col-12 cus-col-sm-7 cus-col-md-8 cus-col-lg-9">
-                <div [ngClass]="{'cus-col-sm-12 cus-col-md-4 cus-col-lg-4':grid==true,'cus-col-12':list==true}">
+                <div [ngClass]="{'cus-col-sm-12 cus-col-md-4 cus-col-lg-4':grid==true,'cus-col-12':list==true}"  *ngFor="let item of courseCatalogsComplete">
                   <a class="card" [ngClass]="{'coursecomplete-card':list==true,' coursecomplete-card-grid':grid==true}" href="#">
                     <div class="card-footer cus-row no-gutters my-0">
                       <div class="card-details cus-col-12">
@@ -128,86 +89,28 @@
                           <img class="courses-margin" [ngClass]="{'img-thumbnail':list==true,'img-thumbnail-grid':grid==true}" src="https://s3.us-east-1.amazonaws.com/alabar-prolearnfiles/images/b94e87cd_fcd6_4bf6_8032_18582ba6026a-ASBlogoBlue.png" />
                           <p [ngClass]="{'p-text br':list==true,'p-text-grid br':grid==true}">
                             <span class="list-heading">
-                              Embracing Health & Wellness in the Legal Profession
+                              {{item.name}}
                             </span> <br />
-                            <span [ngClass]="{'display-none':grid==true,'display-block':list==true}"><span style="font-weight:600;font-size:smaller" class="br"> Credits: 1 CLE Credits</span> <br /></span>
+                            <span [ngClass]="{'display-none':grid==true,'display-block':list==true}"><span style="font-weight:600;font-size:smaller" class="br" *ngIf="item.creditstype!=''">Credits: {{item.creditstype}}</span> <br /></span>
                             <span class="item-details br">
-                              When Home Isn't Safe - Domestic Violence During a Pandemic<br />
-                              Courtesy of Legal Services Alabama<br />
-                              Presenter: Kelly F. McTear<br />
-                              1.0 CLE Credits
+                              {{item.name}}<br />
+                              {{item.localCountry}}<br />
+                              {{item.sponser}}<br />
+                              {{item.creditstype}}
                             </span>
                             <span class="detail-item w-100 mt-3 mb-0 pt-3 border-top d-md-flex align-items-start" [ngClass]="{'display-block':grid==true,'display-none':list==true}">
-                              <span style="font-weight:600;font-size:smaller" class="br"> Credits: 1 CLE Credits</span>
+                              <span style="font-weight:600;font-size:smaller" class="br" *ngIf="item.creditstype!=''">Credits: {{item.creditstype}}</span>
                             </span>
                           </p>
-                          <div class="cpe-label order-1 courses-margin screen" [ngClass]="{'display-none':grid==true,'display-block':list==true}"><label>Price $0.00</label><br /><input type="button" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
+                          <div class="cpe-label order-1 courses-margin screen" [ngClass]="{'display-none':grid==true,'display-block':list==true}"><label>Price {{item.price|currency}}</label><br /><input type="button" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
                         </div>
                       </div>
                     </div>
                     <div class="card-footer cus-row no-gutters my-0 grid-card-footer" [ngClass]="{'display-block':grid==true,'display-none':list==true}">
-                      <div class="cpe-label order-1 courses-margin-grid grid-fotter"><label style="margin-left:41px">Price $0.00</label><br /><input type="button" class="btn btn-default S-btn-addToCart" style="margin-left:55px" value="Buy" /></div><br />
+                      <div class="cpe-label order-1 courses-margin-grid grid-fotter"><label style="margin-left:56px">Price $0.00</label><br /><input type="button" class="btn btn-default S-btn-addToCart" style="margin-left:71px" value="Buy" /></div><br />
                     </div>
                   </a>
                 </div>
-                <div [ngClass]="{'cus-col-sm-12 cus-col-md-4 cus-col-lg-4':grid==true,'cus-col-12':list==true}">
-                  <a class="card" [ngClass]="{'coursecomplete-card':list==true,' coursecomplete-card-grid':grid==true}" href="#">
-                    <div class="card-footer cus-row no-gutters my-0">
-                      <div class="card-details cus-col-12">
-                        <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
-                          <img class="courses-margin" [ngClass]="{'img-thumbnail':list==true,'img-thumbnail-grid':grid==true}" src="https://s3.us-east-1.amazonaws.com/alabar-prolearnfiles/images/b94e87cd_fcd6_4bf6_8032_18582ba6026a-ASBlogoBlue.png" />
-                          <p [ngClass]="{'p-text br':list==true,'p-text-grid br':grid==true}">
-                            <span class="list-heading"> Defending Third Party Debt Buyer Cases </span> <br />
-                            <span [ngClass]="{'display-none':grid==true,'display-block':list==true}"><span style="font-weight:600" class="br"> Credits:</span> 1 CLE Credits<br /></span>
-                            <span class="item-details br">
-                              Defending Third Party Debt Buyer Cases<br />
-                              Courtesy of Legal Services Alabama<br />
-                              Presenter: John G. Watts<br />
-                              1.0 CLE Credits
-                            </span>
-                            <span class="detail-item w-100 mt-3 mb-0 pt-3 border-top d-md-flex align-items-start" [ngClass]="{'display-block':grid==true,'display-none':list==true}">
-                              <span style="font-weight:600;font-size:smaller" class="br"> Credits: 1 CLE Credits</span>
-                            </span>
-                          </p>
-                          <div class="cpe-label order-1 courses-margin screen" [ngClass]="{'display-none':grid==true,'display-block':list==true}"><label>Price $0.00</label><br /><input type="button" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-footer cus-row no-gutters my-0 grid-card-footer" [ngClass]="{'display-block':grid==true,'display-none':list==true}">
-                      <div class="cpe-label order-1 courses-margin-grid grid-fotter"><label style="margin-left:41px">Price $0.00</label><br /><input type="button" style="margin-left:55px" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
-                    </div>
-                  </a>
-                </div>
-                <div [ngClass]="{'cus-col-sm-12 cus-col-md-4 cus-col-lg-4':grid==true,'cus-col-12':list==true}">
-                  <a class="card" [ngClass]="{'coursecomplete-card':list==true,' coursecomplete-card-grid':grid==true}" href="#">
-                    <div class="card-footer cus-row no-gutters my-0">
-                      <div class="card-details cus-col-12">
-                        <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
-                          <img class="courses-margin" [ngClass]="{'img-thumbnail':list==true,'img-thumbnail-grid':grid==true}" src="https://s3.us-east-1.amazonaws.com/alabar-prolearnfiles/images/b94e87cd_fcd6_4bf6_8032_18582ba6026a-ASBlogoBlue.png" />
-                          <p [ngClass]="{'p-text br':list==true,'p-text-grid br':grid==true}">
-                            <span class="list-heading">ERISA Survival Kit </span><br />
-                            <span [ngClass]="{'display-none':grid==true,'display-block':list==true}"><span style="font-weight: 600; font-size: smaller" class="br"> Credits: 1 CLE Credits</span><br /></span>
-                            <span class="item-details br">
-                              ERISA Survival Kit<br />
-                              Courtesy of Legal Services Alabama<br />
-                              Presenter: David P. Martin<br />
-                              1.0 CLE Credits
-                            </span>
-                            <span class="detail-item w-100 mt-3 mb-0 pt-3 border-top d-md-flex align-items-start" [ngClass]="{'display-block':grid==true,'display-none':list==true}">
-                              <span style="font-weight:600;font-size:smaller" class="br"> Credits: 1 CLE Credits</span>
-                            </span>
-
-                          </p>
-                          <div class="cpe-label order-1 courses-margin screen" [ngClass]="{'display-none':grid==true,'display-block':list==true}"><label>Price $0.00</label><br /><input type="button" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-footer cus-row no-gutters my-0 grid-card-footer" [ngClass]="{'display-block':grid==true,'display-none':list==true}">
-                      <div class="cpe-label order-1 courses-margin-grid grid-fotter"><label style="margin-left:41px">Price $0.00</label><br /><input type="button" style="margin-left:55px" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
-                    </div>
-                  </a>
-                </div>
-
               </div>
               <div class="cus-col-12 cus-col-sm-5 cus-col-md-4 cus-col-lg-3">
                 <div class="catalog-item">
