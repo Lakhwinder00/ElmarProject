@@ -68,7 +68,7 @@
           <div id="courses-inprogress" class="pl-0 pl-sm-5" [ngStyle]="(tab==='tab1')?{'display':'block'}:{'display':'none'}">
             <div class="facetwp-template" *ngFor="let item of courseCatalogs">
               <div class="catalog-item cus-col-md-12 mb-5 p-0">
-                <a class="card" href="#">
+                <a class="card" >
                   <div class="card-footer cus-row no-gutters my-0">
                     <div class="card-details cus-col-12">
                       <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
@@ -86,7 +86,7 @@
             <div class="cus-row no-gutters my-0 py-4 py-sm-5">
               <div class="cus-row  cus-col-12 cus-col-sm-7 cus-col-md-8 cus-col-lg-9">
                 <div [ngClass]="{'cus-col-sm-12 cus-col-md-4 cus-col-lg-4':grid==true,'cus-col-12':list==true}" *ngFor="let item of courseCatalogsComplete">
-                  <a class="card" [ngClass]="{'coursecomplete-card':list==true,' coursecomplete-card-grid':grid==true}" href="#">
+                  <a class="card" [ngClass]="{'coursecomplete-card':list==true,' coursecomplete-card-grid':grid==true}"  >
                     <div class="card-footer cus-row no-gutters my-0">
                       <div class="card-details cus-col-12">
                         <div class="d-flex justify-content-between _justify-content-md-between flex-wrap">
@@ -106,12 +106,15 @@
                               <span style="font-weight:600;font-size:smaller" class="br" *ngIf="item.creditstype!=''">Credits: {{item.creditstype}}</span>
                             </span>
                           </p>
-                          <div class="cpe-label order-1 courses-margin screen" [ngClass]="{'display-none':grid==true,'display-block':list==true}"><label>Price {{item.price|currency}}</label><br /><input type="button" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
+                          <div class="cpe-label order-1 courses-margin screen" [ngClass]="{'display-none':grid==true,'display-block':list==true}"><label>Price {{item.price|currency}}</label><br /><input *ngIf="checkIndex(item.id); else checkOut" type="button" (click)="addShoppingCartItem(item)" class="btn btn-default S-btn-addToCart" value="Buy" /></div><br />
+                          <ng-template #checkOut>
+                            <label><strong>Item in cart</strong></label> 
+                          </ng-template>
                         </div>
                       </div>
                     </div>
                     <div class="card-footer cus-row no-gutters my-0 grid-card-footer" [ngClass]="{'display-block':grid==true,'display-none':list==true}">
-                      <div class="cpe-label order-1 courses-margin-grid grid-fotter"><label style="margin-left:56px">Price $0.00</label><br /><input type="button" class="btn btn-default S-btn-addToCart" style="margin-left:71px" value="Buy" /></div><br />
+                      <div class="cpe-label order-1 courses-margin-grid grid-fotter"><label style="margin-left:56px">Price $0.00</label><br /><input type="button"  class="btn btn-default S-btn-addToCart" style="margin-left:71px" value="Buy" /></div><br />
                     </div>
                   </a>
                 </div>
@@ -124,18 +127,24 @@
                         <h3 class="shopping-card">Shopping Cart</h3>
                       </div>
                     </div>
-                    <div class="card-footer cus-row no-gutters my-0">
+                    <div class="card-footer cus-row no-gutters my-0" *ngFor="let cartItem of cartList;let i=index">
                       <div class="card-details cus-col-12">
                         <div class="d-flex justify-content-between _justify-content-md-between flex-wrap grid">
                           <div class="col-6">
-                            <span class="fa fa-minus-circle text-danger" style="cursor:pointer;display:inline;color:red" role="button" tabindex="0"></span>
-                            <label class="shopping-details">Defending Third Party Debt Buyer Cases</label><br />
+                            <span class="fa fa-minus-circle text-danger" style="cursor:pointer;display:inline;color:red" role="button" tabindex="0" (click)="deleteShoppingCartItem(i)"></span>
+                            <label class="shopping-details"><strong>{{cartItem.name}}</strong> </label><br />
                           </div>
-                          <div class="col-6">  <input type="text" style="width:40%" value="1" /></div>
+                          <div class="col-6">  <input type="text" style="width:40%" [(ngModel)]="cartItem.price" /></div>
                         </div>
                       </div>
                     </div>
+                    <div class=" col-6 flex"></div>
+                      <label class="justify-content-end align-content-end" ><strong>Total:$0.00</strong> </label>
+                      <a><strong>Checkout </strong></a>
+                   
                   </a>
+                  
+                  
                 </div>
 
               </div>

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { courseCatalogComplete, courseCatalogsList, loadCourseCatalogCompleteSuccess, loadCourseCatalogSuccess } from '../store/course-catalogs/course-catalog.action';
-import {selectCourseCatlogsLoading,selectAllCourseCatalogsSelector} from '../store/course-catalogs/course-catalog.selector';
+import { selectCourseCatlogsLoading, selectAllCourseCatalogsSelector } from '../store/course-catalogs/course-catalog.selector';
 import { select, Store } from '@ngrx/store';
 import { forkJoin, Observable } from 'rxjs';
 /*import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';*/
 import { CdkDragStart } from '@angular/cdk/drag-drop';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-course-catalogs',
@@ -22,7 +23,7 @@ export class CourseCatalogsComponent implements OnInit {
   courseCatalogsComplete: any = [];
   getCourseCatlogsListData: any = [];
   public dragging: boolean;
-  constructor(private store:Store) {
+  constructor(private store: Store) {
   }
   $loading: Observable<boolean> = this.store.select(selectCourseCatlogsLoading)
   ngOnInit() {
@@ -56,10 +57,20 @@ export class CourseCatalogsComponent implements OnInit {
       this.list = false;
     }
   }
-  deleteShoppingCartItem() {
-
+  cartList: any = []
+  deleteShoppingCartItem(i) {
+    if (this.cartList.length > 0)
+      this.cartList.splice(i, 1)
   }
-  addShoppingCartItem(event:any) {
-
+  addShoppingCartItem(event: any) {
+    debugger;
+    if (event?.id && this.cartList.findIndex(x => x.id == event.id) < 0)
+      this.cartList.push(event);
+  }
+  checkIndex(id) {
+    if (this.cartList.findIndex(x => x.id == id) < 0)
+      return true
+    else
+      return false
   }
 }
