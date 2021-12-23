@@ -3,6 +3,8 @@ import { courseCatalogComplete, courseCatalogsList, loadCourseCatalogCompleteSuc
 import {selectCourseCatlogsLoading,selectAllCourseCatalogsSelector} from '../store/course-catalogs/course-catalog.selector';
 import { select, Store } from '@ngrx/store';
 import { forkJoin, Observable } from 'rxjs';
+/*import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';*/
+import { CdkDragStart } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-course-catalogs',
@@ -19,6 +21,7 @@ export class CourseCatalogsComponent implements OnInit {
   courseCatalogs: any = [];
   courseCatalogsComplete: any = [];
   getCourseCatlogsListData: any = [];
+  public dragging: boolean;
   constructor(private store:Store) {
   }
   $loading: Observable<boolean> = this.store.select(selectCourseCatlogsLoading)
@@ -41,6 +44,9 @@ export class CourseCatalogsComponent implements OnInit {
       this.tab = 'tab3';
     }
   }
+  handleDragStart(event: CdkDragStart): void {
+    this.dragging = true;
+  }
   displayRecord(event: any) {
     if (event == 'list') {
       this.list = true
@@ -49,5 +55,11 @@ export class CourseCatalogsComponent implements OnInit {
       this.grid = true;
       this.list = false;
     }
+  }
+  deleteShoppingCartItem() {
+
+  }
+  addShoppingCartItem(event:any) {
+
   }
 }

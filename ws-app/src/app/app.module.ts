@@ -57,7 +57,8 @@ import { AdminMenuComponent } from './shared/admin-layout/layout/menu/admin-menu
 import { AdminSidebarComponent} from './shared/admin-layout/layout/sidebar/admin-sidebar.component';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AdminFooterComponent } from './shared/admin-layout/layout/footer/admin-footer.component';
-import {CourseCatalogsComponent} from'../app/users/course-catalogs/course-catalogs.component'
+import { CourseCatalogsComponent } from '../app/users/course-catalogs/course-catalogs.component'
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,7 @@ import {CourseCatalogsComponent} from'../app/users/course-catalogs/course-catalo
     EditorModule,
     FormsModule,
     SidebarModule,
-    TabViewModule,OverlayPanelModule,
+    TabViewModule, OverlayPanelModule, DragDropModule,
     NgMultiSelectDropDownModule.forRoot(),
     FormlyModule.forRoot({
       validationMessages: [
