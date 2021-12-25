@@ -130,18 +130,21 @@
                     <div class="card-footer cus-row no-gutters my-0" *ngFor="let cartItem of cartList;let i=index">
                       <div class="card-details cus-col-12">
                         <div class="d-flex justify-content-between _justify-content-md-between flex-wrap grid">
-                          <div class="col-6">
-                            <span class="fa fa-minus-circle text-danger" style="cursor:pointer;display:inline;color:red" role="button" tabindex="0" (click)="deleteShoppingCartItem(i)"></span>
-                            <label class="shopping-details"><strong>{{cartItem.name}}</strong> </label><br />
+                          <div class="col-9 grid">
+                            <div class="col-2"><span class="fa fa-minus-circle text-danger" style="cursor:pointer;display:inline;color:red" role="button" tabindex="0" (click)="deleteShoppingCartItem(i)"></span></div>
+                            <div class="col-7" style="width: 81.6667%;"><label class="shopping-details">{{cartItem.name}}</label></div>
+                            <br />
                           </div>
-                          <div class="col-6">  <input type="text" style="width:40%" [(ngModel)]="cartItem.price" /></div>
+                          <div class="col-3"><input type="number" style="width:100%" [(ngModel)]="defaultItem" /></div>
                         </div>
                       </div>
                     </div>
                     <div class=" col-6 flex"></div>
-                      <label class="justify-content-end align-content-end" ><strong>Total:$0.00</strong> </label>
-                      <a><strong>Checkout </strong></a>
-                   
+                    <div class="col-12 grid" *ngIf="cartList.length!=0;else elseblock">
+                      <label class="justify-content-end align-content-end"><strong class="total-shoppingcart">Total:$0.00</strong></label>&nbsp;
+                      <a class="btn btn-default checkout-shoppingcart">Checkout</a>
+                    </div>
+                    <ng-template #elseblock><span class="empty-cart">Your shopping cart is currently empty</span></ng-template>
                   </a>
                   
                   

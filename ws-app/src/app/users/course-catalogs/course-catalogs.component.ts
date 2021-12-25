@@ -22,7 +22,9 @@ export class CourseCatalogsComponent implements OnInit {
   courseCatalogs: any = [];
   courseCatalogsComplete: any = [];
   getCourseCatlogsListData: any = [];
+  cartList: any = []
   public dragging: boolean;
+  defaultItem: number = 1;
   constructor(private store: Store) {
   }
   $loading: Observable<boolean> = this.store.select(selectCourseCatlogsLoading)
@@ -57,14 +59,14 @@ export class CourseCatalogsComponent implements OnInit {
       this.list = false;
     }
   }
-  cartList: any = []
+ 
   deleteShoppingCartItem(i) {
     if (this.cartList.length > 0)
       this.cartList.splice(i, 1)
   }
   addShoppingCartItem(event: any) {
-    debugger;
     if (event?.id && this.cartList.findIndex(x => x.id == event.id) < 0)
+      this.defaultItem = 1;
       this.cartList.push(event);
   }
   checkIndex(id) {

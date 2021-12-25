@@ -43,7 +43,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { HomeComponent } from './users/home/home.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AppEffect } from './admin/store/app.effect';
-import {CourseCatalogEffect} from '../app/users/store/course-catalogs/course-catalog.effect'
+import { AppCourseCatalogEffect} from '../app/users/store/course-catalogs/course-catalog.effect'
 import { appReducer } from './admin/store/app.reducer';
 import {appCourseCatalogsReducer} from '../app/users/store/course-catalogs/course-catalog.reducer'
 import { PamedFeaturedComponent } from './users/pamed-featured/pamed-featured.component';
@@ -71,7 +71,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AdminLayoutComponent, AdminHeaderComponent, AdminMenuComponent, AdminFooterComponent, AdminSidebarComponent, CourseCatalogsComponent
   ],
   imports: [
-    EffectsModule.forRoot([AppHomeEffect, AppEffect, CourseCatalogEffect]),
+    EffectsModule.forRoot([AppHomeEffect, AppEffect, AppCourseCatalogEffect]),
     StoreModule.forRoot({ apphome: appHomeReducer, app: appReducer, appcourseCatlogs: appCourseCatalogsReducer}),
     BrowserModule,
     BrowserAnimationsModule,

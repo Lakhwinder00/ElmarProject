@@ -6,7 +6,7 @@ import { Action, Store, select } from "@ngrx/store";
 import { ICourseCatalog } from '../../model'
 
 @Injectable()
-export class CourseCatalogEffect {
+export class AppCourseCatalogEffect {
 
   constructor(private actions$: Actions, private store: Store<any>) {
 
